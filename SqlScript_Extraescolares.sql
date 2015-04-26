@@ -7,100 +7,85 @@ go
 
 create login login_Extraescolares with
 	password = '1234',
-	default_database = Extraescolares,
+	default_database = ExtraescolaresDB,
 	check_policy = off;
 go
 
-create user user_Administrador
-	for login Extraescolares
-	with default_schema = Extraescolares;
-
-create user user_Docente
-	for login Extraescolares
-	with default_schema = Extraescolares;
-
-create user user_Alumno
-	for login Extraescolares
-	with default_schema = Extraescolares;
+create user user_Extraescolares
+	for login login_Extraescolares
+	with default_schema = ExtraescolaresDB;
 go
 
-create role role_Administrador;
-go
-
-grant delete, insert, select, update 
-	on Extraescolares.Alumnos
-	to role_Administrador;
-	
-grant delete, insert, select, update 
-	on Extraescolares.Docentes
-	to role_Administrador;
-	
-grant delete, insert, select, update 
-	on Extraescolares.Administradores
-	to role_Administrador;
-	
-grant delete, insert, select, update 
-	on Extraescolares.Actividades
-	to role_Administrador;
-	
-grant delete, insert, select, update 
-	on Extraescolares.Grupos
-	to role_Administrador;
-	
-grant delete, insert, select, update 
-	on Extraescolares.Listas
-	to role_Administrador;
-go
+create table Usuarios 
+(
+	IDUsuario int identity(1,1) unique not null,
+	Usuario nvarchar(50) not null,
+	Passwrd nvarchar(50) not null,
+	Rango tinyint not null default 0,
+	constraint PK_Usuario primary key (IDUsuario)
+);
 
 create table Alumnos
 (
 	IDAlumno int identity(1,1) unique not null,
-	NumeroDeControl int unique,
-	Nombre nvarchar(25),
-	Apellidos nvarchar(50),
-	Edad tinyint,
-	Sexo (1), -- H -> Hombre || M -> Mujer
-	Semestre tinyint,
-	Carrera nvarchar(50),
+	NumeroDeControl int unique not null,
+	Nombre nvarchar(25) not null,
+	Apellidos nvarchar(50) not null,
+	Edad tinyint not null,
+	Sexo char(1) not null, -- H -> Hombre || M -> Mujer
+	Semestre tinyint not null,
+	Carrera nvarchar(50) not null,
 	Email nvarchar(50),
-	Telefono char(10),
+	Telefono char(10) not null,
+	IDUsuario int not null,
 	constraint PK_Alumnos primary key (IDAlumno),
-	constraint CK_Alumnos_TelefonoSoloNumeros (Telefono like '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]')
+	constraint CK_Alumnos_TelefonoSoloNumeros check (Telefono like '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]'),
+	constraint CK_Alumnos_Sexo check (Sexo like '[H,M]'),
+	constraint FK_Alumnos_Usuario foreign key (IDUsuario)
+		references Usuarios(IDUsuario)
 );
 go
 
 create table Docentes
 (
 	IDDocente int identity(1,1) unique not null,
-	Nombre nvarchar(25),
-	Apellidos nvarchar(50),
-	Edad tinyint,
-	Sexo (1), -- H -> Hombre || M -> Mujer
+	Nombre nvarchar(25) not null,
+	Apellidos nvarchar(50) not null,
+	Edad tinyint not null,
+	Sexo char(1) not null, -- H -> Hombre || M -> Mujer
 	Email nvarchar(50),
-	Telefono char(10),
+	Telefono char(10) not null,
+	IDUsuario int not null,
 	constraint PK_Docentes primary key (IDDocente),
-	constraint CK_Docentes_TelefonoSoloNumeros (Telefono like '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]')
+	constraint CK_Docentes_TelefonoSoloNumeros check (Telefono like '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]'),
+	constraint CK_Docentes_Sexo check (Sexo like '[H,M]'),
+	constraint FK_Docentes_Usuario foreign key (IDUsuario)
+		references Usuarios(IDUsuario)
 );
 go
 
 create table Administradores
 (
 	IDAdministrador int identity(1,1) unique not null,
-	Nombre nvarchar(25),
-	Apellidos nvarchar(50),
-	Edad tinyint,
-	Sexo (1), -- H -> Hombre || M -> Mujer
+	Nombre nvarchar(25) not null,
+	Apellidos nvarchar(50) not null,
+	Edad tinyint not null,
+	Sexo char(1) not null, -- H -> Hombre || M -> Mujer
 	Email nvarchar(50),
-	Telefono char(10),
+	Telefono char(10) not null,
+	IDUsuario int not null,
 	constraint PK_Administradores primary key (IDAdministrador),
-	constraint CK_Administradores_TelefonoSoloNumeros (Telefono like '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]')
+	constraint CK_Administradores_TelefonoSoloNumeros check (Telefono like '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]'),
+	constraint CK_Administradores_Sexo check (Sexo like '[H,M]'),
+	constraint FK_Administradores_Usuario foreign key (IDUsuario)
+		references Usuarios(IDUsuario)
 );
 go
 
 create table Actividades
 (
 	IDActividad int identity(1,1) unique not null,
-	Nombre nvarchar(50),
+	Nombre nvarchar(50) not null,
 	constraint PK_Actividades primary key (IDActividad)
 );
 go
@@ -108,17 +93,20 @@ go
 create table Grupos
 (
 	IDGrupo int identity(1,1) unique not null,
-	CicloEscolar_Anho smallint,
-	CicloEscolar_MesPrimero tinyint,
-	CicloEscolar_MesUltimo tinyint,
-	Capacidad tinyint,
-	Horario nvarchar(255),
+	CicloEscolar_Anho smallint not null,
+	CicloEscolar_MesPrimero tinyint not null,
+	CicloEscolar_MesUltimo tinyint not null,
+	Capacidad tinyint not null,
+	Horario nvarchar(255) not null,
 	-- Formato para almacenar el horario
-	-- La hora ser√° expresada en un formato de 24 horas.
+	-- La hora ser· expresada en un formato de 24 horas.
 	-- {Dia,HH:MM,HH:MM}[&Dia,HH:MM,HH:MM][&...]...
 	-- Ejemplo: Martes,14:00,16:00&Jueves,14:00,16:00
 	IDActividad int not null,
 	constraint PK_Grupos primary key (IDGrupo),
+	constraint CK_Grupos_Meses 
+		check (1 <= CicloEscolar_MesPrimero && CicloEscolar_MesPrimero <= 12 and 
+		1 <= CicloEscolar_MesUltimo && CicloEscolar_MesUltimo <= 12),
 	constraint FK_Grupos foreign key (IDActividad)
 		references Actividades (IDActividad) on delete cascade on update cascade
 );
@@ -128,11 +116,25 @@ create table Listas
 (
 	IDAlumno int not null,
 	IDGrupo int not null,
-	Calificacion tinyint default 0,
+	Calificacion tinyint default 0 not null,
 	constraint PK_Listas primary key (IDAlumno, IDGrupo),
+	constraint CK_Listas_Calificacion check (0 <= Calificacion 
 	constraint FK_Listas_IDAlumno foreign key (IDAlumno)
 		references Alumnos (IDAlumno) on delete cascade on update cascade,
 	constraint FK_Listas_IDGrupo foreign key (IDGrupo)
 		references Grupos (IDGrupo) on delete cascade on update cascade
 );
 go
+
+insert into Usuarios (Usuario, Passwrd) values ('1','1');
+
+insert into Actividades (Nombre) values ('Volleyball');
+insert into Actividades (Nombre) values ('Basketball');
+insert into Actividades (Nombre) values ('NataciÛn');
+insert into Actividades (Nombre) values ('Futball');
+insert into Actividades (Nombre) values ('Ajedrez');
+insert into Actividades (Nombre) values ('Yu-gi-oh!');
+insert into Actividades (Nombre) values ('Taller de ProgramaciÛn');
+insert into Actividades (Nombre) values ('Rondalla');
+insert into Actividades (Nombre) values ('Danza');
+insert into Actividades (Nombre) values ('Atletismo');

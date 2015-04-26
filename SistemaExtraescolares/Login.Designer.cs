@@ -117,7 +117,7 @@
             this.TextBox_Password.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TextBox_Password.Location = new System.Drawing.Point(192, 64);
             this.TextBox_Password.Name = "TextBox_Password";
-            this.TextBox_Password.PasswordChar = '☣';
+            this.TextBox_Password.PasswordChar = '✌';
             this.TextBox_Password.Size = new System.Drawing.Size(330, 47);
             this.TextBox_Password.TabIndex = 3;
             // 
