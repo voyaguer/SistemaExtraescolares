@@ -81,6 +81,7 @@
     </Compile>
     <Compile Include="Manejadores\Actividad_Manejador.cs" />
     <Compile Include="Modelos\Actividad.cs" />
+    <Compile Include="Modelos\Grupo.cs" />
     <Compile Include="Principal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,7 +122,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">
