@@ -14,9 +14,9 @@ namespace SistemaExtraescolares
     {
         IComunicacion Delegado;
         Boolean Actividades_ConDatos = false;
-        Boolean Grupos_ConDatos = false;
-        Boolean Docentes_ConDatos = false;
-        Boolean Alumnos_ConDatos = false;
+        //Boolean Grupos_ConDatos = false;
+        //Boolean Docentes_ConDatos = false;
+       // Boolean Alumnos_ConDatos = false;
         Actividad[] Actividades;
         Int32 IndiceSeleccionado;
 
@@ -71,6 +71,14 @@ namespace SistemaExtraescolares
         void Cargar_Grupos()
         {
 
+            Cargar_Actividades();
+            comboBox_Actividades.Items.Clear();
+            foreach (Actividad Act in Actividades)
+            {
+                comboBox_Actividades.Items.Add(Act);
+            }
+            comboBox_MesPrimero.SelectedIndex = comboBox_MesPrimero.FindStringExact("Enero");
+            comboBox_MesUltimo.SelectedIndex = comboBox_MesPrimero.FindStringExact("Febrero");
         }
 
         void Cargar_Docentes()

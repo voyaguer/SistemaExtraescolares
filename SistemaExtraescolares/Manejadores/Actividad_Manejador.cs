@@ -44,7 +44,7 @@ namespace SistemaExtraescolares
             }
             catch (Exception ex)
             {
-
+                Console.Write(ex.Message);
             }
             finally
             {
@@ -66,7 +66,7 @@ namespace SistemaExtraescolares
             }
             catch (Exception ex)
             {
-
+                Console.Write(ex.Message);
             }
             finally
             {

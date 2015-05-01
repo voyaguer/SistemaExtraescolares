@@ -80,6 +80,7 @@
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Manejadores\Actividad_Manejador.cs" />
+    <Compile Include="Manejadores\Grupo_Manejador.cs" />
     <Compile Include="Modelos\Actividad.cs" />
     <Compile Include="Modelos\Grupo.cs" />
     <Compile Include="Principal.cs">

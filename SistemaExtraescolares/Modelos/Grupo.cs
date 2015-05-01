@@ -2,7 +2,7 @@
 
 namespace SistemaExtraescolares
 {
-    internal class Grupo
+   public class Grupo
     {
         private int IDActividad { get; set; }
 
