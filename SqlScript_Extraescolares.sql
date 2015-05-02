@@ -144,22 +144,22 @@ insert into Actividades (Nombre) values ('Atletismo');
 insert into Usuarios (Usuario, Passwrd, Rango) values ('2', '2', 0);
 
 insert into Alumnos (NumeroDeControl, Nombre, Apellidos, Edad, Sexo, Semestre, Carrera, Telefono, IDUsuario)
-	values (0000, 'Alumno0', 'Apellido', 20, 'H', 1, 'Sistemas', '0123456789', 2);
+	values (0000, 'Juan', 'Pérez', 20, 'H', 1, 'Sistemas', '6621001122', 2);
 insert into Alumnos (NumeroDeControl, Nombre, Apellidos, Edad, Sexo, Semestre, Carrera, Telefono, IDUsuario)
-	values (0001, 'Alumno1', 'Apellido', 20, 'M', 1, 'Sistemas', '0123456789', 2);
+	values (0001, 'María', 'Herrera', 20, 'M', 1, 'Sistemas', '6621001133', 2);
 insert into Alumnos (NumeroDeControl, Nombre, Apellidos, Edad, Sexo, Semestre, Carrera, Telefono, IDUsuario)
-	values (0002, 'Alumno2', 'Apellido', 20, 'H', 1, 'Sistemas', '0123456789', 2);
+	values (0002, 'Pedro', 'Pacheco', 20, 'H', 1, 'Sistemas', '6621001144', 2);
 insert into Alumnos (NumeroDeControl, Nombre, Apellidos, Edad, Sexo, Semestre, Carrera, Telefono, IDUsuario)
-	values (0003, 'Alumno3', 'Apellido', 20, 'M', 1, 'Sistemas', '0123456789', 2);
+	values (0003, 'Elena', 'Galindo', 20, 'M', 1, 'Sistemas', '6621001155', 2);
 insert into Alumnos (NumeroDeControl, Nombre, Apellidos, Edad, Sexo, Semestre, Carrera, Telefono, IDUsuario)
-	values (0004, 'Alumno4', 'Apellido', 20, 'H', 1, 'Sistemas', '0123456789', 2);
+	values (0004, 'Agustín', 'Guerra', 20, 'H', 1, 'Sistemas', '6621001166', 2);
 insert into Alumnos (NumeroDeControl, Nombre, Apellidos, Edad, Sexo, Semestre, Carrera, Telefono, IDUsuario)
-	values (0005, 'Alumno5', 'Apellido', 20, 'M', 1, 'Sistemas', '0123456789', 2);
+	values (0105, 'Fernanda', 'Torres', 20, 'M', 1, 'Sistemas', '6621001177', 2);
 insert into Alumnos (NumeroDeControl, Nombre, Apellidos, Edad, Sexo, Semestre, Carrera, Telefono, IDUsuario)
-	values (0006, 'Alumno6', 'Apellido', 20, 'H', 1, 'Sistemas', '0123456789', 2);
+	values (0106, 'Tenorio', 'Beltran', 20, 'H', 1, 'Sistemas', '6621001188', 2);
 insert into Alumnos (NumeroDeControl, Nombre, Apellidos, Edad, Sexo, Semestre, Carrera, Telefono, IDUsuario)
-	values (0007, 'Alumno7', 'Apellido', 20, 'M', 1, 'Sistemas', '0123456789', 2);
+	values (0107, 'Daniela', 'Gálvez', 20, 'M', 1, 'Sistemas', '6621001199', 2);
 insert into Alumnos (NumeroDeControl, Nombre, Apellidos, Edad, Sexo, Semestre, Carrera, Telefono, IDUsuario)
-	values (0008, 'Alumno8', 'Apellido', 20, 'H', 1, 'Sistemas', '0123456789', 2);
+	values (0108, 'Gustavo', 'Ortega', 20, 'H', 1, 'Sistemas', '6621001100', 2);
 insert into Alumnos (NumeroDeControl, Nombre, Apellidos, Edad, Sexo, Semestre, Carrera, Telefono, IDUsuario)
-	values (0009, 'Alumno9', 'Apellido', 20, 'M', 1, 'Sistemas', '0123456789', 2); 
+	values (0109, 'Gloria', 'Renteria', 20, 'M', 1, 'Sistemas', '6621001111', 2); 
