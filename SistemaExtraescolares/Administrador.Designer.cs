@@ -38,6 +38,12 @@
             this.TextBox_Buscar = new System.Windows.Forms.TextBox();
             this.TabPage_Grupos = new System.Windows.Forms.TabPage();
             this.GroupBox_AgregarGrupo = new System.Windows.Forms.GroupBox();
+            this.comboBox_MesUltimo = new System.Windows.Forms.ComboBox();
+            this.label_MesUltimo = new System.Windows.Forms.Label();
+            this.comboBox_MesPrimero = new System.Windows.Forms.ComboBox();
+            this.label_MesPrimero = new System.Windows.Forms.Label();
+            this.numericUpDown_CicloEscolar_Anho = new System.Windows.Forms.NumericUpDown();
+            this.label_CicloEscolar_Anho = new System.Windows.Forms.Label();
             this.comboBox_Actividades = new System.Windows.Forms.ComboBox();
             this.TabPage_Docentes = new System.Windows.Forms.TabPage();
             this.TabPage_Alumnos = new System.Windows.Forms.TabPage();
@@ -47,20 +53,21 @@
             this.ToolStripMenuItem_Actividad_Modificar = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItem_Actividad_Borrar = new System.Windows.Forms.ToolStripMenuItem();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.label_CicloEscolar_Anho = new System.Windows.Forms.Label();
-            this.numericUpDown_CicloEscolar_Anho = new System.Windows.Forms.NumericUpDown();
-            this.label_MesPrimero = new System.Windows.Forms.Label();
-            this.comboBox_MesPrimero = new System.Windows.Forms.ComboBox();
-            this.comboBox_MesUltimo = new System.Windows.Forms.ComboBox();
-            this.label_MesUltimo = new System.Windows.Forms.Label();
+            this.label_Capacidad_Grupo = new System.Windows.Forms.Label();
+            this.numericUpDown_Capacidad_Grupo = new System.Windows.Forms.NumericUpDown();
+            this.label_Horario_Grupo = new System.Windows.Forms.Label();
+            this.button_Agregar_Grupo = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.uC_Horario_Dia1 = new SistemaExtraescolares.UC_Horario_Dia();
             this.panel1.SuspendLayout();
             this.TabControl_Principal.SuspendLayout();
             this.TabPage_Inicio.SuspendLayout();
             this.TabPage_Actividades.SuspendLayout();
             this.TabPage_Grupos.SuspendLayout();
             this.GroupBox_AgregarGrupo.SuspendLayout();
-            this.ContextMenuStrip_Actividad.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_CicloEscolar_Anho)).BeginInit();
+            this.ContextMenuStrip_Actividad.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Capacidad_Grupo)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -154,6 +161,12 @@
             // 
             // GroupBox_AgregarGrupo
             // 
+            this.GroupBox_AgregarGrupo.Controls.Add(this.label1);
+            this.GroupBox_AgregarGrupo.Controls.Add(this.uC_Horario_Dia1);
+            this.GroupBox_AgregarGrupo.Controls.Add(this.button_Agregar_Grupo);
+            this.GroupBox_AgregarGrupo.Controls.Add(this.label_Horario_Grupo);
+            this.GroupBox_AgregarGrupo.Controls.Add(this.numericUpDown_Capacidad_Grupo);
+            this.GroupBox_AgregarGrupo.Controls.Add(this.label_Capacidad_Grupo);
             this.GroupBox_AgregarGrupo.Controls.Add(this.comboBox_MesUltimo);
             this.GroupBox_AgregarGrupo.Controls.Add(this.label_MesUltimo);
             this.GroupBox_AgregarGrupo.Controls.Add(this.comboBox_MesPrimero);
@@ -163,15 +176,103 @@
             this.GroupBox_AgregarGrupo.Controls.Add(this.comboBox_Actividades);
             this.GroupBox_AgregarGrupo.Location = new System.Drawing.Point(25, 6);
             this.GroupBox_AgregarGrupo.Name = "GroupBox_AgregarGrupo";
-            this.GroupBox_AgregarGrupo.Size = new System.Drawing.Size(754, 317);
+            this.GroupBox_AgregarGrupo.Size = new System.Drawing.Size(754, 415);
             this.GroupBox_AgregarGrupo.TabIndex = 0;
             this.GroupBox_AgregarGrupo.TabStop = false;
             this.GroupBox_AgregarGrupo.Text = "Agregar";
             // 
+            // comboBox_MesUltimo
+            // 
+            this.comboBox_MesUltimo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_MesUltimo.FormattingEnabled = true;
+            this.comboBox_MesUltimo.Items.AddRange(new object[] {
+            "Enero",
+            "Febrero",
+            "Marzo",
+            "Abril",
+            "Mayo",
+            "Junio",
+            "Julio",
+            "Agosto",
+            "Septiembre",
+            "Octubre",
+            "Noviembre",
+            "Diciembre"});
+            this.comboBox_MesUltimo.Location = new System.Drawing.Point(444, 124);
+            this.comboBox_MesUltimo.Name = "comboBox_MesUltimo";
+            this.comboBox_MesUltimo.Size = new System.Drawing.Size(158, 30);
+            this.comboBox_MesUltimo.TabIndex = 6;
+            // 
+            // label_MesUltimo
+            // 
+            this.label_MesUltimo.AutoSize = true;
+            this.label_MesUltimo.Location = new System.Drawing.Point(345, 127);
+            this.label_MesUltimo.Name = "label_MesUltimo";
+            this.label_MesUltimo.Size = new System.Drawing.Size(93, 22);
+            this.label_MesUltimo.TabIndex = 5;
+            this.label_MesUltimo.Text = "Mes final:";
+            // 
+            // comboBox_MesPrimero
+            // 
+            this.comboBox_MesPrimero.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_MesPrimero.FormattingEnabled = true;
+            this.comboBox_MesPrimero.Items.AddRange(new object[] {
+            "Enero",
+            "Febrero",
+            "Marzo",
+            "Abril",
+            "Mayo",
+            "Junio",
+            "Julio",
+            "Agosto",
+            "Septiembre",
+            "Octubre",
+            "Noviembre",
+            "Diciembre"});
+            this.comboBox_MesPrimero.Location = new System.Drawing.Point(148, 124);
+            this.comboBox_MesPrimero.Name = "comboBox_MesPrimero";
+            this.comboBox_MesPrimero.Size = new System.Drawing.Size(122, 30);
+            this.comboBox_MesPrimero.TabIndex = 4;
+            // 
+            // label_MesPrimero
+            // 
+            this.label_MesPrimero.AutoSize = true;
+            this.label_MesPrimero.Location = new System.Drawing.Point(13, 127);
+            this.label_MesPrimero.Name = "label_MesPrimero";
+            this.label_MesPrimero.Size = new System.Drawing.Size(105, 22);
+            this.label_MesPrimero.TabIndex = 3;
+            this.label_MesPrimero.Text = "Mes inicial:";
+            // 
+            // numericUpDown_CicloEscolar_Anho
+            // 
+            this.numericUpDown_CicloEscolar_Anho.Location = new System.Drawing.Point(148, 87);
+            this.numericUpDown_CicloEscolar_Anho.Maximum = new decimal(new int[] {
+            2050,
+            0,
+            0,
+            0});
+            this.numericUpDown_CicloEscolar_Anho.Name = "numericUpDown_CicloEscolar_Anho";
+            this.numericUpDown_CicloEscolar_Anho.Size = new System.Drawing.Size(122, 31);
+            this.numericUpDown_CicloEscolar_Anho.TabIndex = 2;
+            this.numericUpDown_CicloEscolar_Anho.Value = new decimal(new int[] {
+            2010,
+            0,
+            0,
+            0});
+            // 
+            // label_CicloEscolar_Anho
+            // 
+            this.label_CicloEscolar_Anho.AutoSize = true;
+            this.label_CicloEscolar_Anho.Location = new System.Drawing.Point(13, 89);
+            this.label_CicloEscolar_Anho.Name = "label_CicloEscolar_Anho";
+            this.label_CicloEscolar_Anho.Size = new System.Drawing.Size(130, 22);
+            this.label_CicloEscolar_Anho.TabIndex = 1;
+            this.label_CicloEscolar_Anho.Text = "Ciclo escolar:";
+            // 
             // comboBox_Actividades
             // 
             this.comboBox_Actividades.FormattingEnabled = true;
-            this.comboBox_Actividades.Location = new System.Drawing.Point(432, 61);
+            this.comboBox_Actividades.Location = new System.Drawing.Point(349, 57);
             this.comboBox_Actividades.Name = "comboBox_Actividades";
             this.comboBox_Actividades.Size = new System.Drawing.Size(253, 30);
             this.comboBox_Actividades.TabIndex = 0;
@@ -238,93 +339,62 @@
             this.ToolStripMenuItem_Actividad_Borrar.Text = "Borrar";
             this.ToolStripMenuItem_Actividad_Borrar.Click += new System.EventHandler(this.ToolStripMenuItem_Actividad_Borrar_Click);
             // 
-            // label_CicloEscolar_Anho
+            // label_Capacidad_Grupo
             // 
-            this.label_CicloEscolar_Anho.AutoSize = true;
-            this.label_CicloEscolar_Anho.Location = new System.Drawing.Point(6, 122);
-            this.label_CicloEscolar_Anho.Name = "label_CicloEscolar_Anho";
-            this.label_CicloEscolar_Anho.Size = new System.Drawing.Size(130, 22);
-            this.label_CicloEscolar_Anho.TabIndex = 1;
-            this.label_CicloEscolar_Anho.Text = "Ciclo escolar:";
+            this.label_Capacidad_Grupo.AutoSize = true;
+            this.label_Capacidad_Grupo.Location = new System.Drawing.Point(13, 160);
+            this.label_Capacidad_Grupo.Name = "label_Capacidad_Grupo";
+            this.label_Capacidad_Grupo.Size = new System.Drawing.Size(123, 22);
+            this.label_Capacidad_Grupo.TabIndex = 7;
+            this.label_Capacidad_Grupo.Text = "Capacidad:";
             // 
-            // numericUpDown_CicloEscolar_Anho
+            // numericUpDown_Capacidad_Grupo
             // 
-            this.numericUpDown_CicloEscolar_Anho.Location = new System.Drawing.Point(142, 122);
-            this.numericUpDown_CicloEscolar_Anho.Maximum = new decimal(new int[] {
-            2050,
-            0,
-            0,
-            0});
-            this.numericUpDown_CicloEscolar_Anho.Name = "numericUpDown_CicloEscolar_Anho";
-            this.numericUpDown_CicloEscolar_Anho.Size = new System.Drawing.Size(120, 31);
-            this.numericUpDown_CicloEscolar_Anho.TabIndex = 2;
-            this.numericUpDown_CicloEscolar_Anho.Value = new decimal(new int[] {
-            2010,
+            this.numericUpDown_Capacidad_Grupo.Location = new System.Drawing.Point(148, 158);
+            this.numericUpDown_Capacidad_Grupo.Name = "numericUpDown_Capacidad_Grupo";
+            this.numericUpDown_Capacidad_Grupo.Size = new System.Drawing.Size(122, 31);
+            this.numericUpDown_Capacidad_Grupo.TabIndex = 8;
+            this.numericUpDown_Capacidad_Grupo.Value = new decimal(new int[] {
+            1,
             0,
             0,
             0});
             // 
-            // label_MesPrimero
+            // label_Horario_Grupo
             // 
-            this.label_MesPrimero.AutoSize = true;
-            this.label_MesPrimero.Location = new System.Drawing.Point(7, 175);
-            this.label_MesPrimero.Name = "label_MesPrimero";
-            this.label_MesPrimero.Size = new System.Drawing.Size(105, 22);
-            this.label_MesPrimero.TabIndex = 3;
-            this.label_MesPrimero.Text = "Mes inicial:";
+            this.label_Horario_Grupo.AutoSize = true;
+            this.label_Horario_Grupo.Location = new System.Drawing.Point(315, 167);
+            this.label_Horario_Grupo.Name = "label_Horario_Grupo";
+            this.label_Horario_Grupo.Size = new System.Drawing.Size(97, 22);
+            this.label_Horario_Grupo.TabIndex = 9;
+            this.label_Horario_Grupo.Text = "- Horario -";
             // 
-            // comboBox_MesPrimero
+            // button_Agregar_Grupo
             // 
-            this.comboBox_MesPrimero.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox_MesPrimero.FormattingEnabled = true;
-            this.comboBox_MesPrimero.Items.AddRange(new object[] {
-            "Enero",
-            "Febrero",
-            "Marzo",
-            "Abril",
-            "Mayo",
-            "Junio",
-            "Julio",
-            "Agosto",
-            "Septiembre",
-            "Octubre",
-            "Noviembre",
-            "Diciembre"});
-            this.comboBox_MesPrimero.Location = new System.Drawing.Point(142, 172);
-            this.comboBox_MesPrimero.Name = "comboBox_MesPrimero";
-            this.comboBox_MesPrimero.Size = new System.Drawing.Size(121, 30);
-            this.comboBox_MesPrimero.TabIndex = 4;
+            this.button_Agregar_Grupo.Location = new System.Drawing.Point(47, 359);
+            this.button_Agregar_Grupo.Name = "button_Agregar_Grupo";
+            this.button_Agregar_Grupo.Size = new System.Drawing.Size(172, 40);
+            this.button_Agregar_Grupo.TabIndex = 16;
+            this.button_Agregar_Grupo.Text = "Agregar Grupo";
+            this.button_Agregar_Grupo.UseVisualStyleBackColor = true;
+            this.button_Agregar_Grupo.Click += new System.EventHandler(this.button_Agregar_Grupo_Click);
             // 
-            // comboBox_MesUltimo
+            // label1
             // 
-            this.comboBox_MesUltimo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox_MesUltimo.FormattingEnabled = true;
-            this.comboBox_MesUltimo.Items.AddRange(new object[] {
-            "Enero",
-            "Febrero",
-            "Marzo",
-            "Abril",
-            "Mayo",
-            "Junio",
-            "Julio",
-            "Agosto",
-            "Septiembre",
-            "Octubre",
-            "Noviembre",
-            "Diciembre"});
-            this.comboBox_MesUltimo.Location = new System.Drawing.Point(141, 221);
-            this.comboBox_MesUltimo.Name = "comboBox_MesUltimo";
-            this.comboBox_MesUltimo.Size = new System.Drawing.Size(121, 30);
-            this.comboBox_MesUltimo.TabIndex = 6;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(78, 215);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(65, 22);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "label1";
             // 
-            // label_MesUltimo
+            // uC_Horario_Dia1
             // 
-            this.label_MesUltimo.AutoSize = true;
-            this.label_MesUltimo.Location = new System.Drawing.Point(6, 224);
-            this.label_MesUltimo.Name = "label_MesUltimo";
-            this.label_MesUltimo.Size = new System.Drawing.Size(93, 22);
-            this.label_MesUltimo.TabIndex = 5;
-            this.label_MesUltimo.Text = "Mes final:";
+            this.uC_Horario_Dia1.Location = new System.Drawing.Point(17, 215);
+            this.uC_Horario_Dia1.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.uC_Horario_Dia1.Name = "uC_Horario_Dia1";
+            this.uC_Horario_Dia1.Size = new System.Drawing.Size(239, 136);
+            this.uC_Horario_Dia1.TabIndex = 17;
             // 
             // Administrador
             // 
@@ -342,8 +412,9 @@
             this.TabPage_Grupos.ResumeLayout(false);
             this.GroupBox_AgregarGrupo.ResumeLayout(false);
             this.GroupBox_AgregarGrupo.PerformLayout();
-            this.ContextMenuStrip_Actividad.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_CicloEscolar_Anho)).EndInit();
+            this.ContextMenuStrip_Actividad.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Capacidad_Grupo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -374,5 +445,11 @@
         private System.Windows.Forms.Label label_CicloEscolar_Anho;
         private System.Windows.Forms.ComboBox comboBox_MesUltimo;
         private System.Windows.Forms.Label label_MesUltimo;
+        private System.Windows.Forms.NumericUpDown numericUpDown_Capacidad_Grupo;
+        private System.Windows.Forms.Label label_Capacidad_Grupo;
+        private System.Windows.Forms.Button button_Agregar_Grupo;
+        private System.Windows.Forms.Label label_Horario_Grupo;
+        private UC_Horario_Dia uC_Horario_Dia1;
+        private System.Windows.Forms.Label label1;
     }
 }

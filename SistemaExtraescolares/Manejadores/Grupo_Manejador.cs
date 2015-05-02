@@ -20,8 +20,8 @@ namespace SistemaExtraescolares
             try
             {
                 Connection.Open();
-                //String Query = "delete from Actividades where IDActividad = @IDActividad;";
-                //SqlParameter Data = new SqlParameter("@IDActividad", Index);
+                //String Query = "insert into Grupo (Nombre) values ('Volleyball');";
+                //SqlParameter Data = new SqlParameter("@_IDActividad", Index);
                 //SqlCommand Command = new SqlCommand(Query, Connection);
                 //Command.Parameters.Add(Data);
                 //Command.ExecuteNonQuery();

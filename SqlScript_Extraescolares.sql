@@ -138,3 +138,9 @@ insert into Actividades (Nombre) values ('Taller de Programación');
 insert into Actividades (Nombre) values ('Rondalla');
 insert into Actividades (Nombre) values ('Danza');
 insert into Actividades (Nombre) values ('Atletismo');
+
+
+
+
+insert into Grupos(IDActividad, CicloEscolar_Anho, CicloEscolar_MesPrimero, CicloEscolar_MesUltimo, Capacidad, Horario)
+values (9, 2010,1,3,25,'Martes,14:00,16:00');
