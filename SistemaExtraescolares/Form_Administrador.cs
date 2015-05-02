@@ -256,12 +256,12 @@ namespace SistemaExtraescolares
             if (checkBox_Dia2.Checked)
             {
                 uC_Horario_Dia2.Obtener_Horario_Dia();
-                Horario += ","+uC_Horario_Dia2.Horario;
+                Horario += "&"+uC_Horario_Dia2.Horario;
             }
             if (checkBox_Dia3.Checked)
             {
                 uC_Horario_Dia3.Obtener_Horario_Dia();
-                Horario += "," + uC_Horario_Dia3.Horario;
+                Horario += "&" + uC_Horario_Dia3.Horario;
             }
 
 
