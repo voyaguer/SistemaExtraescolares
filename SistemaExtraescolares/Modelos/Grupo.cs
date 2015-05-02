@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace SistemaExtraescolares
 {
@@ -18,6 +19,10 @@ namespace SistemaExtraescolares
 
         public String Horario { get; set; }
 
+        public String NombreActividad { get; set; }
+
+        public List<Int32> ListaAlumnos { get; set; }
+
         public Grupo()
         {
             IDGrupo = 0;
@@ -28,6 +33,9 @@ namespace SistemaExtraescolares
             CicloEscolar_Anho = 0;
             CicloEscolar_MesPrimero = 0;
             CicloEscolar_MesUltimo = 0;
+
+            NombreActividad = String.Empty;
+            ListaAlumnos = new List<Int32>();
         }
 
         public Grupo(Int32 _IDActividad, Int32 _CicloEscolar_Anho,
@@ -43,7 +51,7 @@ namespace SistemaExtraescolares
 
         public override String ToString()
         {
-            return IDGrupo.ToString();
+            return NombreActividad + " - " + Horario;
         }
     }
 }

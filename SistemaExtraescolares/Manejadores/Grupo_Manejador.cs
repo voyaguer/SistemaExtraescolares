@@ -34,6 +34,7 @@ namespace SistemaExtraescolares
                     {
                         Grup = new Grupo();
                         Grup.IDGrupo = Convert.ToInt32(DataReader["IDGrupo"]);
+                        Grup.IDActividad = Convert.ToInt32(DataReader["IDActividad"]);
                         Lista.Add(Grup);
                     }
                     Grupos = Lista.ToArray<Grupo>();
@@ -71,6 +72,31 @@ namespace SistemaExtraescolares
             {
                 MessageBox.Show(ex.Message);
                 Console.Write(ex.Message);
+            }
+            finally
+            {
+                Connection.Close();
+            }
+        }
+
+        public void AsignarListaDeAlumnos(ref Grupo[] Grupos)
+        {
+            try
+            {
+                Connection.Open();
+                String Query = "select IDGrupo, IDAlumno from Listas;";
+                SqlCommand Command = new SqlCommand(Query, Connection);
+                using (var DataReader = Command.ExecuteReader())
+                {
+                    while (DataReader.Read())
+                    {
+                        Grupos.Single(Gru => Gru.IDGrupo == Convert.ToInt32(DataReader["IDGrupo"])).ListaAlumnos.Add(Convert.ToInt32(DataReader["IDAlumno"]));
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
             }
             finally
             {

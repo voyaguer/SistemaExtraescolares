@@ -34,7 +34,9 @@
             this.TabPage_Inicio = new System.Windows.Forms.TabPage();
             this.Button_Salir = new System.Windows.Forms.Button();
             this.TabPage_Actividades = new System.Windows.Forms.TabPage();
-            this.ListBox_Actividades = new System.Windows.Forms.ListBox();
+            this.ListBox_Actividades_Alumnos = new System.Windows.Forms.ListBox();
+            this.ListBox_Actividades_Grupos = new System.Windows.Forms.ListBox();
+            this.ListBox_Actividades_Actividades = new System.Windows.Forms.ListBox();
             this.TextBox_BuscarActividad = new System.Windows.Forms.TextBox();
             this.TabPage_Grupos = new System.Windows.Forms.TabPage();
             this.groupBox_Agregar_Grupo = new System.Windows.Forms.GroupBox();
@@ -62,6 +64,9 @@
             this.ToolStripMenuItem_Actividad_Borrar = new System.Windows.Forms.ToolStripMenuItem();
             this.ContextMenuStrip_Alumno = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ToolStripMenuItem_Alumno_Modificar = new System.Windows.Forms.ToolStripMenuItem();
+            this.ContextMenuStrip_Grupo = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.modificarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.borrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.uC_Horario_Dia1 = new SistemaExtraescolares.UC_Horario_Dia();
             this.panel1.SuspendLayout();
             this.TabControl_Principal.SuspendLayout();
@@ -74,6 +79,7 @@
             this.TabPage_Alumnos.SuspendLayout();
             this.ContextMenuStrip_Actividad.SuspendLayout();
             this.ContextMenuStrip_Alumno.SuspendLayout();
+            this.ContextMenuStrip_Grupo.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -126,7 +132,9 @@
             // 
             // TabPage_Actividades
             // 
-            this.TabPage_Actividades.Controls.Add(this.ListBox_Actividades);
+            this.TabPage_Actividades.Controls.Add(this.ListBox_Actividades_Alumnos);
+            this.TabPage_Actividades.Controls.Add(this.ListBox_Actividades_Grupos);
+            this.TabPage_Actividades.Controls.Add(this.ListBox_Actividades_Actividades);
             this.TabPage_Actividades.Controls.Add(this.TextBox_BuscarActividad);
             this.TabPage_Actividades.Location = new System.Drawing.Point(4, 31);
             this.TabPage_Actividades.Name = "TabPage_Actividades";
@@ -136,15 +144,39 @@
             this.TabPage_Actividades.Text = "Actividades";
             this.TabPage_Actividades.UseVisualStyleBackColor = true;
             // 
-            // ListBox_Actividades
+            // ListBox_Actividades_Alumnos
             // 
-            this.ListBox_Actividades.FormattingEnabled = true;
-            this.ListBox_Actividades.ItemHeight = 22;
-            this.ListBox_Actividades.Location = new System.Drawing.Point(8, 43);
-            this.ListBox_Actividades.Name = "ListBox_Actividades";
-            this.ListBox_Actividades.Size = new System.Drawing.Size(290, 598);
-            this.ListBox_Actividades.TabIndex = 2;
-            this.ListBox_Actividades.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ListBox_Actividades_MouseUp);
+            this.ListBox_Actividades_Alumnos.FormattingEnabled = true;
+            this.ListBox_Actividades_Alumnos.ItemHeight = 22;
+            this.ListBox_Actividades_Alumnos.Location = new System.Drawing.Point(720, 43);
+            this.ListBox_Actividades_Alumnos.Name = "ListBox_Actividades_Alumnos";
+            this.ListBox_Actividades_Alumnos.Size = new System.Drawing.Size(530, 598);
+            this.ListBox_Actividades_Alumnos.TabIndex = 4;
+            this.ListBox_Actividades_Alumnos.Visible = false;
+            this.ListBox_Actividades_Alumnos.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ListBox_Actividades_Alumnos_MouseUp);
+            // 
+            // ListBox_Actividades_Grupos
+            // 
+            this.ListBox_Actividades_Grupos.FormattingEnabled = true;
+            this.ListBox_Actividades_Grupos.ItemHeight = 22;
+            this.ListBox_Actividades_Grupos.Location = new System.Drawing.Point(304, 43);
+            this.ListBox_Actividades_Grupos.Name = "ListBox_Actividades_Grupos";
+            this.ListBox_Actividades_Grupos.Size = new System.Drawing.Size(410, 598);
+            this.ListBox_Actividades_Grupos.TabIndex = 3;
+            this.ListBox_Actividades_Grupos.Visible = false;
+            this.ListBox_Actividades_Grupos.SelectedIndexChanged += new System.EventHandler(this.ListBox_Actividades_Grupos_SelectedIndexChanged);
+            this.ListBox_Actividades_Grupos.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ListBox_Actividades_Grupos_MouseUp);
+            // 
+            // ListBox_Actividades_Actividades
+            // 
+            this.ListBox_Actividades_Actividades.FormattingEnabled = true;
+            this.ListBox_Actividades_Actividades.ItemHeight = 22;
+            this.ListBox_Actividades_Actividades.Location = new System.Drawing.Point(8, 43);
+            this.ListBox_Actividades_Actividades.Name = "ListBox_Actividades_Actividades";
+            this.ListBox_Actividades_Actividades.Size = new System.Drawing.Size(290, 598);
+            this.ListBox_Actividades_Actividades.TabIndex = 2;
+            this.ListBox_Actividades_Actividades.SelectedIndexChanged += new System.EventHandler(this.ListBox_Actividades_Actividades_SelectedIndexChanged);
+            this.ListBox_Actividades_Actividades.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ListBox_Actividades_Actividades_MouseUp);
             // 
             // TextBox_BuscarActividad
             // 
@@ -383,7 +415,7 @@
             this.ListBox_Alumnos.ItemHeight = 22;
             this.ListBox_Alumnos.Location = new System.Drawing.Point(304, 6);
             this.ListBox_Alumnos.Name = "ListBox_Alumnos";
-            this.ListBox_Alumnos.Size = new System.Drawing.Size(290, 620);
+            this.ListBox_Alumnos.Size = new System.Drawing.Size(530, 620);
             this.ListBox_Alumnos.TabIndex = 0;
             this.ListBox_Alumnos.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ListBox_Alumnos_MouseUp);
             // 
@@ -443,6 +475,26 @@
             this.ToolStripMenuItem_Alumno_Modificar.Text = "Modificar";
             this.ToolStripMenuItem_Alumno_Modificar.Click += new System.EventHandler(this.ToolStripMenuItem_Alumno_Modificar_Click);
             // 
+            // ContextMenuStrip_Grupo
+            // 
+            this.ContextMenuStrip_Grupo.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.modificarToolStripMenuItem,
+            this.borrarToolStripMenuItem});
+            this.ContextMenuStrip_Grupo.Name = "ContextMenuStrip_Grupo";
+            this.ContextMenuStrip_Grupo.Size = new System.Drawing.Size(126, 48);
+            // 
+            // modificarToolStripMenuItem
+            // 
+            this.modificarToolStripMenuItem.Name = "modificarToolStripMenuItem";
+            this.modificarToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
+            this.modificarToolStripMenuItem.Text = "Modificar";
+            // 
+            // borrarToolStripMenuItem
+            // 
+            this.borrarToolStripMenuItem.Name = "borrarToolStripMenuItem";
+            this.borrarToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
+            this.borrarToolStripMenuItem.Text = "Borrar";
+            // 
             // uC_Horario_Dia1
             // 
             this.uC_Horario_Dia1.Horario = null;
@@ -474,6 +526,7 @@
             this.TabPage_Alumnos.PerformLayout();
             this.ContextMenuStrip_Actividad.ResumeLayout(false);
             this.ContextMenuStrip_Alumno.ResumeLayout(false);
+            this.ContextMenuStrip_Grupo.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -491,7 +544,7 @@
         private System.Windows.Forms.TabPage TabPage_Consultas;
         private System.Windows.Forms.Button Button_Salir;
         private System.Windows.Forms.TextBox TextBox_BuscarActividad;
-        private System.Windows.Forms.ListBox ListBox_Actividades;
+        private System.Windows.Forms.ListBox ListBox_Actividades_Actividades;
         private System.Windows.Forms.ContextMenuStrip ContextMenuStrip_Actividad;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_Actividad_Modificar;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_Actividad_Borrar;
@@ -514,5 +567,10 @@
         private System.Windows.Forms.Label label_CicloEscolar_Anho;
         private System.Windows.Forms.ComboBox comboBox_Actividades;
         private UC_Horario_Dia uC_Horario_Dia1;
+        private System.Windows.Forms.ListBox ListBox_Actividades_Grupos;
+        private System.Windows.Forms.ListBox ListBox_Actividades_Alumnos;
+        private System.Windows.Forms.ContextMenuStrip ContextMenuStrip_Grupo;
+        private System.Windows.Forms.ToolStripMenuItem modificarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem borrarToolStripMenuItem;
     }
 }

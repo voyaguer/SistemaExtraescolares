@@ -17,6 +17,7 @@ namespace SistemaExtraescolares
         public Form_Principal()
         {
             InitializeComponent();
+            CenterToScreen();
         }
 
         private void Form_Principal_Load(object sender, EventArgs e)

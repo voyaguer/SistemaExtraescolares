@@ -19,6 +19,7 @@ namespace SistemaExtraescolares
         Boolean Alumnos_ConDatos = false;
         Actividad[] Actividades;
         Alumno[] Alumnos;
+        Grupo[] Grupos;
         Int32 IndiceSeleccionado;
 
         public Form_Administrador(IComunicacion Del)
@@ -38,15 +39,18 @@ namespace SistemaExtraescolares
             {
                 case 1:
                     Cargar_Actividades();
+                    Cargar_PestañaActividades();
                     break;
                 case 2:
                     Cargar_Grupos();
+                    Cargar_PestañaGrupos();
                     break;
                 case 3:
                     Cargar_Docentes();
                     break;
                 case 4:
                     Cargar_Alumnos();
+                    Cargar_PestañaAlumnos();
                     break;
             }
         }
@@ -61,15 +65,36 @@ namespace SistemaExtraescolares
                                 select _Actividad;
                 Actividades = array_Act.ToArray();
             }
-            ListBox_Actividades.Items.Clear();
-            foreach (Actividad Act in Actividades)
-            {
-                ListBox_Actividades.Items.Add(Act);
-            }
             Actividades_ConDatos = true;
         }
 
+        void Cargar_PestañaActividades()
+        {
+            ListBox_Actividades_Actividades.Items.Clear();
+            foreach (Actividad Act in Actividades)
+            {
+                ListBox_Actividades_Actividades.Items.Add(Act);
+            }
+            Cargar_Grupos();
+            Cargar_Alumnos();
+        }
+
         void Cargar_Grupos()
+        {
+            if (!Grupos_ConDatos)
+            {
+                Cargar_Actividades();
+                Grupos = (new Grupo_Manejador()).GetList();
+                foreach (Grupo Grup in Grupos)
+                {
+                    Grup.NombreActividad = Actividades.Single(Act => Act.IDActividad == Grup.IDActividad).Nombre;
+                }
+                (new Grupo_Manejador()).AsignarListaDeAlumnos(ref Grupos);
+                Cargar_Alumnos();
+            }
+        }
+
+        void Cargar_PestañaGrupos()
         {
             Cargar_Actividades();
             comboBox_Actividades.Items.Clear();
@@ -97,38 +122,18 @@ namespace SistemaExtraescolares
                                     orderby _Alumno.NumeroDeControl descending
                                     select _Alumno;
                 Alumnos = array_Alumnos.ToArray();
-                ListBox_Alumnos.Items.Clear();
-                foreach (var Alum in Alumnos)
-                {
-                    ListBox_Alumnos.Items.Add(Alum);
-                }
             }
             Alumnos_ConDatos = true;
+        }
+
+        void Cargar_PestañaAlumnos()
+        {
+            ListBox_Alumnos.Items.Clear();
+            foreach (var Alum in Alumnos)
+            {
+                ListBox_Alumnos.Items.Add(Alum);
+            }
             RadioButton_NumeroControl.Checked = true;
-        }
-
-        private void TextBox_Buscar_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void ListBox_Actividades_MouseUp(object sender, MouseEventArgs e)
-        {
-            Int32 Index = ListBox_Actividades.IndexFromPoint(e.Location);
-            if (Index == -1)
-            {
-                ListBox_Actividades.SelectedIndex = -1;
-            }
-            else
-            {
-                if (e.Button == System.Windows.Forms.MouseButtons.Right)
-                {
-                    IndiceSeleccionado = Index;
-                    ListBox_Actividades.SelectedIndex = Index;
-                    ListBox Lista = (ListBox)sender;
-                    ContextMenuStrip_Actividad.Show(Lista.PointToScreen(e.Location));
-                }
-            }
         }
 
         private void ToolStripMenuItem_Actividad_Modificar_Click(object sender, EventArgs e)
@@ -138,7 +143,7 @@ namespace SistemaExtraescolares
 
         private void ToolStripMenuItem_Actividad_Borrar_Click(object sender, EventArgs e)
         {
-            Int32 IDActividad = ((Actividad)ListBox_Actividades.Items[IndiceSeleccionado]).IDActividad;
+            Int32 IDActividad = ((Actividad)ListBox_Actividades_Actividades.Items[IndiceSeleccionado]).IDActividad;
             (new Actividad_Manejador()).Borrar(IDActividad);
             Actividades_ConDatos = false;
             Cargar_Actividades();
@@ -186,16 +191,6 @@ namespace SistemaExtraescolares
 
         }
 
-        private void TextBox_BuscarAlumno_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TextBox_BuscarAlumno_Leave(object sender, EventArgs e)
-        {
-
-        }
-
         private void TextBox_BuscarAlumno_TextChanged(object sender, EventArgs e)
         {
             if (RadioButton_NumeroControl.Checked)
@@ -238,20 +233,15 @@ namespace SistemaExtraescolares
             var array_Act = from _Actividad in Actividades
                             where (_Actividad.Nombre.ToLower()).Contains(Texto)
                             select _Actividad;
-            ListBox_Actividades.Items.Clear();
+            ListBox_Actividades_Actividades.Items.Clear();
             foreach (Actividad Act in array_Act)
             {
-                ListBox_Actividades.Items.Add(Act);
+                ListBox_Actividades_Actividades.Items.Add(Act);
             }
             if (array_Act.Count() != 0)
             {
-                ListBox_Actividades.SelectedIndex = 0;
+                ListBox_Actividades_Actividades.SelectedIndex = 0;
             }
-        }
-
-        private void button_Agregar_Grupo_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void button_Agregar_Grupo_Click_1(object sender, EventArgs e)
@@ -267,6 +257,109 @@ namespace SistemaExtraescolares
             Grupo_Manejador Manejador = new Grupo_Manejador();
 
             Manejador.Agregar_Grupo(Nuevo_Grupo);
+        }
+
+        private void ListBox_Actividades_Actividades_MouseUp(object sender, MouseEventArgs e)
+        {
+            Int32 Index = ListBox_Actividades_Actividades.IndexFromPoint(e.Location);
+            if (Index == -1)
+            {
+                ListBox_Actividades_Actividades.SelectedIndex = -1;
+            }
+            else
+            {
+                if (e.Button == MouseButtons.Right)
+                {
+                    IndiceSeleccionado = Index;
+                    ListBox_Actividades_Actividades.SelectedIndex = Index;
+                    ListBox Lista = (ListBox)sender;
+                    ContextMenuStrip_Actividad.Show(Lista.PointToScreen(e.Location));
+                }
+            }
+        }
+
+        private void ListBox_Actividades_Grupos_MouseUp(object sender, MouseEventArgs e)
+        {
+            Int32 Index = ListBox_Actividades_Grupos.IndexFromPoint(e.Location);
+            if (Index == -1)
+            {
+                ListBox_Actividades_Grupos.SelectedIndex = -1;
+            }
+            else
+            {
+                if (e.Button == MouseButtons.Right)
+                {
+                    IndiceSeleccionado = Index;
+                    ListBox_Actividades_Grupos.SelectedIndex = Index;
+                    ListBox Lista = (ListBox)sender;
+                    ContextMenuStrip_Grupo.Show(Lista.PointToScreen(e.Location));
+                }
+            }
+        }
+
+        private void ListBox_Actividades_Alumnos_MouseUp(object sender, MouseEventArgs e)
+        {
+            Int32 Index = ListBox_Actividades_Alumnos.IndexFromPoint(e.Location);
+            if (Index == -1)
+            {
+                ListBox_Actividades_Alumnos.SelectedIndex = -1;
+            }
+            else
+            {
+                if (e.Button == MouseButtons.Right)
+                {
+                    IndiceSeleccionado = Index;
+                    ListBox_Actividades_Alumnos.SelectedIndex = Index;
+                    ListBox Lista = (ListBox)sender;
+                    ContextMenuStrip_Alumno.Show(Lista.PointToScreen(e.Location));
+                }
+            }
+        }
+
+        private void ListBox_Actividades_Actividades_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ListBox_Actividades_Actividades.SelectedIndex == -1)
+            {
+                ListBox_Actividades_Grupos.SelectedIndex = -1;
+                ListBox_Actividades_Grupos.Visible = false;
+                ListBox_Actividades_Alumnos.SelectedIndex = -1;
+                ListBox_Actividades_Alumnos.Visible = false;
+            }
+            else
+            {
+                ListBox_Actividades_Grupos.Visible = true;
+                ListBox Lista = (ListBox)sender;
+                ListBox_Actividades_Grupos.Items.Clear();
+                foreach (Grupo Gru in Grupos)
+                {
+                    if (Gru.IDActividad == ((Actividad)Lista.SelectedItem).IDActividad)
+                    {
+                        ListBox_Actividades_Grupos.Items.Add(Gru);
+                    }
+                }
+            }
+        }
+
+        private void ListBox_Actividades_Grupos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ListBox_Actividades_Grupos.SelectedIndex == -1)
+            {
+                ListBox_Actividades_Alumnos.SelectedIndex = -1;
+                ListBox_Actividades_Alumnos.Visible = false;
+            }
+            else
+            {
+                ListBox_Actividades_Alumnos.Visible = true;
+                ListBox Lista = (ListBox)sender;
+                ListBox_Actividades_Alumnos.Items.Clear();
+                foreach (Alumno Alu in Alumnos)
+                {
+                    if (((Grupo)Lista.SelectedItem).ListaAlumnos.Contains(Alu.IDAlumno))
+                    {
+                        ListBox_Actividades_Alumnos.Items.Add(Alu);
+                    }
+                }
+            }
         }
 
     }
