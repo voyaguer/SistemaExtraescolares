@@ -1,6 +1,6 @@
 ﻿namespace SistemaExtraescolares
 {
-    partial class Administrador
+    partial class Form_Administrador
     {
         /// <summary>
         /// Required designer variable.
@@ -35,20 +35,28 @@
             this.Button_Salir = new System.Windows.Forms.Button();
             this.TabPage_Actividades = new System.Windows.Forms.TabPage();
             this.ListBox_Actividades = new System.Windows.Forms.ListBox();
-            this.TextBox_Buscar = new System.Windows.Forms.TextBox();
+            this.TextBox_BuscarActividad = new System.Windows.Forms.TextBox();
             this.TabPage_Grupos = new System.Windows.Forms.TabPage();
             this.TabPage_Docentes = new System.Windows.Forms.TabPage();
             this.TabPage_Alumnos = new System.Windows.Forms.TabPage();
+            this.RadioButton_Nombre = new System.Windows.Forms.RadioButton();
+            this.RadioButton_NumeroControl = new System.Windows.Forms.RadioButton();
+            this.TextBox_BuscarAlumno = new System.Windows.Forms.TextBox();
+            this.ListBox_Alumnos = new System.Windows.Forms.ListBox();
             this.TabPage_Reportes = new System.Windows.Forms.TabPage();
             this.TabPage_Consultas = new System.Windows.Forms.TabPage();
             this.ContextMenuStrip_Actividad = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ToolStripMenuItem_Actividad_Modificar = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItem_Actividad_Borrar = new System.Windows.Forms.ToolStripMenuItem();
+            this.ContextMenuStrip_Alumno = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.ToolStripMenuItem_Alumno_Modificar = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.TabControl_Principal.SuspendLayout();
             this.TabPage_Inicio.SuspendLayout();
             this.TabPage_Actividades.SuspendLayout();
+            this.TabPage_Alumnos.SuspendLayout();
             this.ContextMenuStrip_Actividad.SuspendLayout();
+            this.ContextMenuStrip_Alumno.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -102,7 +110,7 @@
             // TabPage_Actividades
             // 
             this.TabPage_Actividades.Controls.Add(this.ListBox_Actividades);
-            this.TabPage_Actividades.Controls.Add(this.TextBox_Buscar);
+            this.TabPage_Actividades.Controls.Add(this.TextBox_BuscarActividad);
             this.TabPage_Actividades.Location = new System.Drawing.Point(4, 31);
             this.TabPage_Actividades.Name = "TabPage_Actividades";
             this.TabPage_Actividades.Padding = new System.Windows.Forms.Padding(3);
@@ -121,13 +129,13 @@
             this.ListBox_Actividades.TabIndex = 2;
             this.ListBox_Actividades.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ListBox_Actividades_MouseUp);
             // 
-            // TextBox_Buscar
+            // TextBox_BuscarActividad
             // 
-            this.TextBox_Buscar.Location = new System.Drawing.Point(8, 6);
-            this.TextBox_Buscar.Name = "TextBox_Buscar";
-            this.TextBox_Buscar.Size = new System.Drawing.Size(290, 31);
-            this.TextBox_Buscar.TabIndex = 1;
-            this.TextBox_Buscar.TextChanged += new System.EventHandler(this.TextBox_Buscar_TextChanged);
+            this.TextBox_BuscarActividad.Location = new System.Drawing.Point(8, 6);
+            this.TextBox_BuscarActividad.Name = "TextBox_BuscarActividad";
+            this.TextBox_BuscarActividad.Size = new System.Drawing.Size(290, 31);
+            this.TextBox_BuscarActividad.TabIndex = 1;
+            this.TextBox_BuscarActividad.TextChanged += new System.EventHandler(this.TextBox_BuscarActividad_TextChanged);
             // 
             // TabPage_Grupos
             // 
@@ -151,6 +159,10 @@
             // 
             // TabPage_Alumnos
             // 
+            this.TabPage_Alumnos.Controls.Add(this.RadioButton_Nombre);
+            this.TabPage_Alumnos.Controls.Add(this.RadioButton_NumeroControl);
+            this.TabPage_Alumnos.Controls.Add(this.TextBox_BuscarAlumno);
+            this.TabPage_Alumnos.Controls.Add(this.ListBox_Alumnos);
             this.TabPage_Alumnos.Location = new System.Drawing.Point(4, 31);
             this.TabPage_Alumnos.Name = "TabPage_Alumnos";
             this.TabPage_Alumnos.Padding = new System.Windows.Forms.Padding(3);
@@ -158,6 +170,47 @@
             this.TabPage_Alumnos.TabIndex = 4;
             this.TabPage_Alumnos.Text = "Alumnos";
             this.TabPage_Alumnos.UseVisualStyleBackColor = true;
+            // 
+            // RadioButton_Nombre
+            // 
+            this.RadioButton_Nombre.AutoSize = true;
+            this.RadioButton_Nombre.Location = new System.Drawing.Point(8, 79);
+            this.RadioButton_Nombre.Name = "RadioButton_Nombre";
+            this.RadioButton_Nombre.Size = new System.Drawing.Size(102, 26);
+            this.RadioButton_Nombre.TabIndex = 3;
+            this.RadioButton_Nombre.TabStop = true;
+            this.RadioButton_Nombre.Text = "Nombre";
+            this.RadioButton_Nombre.UseVisualStyleBackColor = true;
+            // 
+            // RadioButton_NumeroControl
+            // 
+            this.RadioButton_NumeroControl.AutoSize = true;
+            this.RadioButton_NumeroControl.Location = new System.Drawing.Point(8, 43);
+            this.RadioButton_NumeroControl.Name = "RadioButton_NumeroControl";
+            this.RadioButton_NumeroControl.Size = new System.Drawing.Size(204, 26);
+            this.RadioButton_NumeroControl.TabIndex = 2;
+            this.RadioButton_NumeroControl.TabStop = true;
+            this.RadioButton_NumeroControl.Text = "Numero De Control";
+            this.RadioButton_NumeroControl.UseVisualStyleBackColor = true;
+            // 
+            // TextBox_BuscarAlumno
+            // 
+            this.TextBox_BuscarAlumno.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.TextBox_BuscarAlumno.Location = new System.Drawing.Point(8, 6);
+            this.TextBox_BuscarAlumno.Name = "TextBox_BuscarAlumno";
+            this.TextBox_BuscarAlumno.Size = new System.Drawing.Size(290, 31);
+            this.TextBox_BuscarAlumno.TabIndex = 1;
+            this.TextBox_BuscarAlumno.TextChanged += new System.EventHandler(this.TextBox_BuscarAlumno_TextChanged);
+            // 
+            // ListBox_Alumnos
+            // 
+            this.ListBox_Alumnos.FormattingEnabled = true;
+            this.ListBox_Alumnos.ItemHeight = 22;
+            this.ListBox_Alumnos.Location = new System.Drawing.Point(304, 6);
+            this.ListBox_Alumnos.Name = "ListBox_Alumnos";
+            this.ListBox_Alumnos.Size = new System.Drawing.Size(290, 620);
+            this.ListBox_Alumnos.TabIndex = 0;
+            this.ListBox_Alumnos.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ListBox_Alumnos_MouseUp);
             // 
             // TabPage_Reportes
             // 
@@ -185,36 +238,53 @@
             this.ToolStripMenuItem_Actividad_Modificar,
             this.ToolStripMenuItem_Actividad_Borrar});
             this.ContextMenuStrip_Actividad.Name = "ContextMenuStrip_Actividad";
-            this.ContextMenuStrip_Actividad.Size = new System.Drawing.Size(153, 70);
+            this.ContextMenuStrip_Actividad.Size = new System.Drawing.Size(126, 48);
             // 
             // ToolStripMenuItem_Actividad_Modificar
             // 
             this.ToolStripMenuItem_Actividad_Modificar.Name = "ToolStripMenuItem_Actividad_Modificar";
-            this.ToolStripMenuItem_Actividad_Modificar.Size = new System.Drawing.Size(152, 22);
+            this.ToolStripMenuItem_Actividad_Modificar.Size = new System.Drawing.Size(125, 22);
             this.ToolStripMenuItem_Actividad_Modificar.Text = "Modificar";
             this.ToolStripMenuItem_Actividad_Modificar.Click += new System.EventHandler(this.ToolStripMenuItem_Actividad_Modificar_Click);
             // 
             // ToolStripMenuItem_Actividad_Borrar
             // 
             this.ToolStripMenuItem_Actividad_Borrar.Name = "ToolStripMenuItem_Actividad_Borrar";
-            this.ToolStripMenuItem_Actividad_Borrar.Size = new System.Drawing.Size(152, 22);
+            this.ToolStripMenuItem_Actividad_Borrar.Size = new System.Drawing.Size(125, 22);
             this.ToolStripMenuItem_Actividad_Borrar.Text = "Borrar";
             this.ToolStripMenuItem_Actividad_Borrar.Click += new System.EventHandler(this.ToolStripMenuItem_Actividad_Borrar_Click);
             // 
-            // Administrador
+            // ContextMenuStrip_Alumno
+            // 
+            this.ContextMenuStrip_Alumno.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ToolStripMenuItem_Alumno_Modificar});
+            this.ContextMenuStrip_Alumno.Name = "ContextMenuStrip_Alumno";
+            this.ContextMenuStrip_Alumno.Size = new System.Drawing.Size(126, 26);
+            // 
+            // ToolStripMenuItem_Alumno_Modificar
+            // 
+            this.ToolStripMenuItem_Alumno_Modificar.Name = "ToolStripMenuItem_Alumno_Modificar";
+            this.ToolStripMenuItem_Alumno_Modificar.Size = new System.Drawing.Size(125, 22);
+            this.ToolStripMenuItem_Alumno_Modificar.Text = "Modificar";
+            this.ToolStripMenuItem_Alumno_Modificar.Click += new System.EventHandler(this.ToolStripMenuItem_Alumno_Modificar_Click);
+            // 
+            // Form_Administrador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.panel1);
-            this.Name = "Administrador";
+            this.Name = "Form_Administrador";
             this.Text = "Administrador";
             this.panel1.ResumeLayout(false);
             this.TabControl_Principal.ResumeLayout(false);
             this.TabPage_Inicio.ResumeLayout(false);
             this.TabPage_Actividades.ResumeLayout(false);
             this.TabPage_Actividades.PerformLayout();
+            this.TabPage_Alumnos.ResumeLayout(false);
+            this.TabPage_Alumnos.PerformLayout();
             this.ContextMenuStrip_Actividad.ResumeLayout(false);
+            this.ContextMenuStrip_Alumno.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -231,10 +301,16 @@
         private System.Windows.Forms.TabPage TabPage_Reportes;
         private System.Windows.Forms.TabPage TabPage_Consultas;
         private System.Windows.Forms.Button Button_Salir;
-        private System.Windows.Forms.TextBox TextBox_Buscar;
+        private System.Windows.Forms.TextBox TextBox_BuscarActividad;
         private System.Windows.Forms.ListBox ListBox_Actividades;
         private System.Windows.Forms.ContextMenuStrip ContextMenuStrip_Actividad;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_Actividad_Modificar;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_Actividad_Borrar;
+        private System.Windows.Forms.ListBox ListBox_Alumnos;
+        private System.Windows.Forms.TextBox TextBox_BuscarAlumno;
+        private System.Windows.Forms.RadioButton RadioButton_Nombre;
+        private System.Windows.Forms.RadioButton RadioButton_NumeroControl;
+        private System.Windows.Forms.ContextMenuStrip ContextMenuStrip_Alumno;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_Alumno_Modificar;
     }
 }

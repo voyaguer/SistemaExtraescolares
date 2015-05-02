@@ -1,4 +1,5 @@
 -- Microsoft Transact-SQL
+--drop database ExtraescolaresDB;
 create database ExtraescolaresDB;
 go
 
@@ -24,6 +25,7 @@ create table Usuarios
 	Rango tinyint not null default 0,
 	constraint PK_Usuario primary key (IDUsuario)
 );
+go
 
 create table Alumnos
 (
@@ -105,8 +107,8 @@ create table Grupos
 	IDActividad int not null,
 	constraint PK_Grupos primary key (IDGrupo),
 	constraint CK_Grupos_Meses 
-		check (1 <= CicloEscolar_MesPrimero && CicloEscolar_MesPrimero <= 12 and 
-		1 <= CicloEscolar_MesUltimo && CicloEscolar_MesUltimo <= 12),
+		check (1 <= CicloEscolar_MesPrimero and CicloEscolar_MesPrimero <= 12 and 
+		1 <= CicloEscolar_MesUltimo and CicloEscolar_MesUltimo <= 12),
 	constraint FK_Grupos foreign key (IDActividad)
 		references Actividades (IDActividad) on delete cascade on update cascade
 );
@@ -118,7 +120,7 @@ create table Listas
 	IDGrupo int not null,
 	Calificacion tinyint default 0 not null,
 	constraint PK_Listas primary key (IDAlumno, IDGrupo),
-	constraint CK_Listas_Calificacion check (0 <= Calificacion 
+	constraint CK_Listas_Calificacion check (0 <= Calificacion and Calificacion <= 100),
 	constraint FK_Listas_IDAlumno foreign key (IDAlumno)
 		references Alumnos (IDAlumno) on delete cascade on update cascade,
 	constraint FK_Listas_IDGrupo foreign key (IDGrupo)
@@ -126,7 +128,7 @@ create table Listas
 );
 go
 
-insert into Usuarios (Usuario, Passwrd) values ('1','1');
+insert into Usuarios (Usuario, Passwrd, Rango) values ('1','1', 2);
 
 insert into Actividades (Nombre) values ('Volleyball');
 insert into Actividades (Nombre) values ('Basketball');

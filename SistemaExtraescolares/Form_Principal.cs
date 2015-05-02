@@ -21,7 +21,7 @@ namespace SistemaExtraescolares
 
         private void Form_Principal_Load(object sender, EventArgs e)
         {
-            Login _Login = new Login(this);
+            Form_Login _Login = new Form_Login(this);
             Control _Controls = _Login.Controls[0];
             this.Controls.Add(_Controls);
         }
@@ -29,7 +29,7 @@ namespace SistemaExtraescolares
         public void Salir()
         {
             this.Controls.Clear();
-            Login _Login = new Login(this);
+            Form_Login _Login = new Form_Login(this);
             Control _Controls = _Login.Controls[0];
             this.Controls.Add(_Controls);
         }
@@ -44,7 +44,7 @@ namespace SistemaExtraescolares
             this.Controls.Clear();
             if (Rango == 0)
             {
-                Alumno _Alumno = new Alumno();
+                Form_Alumno _Alumno = new Form_Alumno();
                 Control _Controls = _Alumno.Controls[0];
                 this.Controls.Add(_Controls);
             }
@@ -54,7 +54,7 @@ namespace SistemaExtraescolares
             }
             else if (Rango == 2)
             {
-                Administrador _Administrador = new Administrador(this);
+                Form_Administrador _Administrador = new Form_Administrador(this);
                 Control _Controls = _Administrador.Controls[0];
                 this.Controls.Add(_Controls);
             }

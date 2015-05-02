@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SistemaExtraescolares
 {
-    public partial class Alumno : Form
+    public partial class Form_Alumno : Form
     {
-        public Alumno()
+        public Form_Alumno()
         {
             InitializeComponent();
         }

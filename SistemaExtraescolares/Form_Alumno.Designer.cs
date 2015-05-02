@@ -1,6 +1,6 @@
 ﻿namespace SistemaExtraescolares
 {
-    partial class Alumno
+    partial class Form_Alumno
     {
         /// <summary>
         /// Required designer variable.
@@ -36,17 +36,17 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1264, 681);
+            this.panel1.Size = new System.Drawing.Size(720, 567);
             this.panel1.TabIndex = 0;
             // 
-            // Alumno
+            // Form_Alumno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.ClientSize = new System.Drawing.Size(720, 567);
             this.Controls.Add(this.panel1);
-            this.Name = "Alumno";
-            this.Text = "Alumno";
+            this.Name = "Form_Alumno";
+            this.Text = "Form_Alumno";
             this.ResumeLayout(false);
 
         }

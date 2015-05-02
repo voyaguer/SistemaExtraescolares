@@ -60,47 +60,49 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Administrador.cs">
+    <Compile Include="Form_Administrador.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Administrador.Designer.cs">
-      <DependentUpon>Administrador.cs</DependentUpon>
+    <Compile Include="Form_Administrador.Designer.cs">
+      <DependentUpon>Form_Administrador.cs</DependentUpon>
     </Compile>
-    <Compile Include="Alumno.cs">
+    <Compile Include="Form_Alumno.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Alumno.Designer.cs">
-      <DependentUpon>Alumno.cs</DependentUpon>
+    <Compile Include="Form_Alumno.Designer.cs">
+      <DependentUpon>Form_Alumno.cs</DependentUpon>
     </Compile>
     <Compile Include="IComunicacion.cs" />
-    <Compile Include="Login.cs">
+    <Compile Include="Form_Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.Designer.cs">
-      <DependentUpon>Login.cs</DependentUpon>
+    <Compile Include="Form_Login.Designer.cs">
+      <DependentUpon>Form_Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Manejadores\Actividad_Manejador.cs" />
+    <Compile Include="Manejadores\Alumno_Manejador.cs" />
     <Compile Include="Modelos\Actividad.cs" />
+    <Compile Include="Modelos\Alumno.cs" />
     <Compile Include="Modelos\Grupo.cs" />
-    <Compile Include="Principal.cs">
+    <Compile Include="Form_Principal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Principal.Designer.cs">
-      <DependentUpon>Principal.cs</DependentUpon>
+    <Compile Include="Form_Principal.Designer.cs">
+      <DependentUpon>Form_Principal.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Administrador.resx">
-      <DependentUpon>Administrador.cs</DependentUpon>
+    <EmbeddedResource Include="Form_Administrador.resx">
+      <DependentUpon>Form_Administrador.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Alumno.resx">
-      <DependentUpon>Alumno.cs</DependentUpon>
+    <EmbeddedResource Include="Form_Alumno.resx">
+      <DependentUpon>Form_Alumno.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
-      <DependentUpon>Login.cs</DependentUpon>
+    <EmbeddedResource Include="Form_Login.resx">
+      <DependentUpon>Form_Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Principal.resx">
-      <DependentUpon>Principal.cs</DependentUpon>
+    <EmbeddedResource Include="Form_Principal.resx">
+      <DependentUpon>Form_Principal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

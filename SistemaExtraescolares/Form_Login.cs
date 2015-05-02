@@ -12,13 +12,13 @@ using System.Data.SqlClient;
 
 namespace SistemaExtraescolares
 {
-    public partial class Login : Form
+    public partial class Form_Login : Form
     {
         IComunicacion Delegado;
         String ConnectionString;
         SqlConnection Connection;
 
-        public Login(IComunicacion Del)
+        public Form_Login(IComunicacion Del)
         {
             InitializeComponent();
             Delegado = Del;

@@ -42,7 +42,7 @@ namespace SistemaExtraescolares
                     Actividades = Lista.ToArray<Actividad>();
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }
@@ -64,7 +64,7 @@ namespace SistemaExtraescolares
                 Command.Parameters.Add(Data);
                 Command.ExecuteNonQuery();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }
