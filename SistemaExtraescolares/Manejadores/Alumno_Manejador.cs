@@ -28,7 +28,7 @@ namespace SistemaExtraescolares
                     {
                         Alum = new Alumno();
                         Alum.IDAlumno = Convert.ToInt32(DataReader["IDAlumno"]);
-                        Alum.NumeroDeControl = Convert.ToInt32(DataReader["NumeroDeControl"]);
+                        Alum.NumeroDeControl = DataReader["NumeroDeControl"].ToString();
                         Alum.Nombre = DataReader["Nombre"].ToString();
                         Alum.Apellidos = DataReader["Apellidos"].ToString();
                         Alum.Edad = Convert.ToInt32(DataReader["Edad"]);

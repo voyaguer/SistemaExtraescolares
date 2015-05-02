@@ -339,6 +339,7 @@ namespace SistemaExtraescolares
             }
             else
             {
+                ListBox_Actividades_Alumnos.Visible = false;
                 ListBox_Actividades_Grupos.Visible = true;
                 ListBox Lista = (ListBox)sender;
                 ListBox_Actividades_Grupos.Items.Clear();

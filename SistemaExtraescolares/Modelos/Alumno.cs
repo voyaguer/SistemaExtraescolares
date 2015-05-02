@@ -5,7 +5,7 @@ namespace SistemaExtraescolares
     class Alumno
     {
         public Int32 IDAlumno { get; set; }
-        public Int32 NumeroDeControl { get; set; }
+        public String NumeroDeControl { get; set; }
         public String Nombre { get; set; }
         public String Apellidos { get; set; }
         public Int32 Edad { get; set; }
@@ -23,7 +23,7 @@ namespace SistemaExtraescolares
         public Alumno()
         {
             IDAlumno = 0;
-            NumeroDeControl = 0;
+            NumeroDeControl = String.Empty;
             Nombre = String.Empty;
             Apellidos = String.Empty;
             Edad = 0;

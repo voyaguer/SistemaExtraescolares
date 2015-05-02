@@ -40,6 +40,11 @@
             this.TextBox_BuscarActividad = new System.Windows.Forms.TextBox();
             this.TabPage_Grupos = new System.Windows.Forms.TabPage();
             this.groupBox_Agregar_Grupo = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.checkBox_Dia3 = new System.Windows.Forms.CheckBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label_Dia1 = new System.Windows.Forms.Label();
+            this.checkBox_Dia2 = new System.Windows.Forms.CheckBox();
             this.button_Agregar_Grupo = new System.Windows.Forms.Button();
             this.label_Horario_Grupo = new System.Windows.Forms.Label();
             this.numericUpDown_Capacidad_Grupo = new System.Windows.Forms.NumericUpDown();
@@ -67,11 +72,6 @@
             this.ContextMenuStrip_Grupo = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.modificarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.borrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.checkBox_Dia2 = new System.Windows.Forms.CheckBox();
-            this.label_Dia1 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.checkBox_Dia3 = new System.Windows.Forms.CheckBox();
             this.uC_Horario_Dia3 = new SistemaExtraescolares.UC_Horario_Dia();
             this.uC_Horario_Dia2 = new SistemaExtraescolares.UC_Horario_Dia();
             this.uC_Horario_Dia1 = new SistemaExtraescolares.UC_Horario_Dia();
@@ -155,9 +155,9 @@
             // 
             this.ListBox_Actividades_Alumnos.FormattingEnabled = true;
             this.ListBox_Actividades_Alumnos.ItemHeight = 22;
-            this.ListBox_Actividades_Alumnos.Location = new System.Drawing.Point(720, 43);
+            this.ListBox_Actividades_Alumnos.Location = new System.Drawing.Point(800, 43);
             this.ListBox_Actividades_Alumnos.Name = "ListBox_Actividades_Alumnos";
-            this.ListBox_Actividades_Alumnos.Size = new System.Drawing.Size(530, 598);
+            this.ListBox_Actividades_Alumnos.Size = new System.Drawing.Size(450, 598);
             this.ListBox_Actividades_Alumnos.TabIndex = 4;
             this.ListBox_Actividades_Alumnos.Visible = false;
             this.ListBox_Actividades_Alumnos.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ListBox_Actividades_Alumnos_MouseUp);
@@ -165,10 +165,11 @@
             // ListBox_Actividades_Grupos
             // 
             this.ListBox_Actividades_Grupos.FormattingEnabled = true;
+            this.ListBox_Actividades_Grupos.HorizontalScrollbar = true;
             this.ListBox_Actividades_Grupos.ItemHeight = 22;
             this.ListBox_Actividades_Grupos.Location = new System.Drawing.Point(304, 43);
             this.ListBox_Actividades_Grupos.Name = "ListBox_Actividades_Grupos";
-            this.ListBox_Actividades_Grupos.Size = new System.Drawing.Size(410, 598);
+            this.ListBox_Actividades_Grupos.Size = new System.Drawing.Size(490, 598);
             this.ListBox_Actividades_Grupos.TabIndex = 3;
             this.ListBox_Actividades_Grupos.Visible = false;
             this.ListBox_Actividades_Grupos.SelectedIndexChanged += new System.EventHandler(this.ListBox_Actividades_Grupos_SelectedIndexChanged);
@@ -231,6 +232,53 @@
             this.groupBox_Agregar_Grupo.TabIndex = 0;
             this.groupBox_Agregar_Grupo.TabStop = false;
             this.groupBox_Agregar_Grupo.Text = "Agregar Grupo";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(588, 184);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(105, 22);
+            this.label2.TabIndex = 35;
+            this.label2.Text = "Día y Hora";
+            // 
+            // checkBox_Dia3
+            // 
+            this.checkBox_Dia3.AutoSize = true;
+            this.checkBox_Dia3.Location = new System.Drawing.Point(567, 189);
+            this.checkBox_Dia3.Name = "checkBox_Dia3";
+            this.checkBox_Dia3.Size = new System.Drawing.Size(15, 14);
+            this.checkBox_Dia3.TabIndex = 34;
+            this.checkBox_Dia3.UseVisualStyleBackColor = true;
+            this.checkBox_Dia3.CheckedChanged += new System.EventHandler(this.checkBox_Dia3_CheckedChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(354, 179);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(105, 22);
+            this.label1.TabIndex = 33;
+            this.label1.Text = "Día y Hora";
+            // 
+            // label_Dia1
+            // 
+            this.label_Dia1.AutoSize = true;
+            this.label_Dia1.Location = new System.Drawing.Point(70, 179);
+            this.label_Dia1.Name = "label_Dia1";
+            this.label_Dia1.Size = new System.Drawing.Size(114, 22);
+            this.label_Dia1.TabIndex = 32;
+            this.label_Dia1.Text = "*Día y Hora";
+            // 
+            // checkBox_Dia2
+            // 
+            this.checkBox_Dia2.AutoSize = true;
+            this.checkBox_Dia2.Location = new System.Drawing.Point(333, 184);
+            this.checkBox_Dia2.Name = "checkBox_Dia2";
+            this.checkBox_Dia2.Size = new System.Drawing.Size(15, 14);
+            this.checkBox_Dia2.TabIndex = 31;
+            this.checkBox_Dia2.UseVisualStyleBackColor = true;
+            this.checkBox_Dia2.CheckedChanged += new System.EventHandler(this.checkBox_Dia2_CheckedChanged);
             // 
             // button_Agregar_Grupo
             // 
@@ -508,53 +556,6 @@
             this.borrarToolStripMenuItem.Name = "borrarToolStripMenuItem";
             this.borrarToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.borrarToolStripMenuItem.Text = "Borrar";
-            // 
-            // checkBox_Dia2
-            // 
-            this.checkBox_Dia2.AutoSize = true;
-            this.checkBox_Dia2.Location = new System.Drawing.Point(333, 184);
-            this.checkBox_Dia2.Name = "checkBox_Dia2";
-            this.checkBox_Dia2.Size = new System.Drawing.Size(15, 14);
-            this.checkBox_Dia2.TabIndex = 31;
-            this.checkBox_Dia2.UseVisualStyleBackColor = true;
-            this.checkBox_Dia2.CheckedChanged += new System.EventHandler(this.checkBox_Dia2_CheckedChanged);
-            // 
-            // label_Dia1
-            // 
-            this.label_Dia1.AutoSize = true;
-            this.label_Dia1.Location = new System.Drawing.Point(70, 179);
-            this.label_Dia1.Name = "label_Dia1";
-            this.label_Dia1.Size = new System.Drawing.Size(114, 22);
-            this.label_Dia1.TabIndex = 32;
-            this.label_Dia1.Text = "*Día y Hora";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(354, 179);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(105, 22);
-            this.label1.TabIndex = 33;
-            this.label1.Text = "Día y Hora";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(588, 184);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(105, 22);
-            this.label2.TabIndex = 35;
-            this.label2.Text = "Día y Hora";
-            // 
-            // checkBox_Dia3
-            // 
-            this.checkBox_Dia3.AutoSize = true;
-            this.checkBox_Dia3.Location = new System.Drawing.Point(567, 189);
-            this.checkBox_Dia3.Name = "checkBox_Dia3";
-            this.checkBox_Dia3.Size = new System.Drawing.Size(15, 14);
-            this.checkBox_Dia3.TabIndex = 34;
-            this.checkBox_Dia3.UseVisualStyleBackColor = true;
-            this.checkBox_Dia3.CheckedChanged += new System.EventHandler(this.checkBox_Dia3_CheckedChanged);
             // 
             // uC_Horario_Dia3
             // 

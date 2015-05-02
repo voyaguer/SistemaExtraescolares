@@ -35,6 +35,11 @@ namespace SistemaExtraescolares
                         Grup = new Grupo();
                         Grup.IDGrupo = Convert.ToInt32(DataReader["IDGrupo"]);
                         Grup.IDActividad = Convert.ToInt32(DataReader["IDActividad"]);
+                        Grup.CicloEscolar_Anho = Convert.ToInt32(DataReader["CicloEscolar_Anho"]);
+                        Grup.CicloEscolar_MesPrimero = Convert.ToInt32(DataReader["CicloEscolar_MesPrimero"]);
+                        Grup.CicloEscolar_MesUltimo = Convert.ToInt32(DataReader["CicloEscolar_MesUltimo"]);
+                        Grup.Capacidad = Convert.ToInt32(DataReader["Capacidad"]);
+                        Grup.Horario = DataReader["Horario"].ToString();
                         Lista.Add(Grup);
                     }
                     Grupos = Lista.ToArray<Grupo>();
