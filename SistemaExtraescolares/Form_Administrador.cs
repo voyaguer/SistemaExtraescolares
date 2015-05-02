@@ -253,6 +253,18 @@ namespace SistemaExtraescolares
             Int32 Mes_Primero = Convert.ToInt32(comboBox_MesPrimero.SelectedValue) + 1;
             Int32 Mes_Ultimo = Convert.ToInt32(comboBox_MesUltimo.SelectedValue) + 1;
             Int32 Capacidad = Convert.ToInt32(numericUpDown_Capacidad_Grupo.Value);
+            if (checkBox_Dia2.Checked)
+            {
+                uC_Horario_Dia2.Obtener_Horario_Dia();
+                Horario += ","+uC_Horario_Dia2.Horario;
+            }
+            if (checkBox_Dia3.Checked)
+            {
+                uC_Horario_Dia3.Obtener_Horario_Dia();
+                Horario += "," + uC_Horario_Dia3.Horario;
+            }
+
+
             Grupo Nuevo_Grupo = new Grupo(Actividad_ID, Ciclo_Escolar, Mes_Primero, Mes_Ultimo, Capacidad, Horario);
             Grupo_Manejador Manejador = new Grupo_Manejador();
 
@@ -359,6 +371,30 @@ namespace SistemaExtraescolares
                         ListBox_Actividades_Alumnos.Items.Add(Alu);
                     }
                 }
+            }
+        }
+
+        private void checkBox_Dia2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox_Dia2.Checked)
+            {
+                uC_Horario_Dia2.Enabled = true;
+            }
+            else
+            {
+                uC_Horario_Dia2.Enabled = false;
+            }
+        }
+
+        private void checkBox_Dia3_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox_Dia3.Checked)
+            {
+                uC_Horario_Dia3.Enabled = true;
+            }
+            else
+            {
+                uC_Horario_Dia3.Enabled = false;
             }
         }
 

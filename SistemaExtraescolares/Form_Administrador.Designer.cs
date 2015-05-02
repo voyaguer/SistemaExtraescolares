@@ -67,6 +67,13 @@
             this.ContextMenuStrip_Grupo = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.modificarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.borrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.checkBox_Dia2 = new System.Windows.Forms.CheckBox();
+            this.label_Dia1 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.checkBox_Dia3 = new System.Windows.Forms.CheckBox();
+            this.uC_Horario_Dia3 = new SistemaExtraescolares.UC_Horario_Dia();
+            this.uC_Horario_Dia2 = new SistemaExtraescolares.UC_Horario_Dia();
             this.uC_Horario_Dia1 = new SistemaExtraescolares.UC_Horario_Dia();
             this.panel1.SuspendLayout();
             this.TabControl_Principal.SuspendLayout();
@@ -199,6 +206,13 @@
             // 
             // groupBox_Agregar_Grupo
             // 
+            this.groupBox_Agregar_Grupo.Controls.Add(this.label2);
+            this.groupBox_Agregar_Grupo.Controls.Add(this.checkBox_Dia3);
+            this.groupBox_Agregar_Grupo.Controls.Add(this.label1);
+            this.groupBox_Agregar_Grupo.Controls.Add(this.label_Dia1);
+            this.groupBox_Agregar_Grupo.Controls.Add(this.checkBox_Dia2);
+            this.groupBox_Agregar_Grupo.Controls.Add(this.uC_Horario_Dia3);
+            this.groupBox_Agregar_Grupo.Controls.Add(this.uC_Horario_Dia2);
             this.groupBox_Agregar_Grupo.Controls.Add(this.uC_Horario_Dia1);
             this.groupBox_Agregar_Grupo.Controls.Add(this.button_Agregar_Grupo);
             this.groupBox_Agregar_Grupo.Controls.Add(this.label_Horario_Grupo);
@@ -213,14 +227,14 @@
             this.groupBox_Agregar_Grupo.Controls.Add(this.comboBox_Actividades);
             this.groupBox_Agregar_Grupo.Location = new System.Drawing.Point(74, 54);
             this.groupBox_Agregar_Grupo.Name = "groupBox_Agregar_Grupo";
-            this.groupBox_Agregar_Grupo.Size = new System.Drawing.Size(677, 395);
+            this.groupBox_Agregar_Grupo.Size = new System.Drawing.Size(809, 452);
             this.groupBox_Agregar_Grupo.TabIndex = 0;
             this.groupBox_Agregar_Grupo.TabStop = false;
             this.groupBox_Agregar_Grupo.Text = "Agregar Grupo";
             // 
             // button_Agregar_Grupo
             // 
-            this.button_Agregar_Grupo.Location = new System.Drawing.Point(437, 331);
+            this.button_Agregar_Grupo.Location = new System.Drawing.Point(51, 406);
             this.button_Agregar_Grupo.Name = "button_Agregar_Grupo";
             this.button_Agregar_Grupo.Size = new System.Drawing.Size(172, 40);
             this.button_Agregar_Grupo.TabIndex = 27;
@@ -495,10 +509,77 @@
             this.borrarToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.borrarToolStripMenuItem.Text = "Borrar";
             // 
+            // checkBox_Dia2
+            // 
+            this.checkBox_Dia2.AutoSize = true;
+            this.checkBox_Dia2.Location = new System.Drawing.Point(333, 184);
+            this.checkBox_Dia2.Name = "checkBox_Dia2";
+            this.checkBox_Dia2.Size = new System.Drawing.Size(15, 14);
+            this.checkBox_Dia2.TabIndex = 31;
+            this.checkBox_Dia2.UseVisualStyleBackColor = true;
+            this.checkBox_Dia2.CheckedChanged += new System.EventHandler(this.checkBox_Dia2_CheckedChanged);
+            // 
+            // label_Dia1
+            // 
+            this.label_Dia1.AutoSize = true;
+            this.label_Dia1.Location = new System.Drawing.Point(70, 179);
+            this.label_Dia1.Name = "label_Dia1";
+            this.label_Dia1.Size = new System.Drawing.Size(114, 22);
+            this.label_Dia1.TabIndex = 32;
+            this.label_Dia1.Text = "*Día y Hora";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(354, 179);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(105, 22);
+            this.label1.TabIndex = 33;
+            this.label1.Text = "Día y Hora";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(588, 184);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(105, 22);
+            this.label2.TabIndex = 35;
+            this.label2.Text = "Día y Hora";
+            // 
+            // checkBox_Dia3
+            // 
+            this.checkBox_Dia3.AutoSize = true;
+            this.checkBox_Dia3.Location = new System.Drawing.Point(567, 189);
+            this.checkBox_Dia3.Name = "checkBox_Dia3";
+            this.checkBox_Dia3.Size = new System.Drawing.Size(15, 14);
+            this.checkBox_Dia3.TabIndex = 34;
+            this.checkBox_Dia3.UseVisualStyleBackColor = true;
+            this.checkBox_Dia3.CheckedChanged += new System.EventHandler(this.checkBox_Dia3_CheckedChanged);
+            // 
+            // uC_Horario_Dia3
+            // 
+            this.uC_Horario_Dia3.Enabled = false;
+            this.uC_Horario_Dia3.Horario = null;
+            this.uC_Horario_Dia3.Location = new System.Drawing.Point(561, 206);
+            this.uC_Horario_Dia3.Margin = new System.Windows.Forms.Padding(20, 14, 20, 14);
+            this.uC_Horario_Dia3.Name = "uC_Horario_Dia3";
+            this.uC_Horario_Dia3.Size = new System.Drawing.Size(237, 191);
+            this.uC_Horario_Dia3.TabIndex = 30;
+            // 
+            // uC_Horario_Dia2
+            // 
+            this.uC_Horario_Dia2.Enabled = false;
+            this.uC_Horario_Dia2.Horario = null;
+            this.uC_Horario_Dia2.Location = new System.Drawing.Point(318, 206);
+            this.uC_Horario_Dia2.Margin = new System.Windows.Forms.Padding(11, 8, 11, 8);
+            this.uC_Horario_Dia2.Name = "uC_Horario_Dia2";
+            this.uC_Horario_Dia2.Size = new System.Drawing.Size(242, 190);
+            this.uC_Horario_Dia2.TabIndex = 29;
+            // 
             // uC_Horario_Dia1
             // 
             this.uC_Horario_Dia1.Horario = null;
-            this.uC_Horario_Dia1.Location = new System.Drawing.Point(51, 178);
+            this.uC_Horario_Dia1.Location = new System.Drawing.Point(51, 206);
             this.uC_Horario_Dia1.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.uC_Horario_Dia1.Name = "uC_Horario_Dia1";
             this.uC_Horario_Dia1.Size = new System.Drawing.Size(231, 193);
@@ -572,5 +653,12 @@
         private System.Windows.Forms.ContextMenuStrip ContextMenuStrip_Grupo;
         private System.Windows.Forms.ToolStripMenuItem modificarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem borrarToolStripMenuItem;
+        private System.Windows.Forms.CheckBox checkBox_Dia2;
+        private UC_Horario_Dia uC_Horario_Dia3;
+        private UC_Horario_Dia uC_Horario_Dia2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.CheckBox checkBox_Dia3;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label_Dia1;
     }
 }
