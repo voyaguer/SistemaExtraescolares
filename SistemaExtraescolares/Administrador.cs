@@ -80,6 +80,7 @@ namespace SistemaExtraescolares
             
             comboBox_MesPrimero.SelectedIndex = comboBox_MesPrimero.FindStringExact("Enero");
             comboBox_MesUltimo.SelectedIndex = comboBox_MesPrimero.FindStringExact("Febrero");
+            comboBox_Actividades.SelectedIndex = 0;
             
         }
 
@@ -142,13 +143,15 @@ namespace SistemaExtraescolares
         {
 
             Int32 Actividad_ID=((Actividad)comboBox_Actividades.SelectedItem).IDActividad;
-            string Horario=uC_Horario_Dia1.Obtener_Horario_Dia();
-            Int32 Ciclo_Escolar=Convert.ToInt32(numericUpDown_CicloEscolar_Anho.ToString());
-            Int32 Mes_Primero = Convert.ToInt32(comboBox_MesPrimero.SelectedItem);
-            Int32 Mes_Ultimo = Convert.ToInt32(comboBox_MesUltimo.SelectedItem);
-            Int32 Capacidad= Convert.ToInt32(numericUpDown_Capacidad_Grupo.ToString());
-            Grupo Nuevo_Grupo = new Grupo(Actividad_ID, Ciclo_Escolar, Mes_Primero, Mes_Ultimo,Capacidad,Horario);
+            uC_Horario_Dia1.Obtener_Horario_Dia();
+            String Horario=uC_Horario_Dia1.Horario;
+            Int32 Ciclo_Escolar=Convert.ToInt32(numericUpDown_CicloEscolar_Anho.Value);
+            Int32 Mes_Primero = Convert.ToInt32(comboBox_MesPrimero.SelectedValue)+1;
+            Int32 Mes_Ultimo = Convert.ToInt32(comboBox_MesUltimo.SelectedValue)+1;
+            Int32 Capacidad= Convert.ToInt32(numericUpDown_Capacidad_Grupo.Value);
+            Grupo Nuevo_Grupo = new Grupo(Actividad_ID, Ciclo_Escolar, Mes_Primero, Mes_Ultimo, Capacidad, Horario);
             Grupo_Manejador Manejador = new Grupo_Manejador();
+            
             Manejador.Agregar_Grupo(Nuevo_Grupo);
         }
 

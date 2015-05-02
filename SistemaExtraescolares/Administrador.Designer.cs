@@ -38,6 +38,10 @@
             this.TextBox_Buscar = new System.Windows.Forms.TextBox();
             this.TabPage_Grupos = new System.Windows.Forms.TabPage();
             this.GroupBox_AgregarGrupo = new System.Windows.Forms.GroupBox();
+            this.button_Agregar_Grupo = new System.Windows.Forms.Button();
+            this.label_Horario_Grupo = new System.Windows.Forms.Label();
+            this.numericUpDown_Capacidad_Grupo = new System.Windows.Forms.NumericUpDown();
+            this.label_Capacidad_Grupo = new System.Windows.Forms.Label();
             this.comboBox_MesUltimo = new System.Windows.Forms.ComboBox();
             this.label_MesUltimo = new System.Windows.Forms.Label();
             this.comboBox_MesPrimero = new System.Windows.Forms.ComboBox();
@@ -53,11 +57,6 @@
             this.ToolStripMenuItem_Actividad_Modificar = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItem_Actividad_Borrar = new System.Windows.Forms.ToolStripMenuItem();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.label_Capacidad_Grupo = new System.Windows.Forms.Label();
-            this.numericUpDown_Capacidad_Grupo = new System.Windows.Forms.NumericUpDown();
-            this.label_Horario_Grupo = new System.Windows.Forms.Label();
-            this.button_Agregar_Grupo = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.uC_Horario_Dia1 = new SistemaExtraescolares.UC_Horario_Dia();
             this.panel1.SuspendLayout();
             this.TabControl_Principal.SuspendLayout();
@@ -65,9 +64,9 @@
             this.TabPage_Actividades.SuspendLayout();
             this.TabPage_Grupos.SuspendLayout();
             this.GroupBox_AgregarGrupo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Capacidad_Grupo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_CicloEscolar_Anho)).BeginInit();
             this.ContextMenuStrip_Actividad.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Capacidad_Grupo)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -161,7 +160,6 @@
             // 
             // GroupBox_AgregarGrupo
             // 
-            this.GroupBox_AgregarGrupo.Controls.Add(this.label1);
             this.GroupBox_AgregarGrupo.Controls.Add(this.uC_Horario_Dia1);
             this.GroupBox_AgregarGrupo.Controls.Add(this.button_Agregar_Grupo);
             this.GroupBox_AgregarGrupo.Controls.Add(this.label_Horario_Grupo);
@@ -180,6 +178,46 @@
             this.GroupBox_AgregarGrupo.TabIndex = 0;
             this.GroupBox_AgregarGrupo.TabStop = false;
             this.GroupBox_AgregarGrupo.Text = "Agregar";
+            // 
+            // button_Agregar_Grupo
+            // 
+            this.button_Agregar_Grupo.Location = new System.Drawing.Point(304, 259);
+            this.button_Agregar_Grupo.Name = "button_Agregar_Grupo";
+            this.button_Agregar_Grupo.Size = new System.Drawing.Size(172, 40);
+            this.button_Agregar_Grupo.TabIndex = 16;
+            this.button_Agregar_Grupo.Text = "Agregar Grupo";
+            this.button_Agregar_Grupo.UseVisualStyleBackColor = true;
+            this.button_Agregar_Grupo.Click += new System.EventHandler(this.button_Agregar_Grupo_Click);
+            // 
+            // label_Horario_Grupo
+            // 
+            this.label_Horario_Grupo.AutoSize = true;
+            this.label_Horario_Grupo.Location = new System.Drawing.Point(315, 167);
+            this.label_Horario_Grupo.Name = "label_Horario_Grupo";
+            this.label_Horario_Grupo.Size = new System.Drawing.Size(97, 22);
+            this.label_Horario_Grupo.TabIndex = 9;
+            this.label_Horario_Grupo.Text = "- Horario -";
+            // 
+            // numericUpDown_Capacidad_Grupo
+            // 
+            this.numericUpDown_Capacidad_Grupo.Location = new System.Drawing.Point(148, 158);
+            this.numericUpDown_Capacidad_Grupo.Name = "numericUpDown_Capacidad_Grupo";
+            this.numericUpDown_Capacidad_Grupo.Size = new System.Drawing.Size(122, 31);
+            this.numericUpDown_Capacidad_Grupo.TabIndex = 8;
+            this.numericUpDown_Capacidad_Grupo.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label_Capacidad_Grupo
+            // 
+            this.label_Capacidad_Grupo.AutoSize = true;
+            this.label_Capacidad_Grupo.Location = new System.Drawing.Point(13, 160);
+            this.label_Capacidad_Grupo.Name = "label_Capacidad_Grupo";
+            this.label_Capacidad_Grupo.Size = new System.Drawing.Size(123, 22);
+            this.label_Capacidad_Grupo.TabIndex = 7;
+            this.label_Capacidad_Grupo.Text = "Capacidad:";
             // 
             // comboBox_MesUltimo
             // 
@@ -339,61 +377,13 @@
             this.ToolStripMenuItem_Actividad_Borrar.Text = "Borrar";
             this.ToolStripMenuItem_Actividad_Borrar.Click += new System.EventHandler(this.ToolStripMenuItem_Actividad_Borrar_Click);
             // 
-            // label_Capacidad_Grupo
-            // 
-            this.label_Capacidad_Grupo.AutoSize = true;
-            this.label_Capacidad_Grupo.Location = new System.Drawing.Point(13, 160);
-            this.label_Capacidad_Grupo.Name = "label_Capacidad_Grupo";
-            this.label_Capacidad_Grupo.Size = new System.Drawing.Size(123, 22);
-            this.label_Capacidad_Grupo.TabIndex = 7;
-            this.label_Capacidad_Grupo.Text = "Capacidad:";
-            // 
-            // numericUpDown_Capacidad_Grupo
-            // 
-            this.numericUpDown_Capacidad_Grupo.Location = new System.Drawing.Point(148, 158);
-            this.numericUpDown_Capacidad_Grupo.Name = "numericUpDown_Capacidad_Grupo";
-            this.numericUpDown_Capacidad_Grupo.Size = new System.Drawing.Size(122, 31);
-            this.numericUpDown_Capacidad_Grupo.TabIndex = 8;
-            this.numericUpDown_Capacidad_Grupo.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // label_Horario_Grupo
-            // 
-            this.label_Horario_Grupo.AutoSize = true;
-            this.label_Horario_Grupo.Location = new System.Drawing.Point(315, 167);
-            this.label_Horario_Grupo.Name = "label_Horario_Grupo";
-            this.label_Horario_Grupo.Size = new System.Drawing.Size(97, 22);
-            this.label_Horario_Grupo.TabIndex = 9;
-            this.label_Horario_Grupo.Text = "- Horario -";
-            // 
-            // button_Agregar_Grupo
-            // 
-            this.button_Agregar_Grupo.Location = new System.Drawing.Point(47, 359);
-            this.button_Agregar_Grupo.Name = "button_Agregar_Grupo";
-            this.button_Agregar_Grupo.Size = new System.Drawing.Size(172, 40);
-            this.button_Agregar_Grupo.TabIndex = 16;
-            this.button_Agregar_Grupo.Text = "Agregar Grupo";
-            this.button_Agregar_Grupo.UseVisualStyleBackColor = true;
-            this.button_Agregar_Grupo.Click += new System.EventHandler(this.button_Agregar_Grupo_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(78, 215);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 22);
-            this.label1.TabIndex = 18;
-            this.label1.Text = "label1";
-            // 
             // uC_Horario_Dia1
             // 
+            this.uC_Horario_Dia1.Horario = null;
             this.uC_Horario_Dia1.Location = new System.Drawing.Point(17, 215);
             this.uC_Horario_Dia1.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.uC_Horario_Dia1.Name = "uC_Horario_Dia1";
-            this.uC_Horario_Dia1.Size = new System.Drawing.Size(239, 136);
+            this.uC_Horario_Dia1.Size = new System.Drawing.Size(242, 192);
             this.uC_Horario_Dia1.TabIndex = 17;
             // 
             // Administrador
@@ -412,9 +402,9 @@
             this.TabPage_Grupos.ResumeLayout(false);
             this.GroupBox_AgregarGrupo.ResumeLayout(false);
             this.GroupBox_AgregarGrupo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Capacidad_Grupo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_CicloEscolar_Anho)).EndInit();
             this.ContextMenuStrip_Actividad.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Capacidad_Grupo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -450,6 +440,5 @@
         private System.Windows.Forms.Button button_Agregar_Grupo;
         private System.Windows.Forms.Label label_Horario_Grupo;
         private UC_Horario_Dia uC_Horario_Dia1;
-        private System.Windows.Forms.Label label1;
     }
 }
