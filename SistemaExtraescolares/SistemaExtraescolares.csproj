@@ -81,6 +81,7 @@
     </Compile>
     <Compile Include="Manejadores\Actividad_Manejador.cs" />
     <Compile Include="Manejadores\Alumno_Manejador.cs" />
+    <Compile Include="Manejadores\Grupo_Manejador.cs" />
     <Compile Include="Modelos\Actividad.cs" />
     <Compile Include="Modelos\Alumno.cs" />
     <Compile Include="Modelos\Grupo.cs" />
@@ -92,6 +93,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UC_Horario_Dia.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Horario_Dia.Designer.cs">
+      <DependentUpon>UC_Horario_Dia.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form_Administrador.resx">
       <DependentUpon>Form_Administrador.cs</DependentUpon>
     </EmbeddedResource>
@@ -113,6 +120,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UC_Horario_Dia.resx">
+      <DependentUpon>UC_Horario_Dia.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
