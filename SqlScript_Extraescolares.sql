@@ -101,7 +101,7 @@ create table Grupos
 	Capacidad tinyint not null,
 	Horario nvarchar(255) not null,
 	-- Formato para almacenar el horario
-	-- La hora ser· expresada en un formato de 24 horas.
+	-- La hora ser√° expresada en un formato de 24 horas.
 	-- {Dia,HH:MM,HH:MM}[&Dia,HH:MM,HH:MM][&...]...
 	-- Ejemplo: Martes,14:00,16:00&Jueves,14:00,16:00
 	IDActividad int not null,
@@ -132,11 +132,11 @@ insert into Usuarios (Usuario, Passwrd, Rango) values ('1','1', 2);
 
 insert into Actividades (Nombre) values ('Volleyball');
 insert into Actividades (Nombre) values ('Basketball');
-insert into Actividades (Nombre) values ('NataciÛn');
+insert into Actividades (Nombre) values ('Nataci√≥n');
 insert into Actividades (Nombre) values ('Futball');
 insert into Actividades (Nombre) values ('Ajedrez');
 insert into Actividades (Nombre) values ('Yu-gi-oh!');
-insert into Actividades (Nombre) values ('Taller de ProgramaciÛn');
+insert into Actividades (Nombre) values ('Taller de Programaci√≥n');
 insert into Actividades (Nombre) values ('Rondalla');
 insert into Actividades (Nombre) values ('Danza');
 insert into Actividades (Nombre) values ('Atletismo');
@@ -162,4 +162,4 @@ insert into Alumnos (NumeroDeControl, Nombre, Apellidos, Edad, Sexo, Semestre, C
 insert into Alumnos (NumeroDeControl, Nombre, Apellidos, Edad, Sexo, Semestre, Carrera, Telefono, IDUsuario)
 	values (0008, 'Alumno8', 'Apellido', 20, 'H', 1, 'Sistemas', '0123456789', 2);
 insert into Alumnos (NumeroDeControl, Nombre, Apellidos, Edad, Sexo, Semestre, Carrera, Telefono, IDUsuario)
-	values (0009, 'Alumno9', 'Apellido', 20, 'M', 1, 'Sistemas', '0123456789', 2);
+	values (0009, 'Alumno9', 'Apellido', 20, 'M', 1, 'Sistemas', '0123456789', 2); 
