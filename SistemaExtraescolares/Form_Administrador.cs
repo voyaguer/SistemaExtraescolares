@@ -20,6 +20,7 @@ namespace SistemaExtraescolares
         Actividad[] Actividades;
         Alumno[] Alumnos;
         Grupo[] Grupos;
+       
         Int32 IndiceSeleccionado;
 
         public Form_Administrador(IComunicacion Del)
@@ -113,6 +114,8 @@ namespace SistemaExtraescolares
 
         }
 
+
+
         void Cargar_Alumnos()
         {
             if (!Alumnos_ConDatos)
@@ -143,10 +146,15 @@ namespace SistemaExtraescolares
 
         private void ToolStripMenuItem_Actividad_Borrar_Click(object sender, EventArgs e)
         {
+            if (MessageBox.Show("¿Está seguro que quiere borrar esta actividad?", "Confirmación",
+                  MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                  == DialogResult.Yes)
+            {
             Int32 IDActividad = ((Actividad)ListBox_Actividades_Actividades.Items[IndiceSeleccionado]).IDActividad;
             (new Actividad_Manejador()).Borrar(IDActividad);
             Actividades_ConDatos = false;
             Cargar_Actividades();
+            }
         }
 
         private void RadioButton_NumeroControl_CheckedChanged(object sender, EventArgs e)
@@ -397,6 +405,54 @@ namespace SistemaExtraescolares
             {
                 uC_Horario_Dia3.Enabled = false;
             }
+        }
+
+        private void button_Agrega_Docente_Click(object sender, EventArgs e)
+        {
+            String Nombre="", ApellidoP="", ApellidoM="", Email="", Telefono="";
+            Int32 Edad=0;
+            Char Sexo = '0';
+
+            if ((textBox_Nombre.Text != null) || (textBox_ApellidoP.Text != null) || (textBox_ApellidoM.Text != null)
+                || (textBox_Telefono.Text != null) || (comboBox_Sexo.SelectedItem != null) || numericUpDown_Edad.Value !=null)
+            {
+                Nombre = textBox_Nombre.Text;
+                ApellidoP = textBox_ApellidoP.Text;
+                ApellidoM = textBox_ApellidoM.Text;
+                Edad = Convert.ToInt32(numericUpDown_Edad.Value);
+                Sexo = Convert.ToChar(comboBox_Sexo.Text);
+                Email = textBox_Email.Text;
+                Telefono = textBox_Telefono.Text;
+            }
+            else
+            {
+                MessageBox.Show("Llene todos los datos porfavor");
+            }
+
+            Docente Nuevo_Docente = new Docente(Nombre, ApellidoP, ApellidoM, Edad, Sexo, Email, Telefono);
+
+            Docente_Manejador Manejador_Doc = new Docente_Manejador();
+
+            Manejador_Doc.Agregar_Docente(Nuevo_Docente);
+
+            textBox_Nombre.Clear();
+            textBox_ApellidoP.Clear();
+            textBox_ApellidoM.Clear();
+            numericUpDown_Edad.Value = 0;
+            comboBox_Sexo.Text = "";
+            textBox_Email.Clear();
+            textBox_Telefono.Clear();
+
+        }
+
+        private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void modificarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
         }
 
     }

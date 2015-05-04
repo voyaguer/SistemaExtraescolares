@@ -81,9 +81,11 @@
     </Compile>
     <Compile Include="Manejadores\Actividad_Manejador.cs" />
     <Compile Include="Manejadores\Alumno_Manejador.cs" />
+    <Compile Include="Manejadores\Docente_Manejador.cs" />
     <Compile Include="Manejadores\Grupo_Manejador.cs" />
     <Compile Include="Modelos\Actividad.cs" />
     <Compile Include="Modelos\Alumno.cs" />
+    <Compile Include="Modelos\Docente.cs" />
     <Compile Include="Modelos\Grupo.cs" />
     <Compile Include="Form_Principal.cs">
       <SubType>Form</SubType>
