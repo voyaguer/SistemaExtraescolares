@@ -81,6 +81,7 @@
     </Compile>
     <Compile Include="Manejadores\Actividad_Manejador.cs" />
     <Compile Include="Manejadores\Alumno_Manejador.cs" />
+    <Compile Include="Manejadores\Consulta_Manejador.cs" />
     <Compile Include="Manejadores\Docente_Manejador.cs" />
     <Compile Include="Manejadores\Grupo_Manejador.cs" />
     <Compile Include="Modelos\Actividad.cs" />

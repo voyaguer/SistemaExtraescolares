@@ -63,7 +63,7 @@ namespace SistemaExtraescolares
             try
             {
                 Connection.Open();
-                String Query = "insert into Docentes(Nombre, ApellidoP, ApellidoM Edad, Sexo, Email, Telefono) " +
+                String Query = "insert into Docentes(Nombre, ApellidoP, ApellidoM, Edad, Sexo, Email, Telefono) " +
                     "values (@_Nombre, @_ApellidoP, @ApellidoM, @_Edad, @_Sexo, @_Email, @_Telefono);";
                 SqlCommand Command = new SqlCommand(Query, Connection);
                 Command.Parameters.AddWithValue("@_Nombre", Nuevo_Docente.Nombre);

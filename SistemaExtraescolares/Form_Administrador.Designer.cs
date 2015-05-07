@@ -60,13 +60,52 @@
             this.label_CicloEscolar_Anho = new System.Windows.Forms.Label();
             this.comboBox_Actividades = new System.Windows.Forms.ComboBox();
             this.TabPage_Docentes = new System.Windows.Forms.TabPage();
+            this.groupBox_Agrega_Docentes = new System.Windows.Forms.GroupBox();
+            this.comboBox_Sexo = new System.Windows.Forms.ComboBox();
+            this.textBox_ApellidoM = new System.Windows.Forms.TextBox();
+            this.label_ApellidoM = new System.Windows.Forms.Label();
+            this.textBox_Email = new System.Windows.Forms.TextBox();
+            this.numericUpDown_Edad = new System.Windows.Forms.NumericUpDown();
+            this.button_Agrega_Docente = new System.Windows.Forms.Button();
+            this.textBox_Telefono = new System.Windows.Forms.TextBox();
+            this.textBox_ApellidoP = new System.Windows.Forms.TextBox();
+            this.textBox_Nombre = new System.Windows.Forms.TextBox();
+            this.label_Telefono = new System.Windows.Forms.Label();
+            this.label_Email = new System.Windows.Forms.Label();
+            this.label_Sexo = new System.Windows.Forms.Label();
+            this.label_Edad = new System.Windows.Forms.Label();
+            this.label_ApellidoP = new System.Windows.Forms.Label();
+            this.label_Nombre = new System.Windows.Forms.Label();
             this.TabPage_Alumnos = new System.Windows.Forms.TabPage();
+            this.gbx_Add_Alumno = new System.Windows.Forms.GroupBox();
+            this.btn_Add_Alumno = new System.Windows.Forms.Button();
+            this.tbx_semestre = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.tbx_carrera = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.tbx_nControl = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.tbx_email = new System.Windows.Forms.TextBox();
+            this.tbx_telefono = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.tbx_apellidos = new System.Windows.Forms.TextBox();
+            this.tbx_nombre = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.RadioButton_Nombre = new System.Windows.Forms.RadioButton();
             this.RadioButton_NumeroControl = new System.Windows.Forms.RadioButton();
             this.TextBox_BuscarAlumno = new System.Windows.Forms.TextBox();
             this.ListBox_Alumnos = new System.Windows.Forms.ListBox();
             this.TabPage_Reportes = new System.Windows.Forms.TabPage();
             this.TabPage_Consultas = new System.Windows.Forms.TabPage();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cbx_consultas = new System.Windows.Forms.ComboBox();
+            this.dgv_consultas = new System.Windows.Forms.DataGridView();
             this.ContextMenuStrip_Actividad = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ToolStripMenuItem_Actividad_Modificar = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItem_Actividad_Borrar = new System.Windows.Forms.ToolStripMenuItem();
@@ -75,25 +114,9 @@
             this.ContextMenuStrip_Grupo = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.modificarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.borrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.groupBox_Agrega_Docentes = new System.Windows.Forms.GroupBox();
-            this.label_Nombre = new System.Windows.Forms.Label();
-            this.label_ApellidoP = new System.Windows.Forms.Label();
-            this.label_Edad = new System.Windows.Forms.Label();
-            this.label_Sexo = new System.Windows.Forms.Label();
-            this.label_Email = new System.Windows.Forms.Label();
-            this.label_Telefono = new System.Windows.Forms.Label();
-            this.textBox_Nombre = new System.Windows.Forms.TextBox();
-            this.textBox_ApellidoP = new System.Windows.Forms.TextBox();
-            this.textBox_Telefono = new System.Windows.Forms.TextBox();
-            this.button_Agrega_Docente = new System.Windows.Forms.Button();
             this.contextMenuStrip_Docente = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.modificarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.numericUpDown_Edad = new System.Windows.Forms.NumericUpDown();
-            this.textBox_Email = new System.Windows.Forms.TextBox();
-            this.textBox_ApellidoM = new System.Windows.Forms.TextBox();
-            this.label_ApellidoM = new System.Windows.Forms.Label();
-            this.comboBox_Sexo = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.TabControl_Principal.SuspendLayout();
             this.TabPage_Inicio.SuspendLayout();
@@ -103,13 +126,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Capacidad_Grupo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_CicloEscolar_Anho)).BeginInit();
             this.TabPage_Docentes.SuspendLayout();
+            this.groupBox_Agrega_Docentes.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Edad)).BeginInit();
             this.TabPage_Alumnos.SuspendLayout();
+            this.gbx_Add_Alumno.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.TabPage_Consultas.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_consultas)).BeginInit();
             this.ContextMenuStrip_Actividad.SuspendLayout();
             this.ContextMenuStrip_Alumno.SuspendLayout();
             this.ContextMenuStrip_Grupo.SuspendLayout();
-            this.groupBox_Agrega_Docentes.SuspendLayout();
             this.contextMenuStrip_Docente.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Edad)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -149,6 +176,7 @@
             this.TabPage_Inicio.TabIndex = 0;
             this.TabPage_Inicio.Text = "Inicio";
             this.TabPage_Inicio.UseVisualStyleBackColor = true;
+            this.TabPage_Inicio.Click += new System.EventHandler(this.TabPage_Inicio_Click);
             // 
             // Button_Salir
             // 
@@ -479,8 +507,160 @@
             this.TabPage_Docentes.Text = "Docentes";
             this.TabPage_Docentes.UseVisualStyleBackColor = true;
             // 
+            // groupBox_Agrega_Docentes
+            // 
+            this.groupBox_Agrega_Docentes.Controls.Add(this.comboBox_Sexo);
+            this.groupBox_Agrega_Docentes.Controls.Add(this.textBox_ApellidoM);
+            this.groupBox_Agrega_Docentes.Controls.Add(this.label_ApellidoM);
+            this.groupBox_Agrega_Docentes.Controls.Add(this.textBox_Email);
+            this.groupBox_Agrega_Docentes.Controls.Add(this.numericUpDown_Edad);
+            this.groupBox_Agrega_Docentes.Controls.Add(this.button_Agrega_Docente);
+            this.groupBox_Agrega_Docentes.Controls.Add(this.textBox_Telefono);
+            this.groupBox_Agrega_Docentes.Controls.Add(this.textBox_ApellidoP);
+            this.groupBox_Agrega_Docentes.Controls.Add(this.textBox_Nombre);
+            this.groupBox_Agrega_Docentes.Controls.Add(this.label_Telefono);
+            this.groupBox_Agrega_Docentes.Controls.Add(this.label_Email);
+            this.groupBox_Agrega_Docentes.Controls.Add(this.label_Sexo);
+            this.groupBox_Agrega_Docentes.Controls.Add(this.label_Edad);
+            this.groupBox_Agrega_Docentes.Controls.Add(this.label_ApellidoP);
+            this.groupBox_Agrega_Docentes.Controls.Add(this.label_Nombre);
+            this.groupBox_Agrega_Docentes.Location = new System.Drawing.Point(72, 60);
+            this.groupBox_Agrega_Docentes.Name = "groupBox_Agrega_Docentes";
+            this.groupBox_Agrega_Docentes.Size = new System.Drawing.Size(796, 434);
+            this.groupBox_Agrega_Docentes.TabIndex = 0;
+            this.groupBox_Agrega_Docentes.TabStop = false;
+            this.groupBox_Agrega_Docentes.Text = "Agregar Docente";
+            // 
+            // comboBox_Sexo
+            // 
+            this.comboBox_Sexo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_Sexo.FormattingEnabled = true;
+            this.comboBox_Sexo.Items.AddRange(new object[] {
+            "Hombre",
+            "Mujer"});
+            this.comboBox_Sexo.Location = new System.Drawing.Point(136, 290);
+            this.comboBox_Sexo.Name = "comboBox_Sexo";
+            this.comboBox_Sexo.Size = new System.Drawing.Size(182, 32);
+            this.comboBox_Sexo.TabIndex = 4;
+            // 
+            // textBox_ApellidoM
+            // 
+            this.textBox_ApellidoM.Location = new System.Drawing.Point(200, 171);
+            this.textBox_ApellidoM.Name = "textBox_ApellidoM";
+            this.textBox_ApellidoM.Size = new System.Drawing.Size(228, 29);
+            this.textBox_ApellidoM.TabIndex = 2;
+            // 
+            // label_ApellidoM
+            // 
+            this.label_ApellidoM.AutoSize = true;
+            this.label_ApellidoM.Location = new System.Drawing.Point(45, 174);
+            this.label_ApellidoM.Name = "label_ApellidoM";
+            this.label_ApellidoM.Size = new System.Drawing.Size(153, 24);
+            this.label_ApellidoM.TabIndex = 12;
+            this.label_ApellidoM.Text = "Apellido Materno";
+            // 
+            // textBox_Email
+            // 
+            this.textBox_Email.Location = new System.Drawing.Point(541, 57);
+            this.textBox_Email.Name = "textBox_Email";
+            this.textBox_Email.Size = new System.Drawing.Size(236, 29);
+            this.textBox_Email.TabIndex = 5;
+            // 
+            // numericUpDown_Edad
+            // 
+            this.numericUpDown_Edad.Location = new System.Drawing.Point(136, 234);
+            this.numericUpDown_Edad.Name = "numericUpDown_Edad";
+            this.numericUpDown_Edad.Size = new System.Drawing.Size(84, 29);
+            this.numericUpDown_Edad.TabIndex = 3;
+            // 
+            // button_Agrega_Docente
+            // 
+            this.button_Agrega_Docente.Location = new System.Drawing.Point(527, 314);
+            this.button_Agrega_Docente.Name = "button_Agrega_Docente";
+            this.button_Agrega_Docente.Size = new System.Drawing.Size(181, 42);
+            this.button_Agrega_Docente.TabIndex = 9;
+            this.button_Agrega_Docente.Text = "Agregar Docente";
+            this.button_Agrega_Docente.UseVisualStyleBackColor = true;
+            this.button_Agrega_Docente.Click += new System.EventHandler(this.button_Agrega_Docente_Click);
+            // 
+            // textBox_Telefono
+            // 
+            this.textBox_Telefono.Location = new System.Drawing.Point(554, 131);
+            this.textBox_Telefono.Name = "textBox_Telefono";
+            this.textBox_Telefono.Size = new System.Drawing.Size(223, 29);
+            this.textBox_Telefono.TabIndex = 6;
+            // 
+            // textBox_ApellidoP
+            // 
+            this.textBox_ApellidoP.Location = new System.Drawing.Point(198, 118);
+            this.textBox_ApellidoP.Name = "textBox_ApellidoP";
+            this.textBox_ApellidoP.Size = new System.Drawing.Size(228, 29);
+            this.textBox_ApellidoP.TabIndex = 1;
+            // 
+            // textBox_Nombre
+            // 
+            this.textBox_Nombre.Location = new System.Drawing.Point(183, 55);
+            this.textBox_Nombre.Name = "textBox_Nombre";
+            this.textBox_Nombre.Size = new System.Drawing.Size(233, 29);
+            this.textBox_Nombre.TabIndex = 0;
+            // 
+            // label_Telefono
+            // 
+            this.label_Telefono.AutoSize = true;
+            this.label_Telefono.Location = new System.Drawing.Point(463, 136);
+            this.label_Telefono.Name = "label_Telefono";
+            this.label_Telefono.Size = new System.Drawing.Size(85, 24);
+            this.label_Telefono.TabIndex = 5;
+            this.label_Telefono.Text = "Teléfono";
+            // 
+            // label_Email
+            // 
+            this.label_Email.AutoSize = true;
+            this.label_Email.Location = new System.Drawing.Point(464, 62);
+            this.label_Email.Name = "label_Email";
+            this.label_Email.Size = new System.Drawing.Size(57, 24);
+            this.label_Email.TabIndex = 4;
+            this.label_Email.Text = "Email";
+            // 
+            // label_Sexo
+            // 
+            this.label_Sexo.AutoSize = true;
+            this.label_Sexo.Location = new System.Drawing.Point(45, 293);
+            this.label_Sexo.Name = "label_Sexo";
+            this.label_Sexo.Size = new System.Drawing.Size(54, 24);
+            this.label_Sexo.TabIndex = 3;
+            this.label_Sexo.Text = "Sexo";
+            // 
+            // label_Edad
+            // 
+            this.label_Edad.AutoSize = true;
+            this.label_Edad.Location = new System.Drawing.Point(45, 239);
+            this.label_Edad.Name = "label_Edad";
+            this.label_Edad.Size = new System.Drawing.Size(55, 24);
+            this.label_Edad.TabIndex = 2;
+            this.label_Edad.Text = "Edad";
+            // 
+            // label_ApellidoP
+            // 
+            this.label_ApellidoP.AutoSize = true;
+            this.label_ApellidoP.Location = new System.Drawing.Point(43, 121);
+            this.label_ApellidoP.Name = "label_ApellidoP";
+            this.label_ApellidoP.Size = new System.Drawing.Size(149, 24);
+            this.label_ApellidoP.TabIndex = 1;
+            this.label_ApellidoP.Text = "Apellido Paterno";
+            // 
+            // label_Nombre
+            // 
+            this.label_Nombre.AutoSize = true;
+            this.label_Nombre.Location = new System.Drawing.Point(43, 62);
+            this.label_Nombre.Name = "label_Nombre";
+            this.label_Nombre.Size = new System.Drawing.Size(79, 24);
+            this.label_Nombre.TabIndex = 0;
+            this.label_Nombre.Text = "Nombre";
+            // 
             // TabPage_Alumnos
             // 
+            this.TabPage_Alumnos.Controls.Add(this.gbx_Add_Alumno);
             this.TabPage_Alumnos.Controls.Add(this.RadioButton_Nombre);
             this.TabPage_Alumnos.Controls.Add(this.RadioButton_NumeroControl);
             this.TabPage_Alumnos.Controls.Add(this.TextBox_BuscarAlumno);
@@ -492,6 +672,194 @@
             this.TabPage_Alumnos.TabIndex = 4;
             this.TabPage_Alumnos.Text = "Alumnos";
             this.TabPage_Alumnos.UseVisualStyleBackColor = true;
+            // 
+            // gbx_Add_Alumno
+            // 
+            this.gbx_Add_Alumno.Controls.Add(this.btn_Add_Alumno);
+            this.gbx_Add_Alumno.Controls.Add(this.tbx_semestre);
+            this.gbx_Add_Alumno.Controls.Add(this.label13);
+            this.gbx_Add_Alumno.Controls.Add(this.tbx_carrera);
+            this.gbx_Add_Alumno.Controls.Add(this.label12);
+            this.gbx_Add_Alumno.Controls.Add(this.tbx_nControl);
+            this.gbx_Add_Alumno.Controls.Add(this.label11);
+            this.gbx_Add_Alumno.Controls.Add(this.tbx_email);
+            this.gbx_Add_Alumno.Controls.Add(this.tbx_telefono);
+            this.gbx_Add_Alumno.Controls.Add(this.label9);
+            this.gbx_Add_Alumno.Controls.Add(this.label10);
+            this.gbx_Add_Alumno.Controls.Add(this.comboBox1);
+            this.gbx_Add_Alumno.Controls.Add(this.numericUpDown1);
+            this.gbx_Add_Alumno.Controls.Add(this.label7);
+            this.gbx_Add_Alumno.Controls.Add(this.label8);
+            this.gbx_Add_Alumno.Controls.Add(this.tbx_apellidos);
+            this.gbx_Add_Alumno.Controls.Add(this.tbx_nombre);
+            this.gbx_Add_Alumno.Controls.Add(this.label5);
+            this.gbx_Add_Alumno.Controls.Add(this.label6);
+            this.gbx_Add_Alumno.Location = new System.Drawing.Point(469, 6);
+            this.gbx_Add_Alumno.Name = "gbx_Add_Alumno";
+            this.gbx_Add_Alumno.Size = new System.Drawing.Size(485, 466);
+            this.gbx_Add_Alumno.TabIndex = 4;
+            this.gbx_Add_Alumno.TabStop = false;
+            this.gbx_Add_Alumno.Text = "Agregar Alumno";
+            this.gbx_Add_Alumno.Enter += new System.EventHandler(this.gbx_Add_Alumno_Enter);
+            // 
+            // btn_Add_Alumno
+            // 
+            this.btn_Add_Alumno.Location = new System.Drawing.Point(248, 391);
+            this.btn_Add_Alumno.Name = "btn_Add_Alumno";
+            this.btn_Add_Alumno.Size = new System.Drawing.Size(194, 37);
+            this.btn_Add_Alumno.TabIndex = 33;
+            this.btn_Add_Alumno.Text = "Agregar Alumno";
+            this.btn_Add_Alumno.UseVisualStyleBackColor = true;
+            this.btn_Add_Alumno.Click += new System.EventHandler(this.btn_Add_Alumno_Click);
+            // 
+            // tbx_semestre
+            // 
+            this.tbx_semestre.Location = new System.Drawing.Point(112, 254);
+            this.tbx_semestre.Name = "tbx_semestre";
+            this.tbx_semestre.Size = new System.Drawing.Size(100, 29);
+            this.tbx_semestre.TabIndex = 32;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(16, 259);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(90, 24);
+            this.label13.TabIndex = 31;
+            this.label13.Text = "Semestre";
+            // 
+            // tbx_carrera
+            // 
+            this.tbx_carrera.Location = new System.Drawing.Point(97, 219);
+            this.tbx_carrera.Name = "tbx_carrera";
+            this.tbx_carrera.Size = new System.Drawing.Size(100, 29);
+            this.tbx_carrera.TabIndex = 30;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(16, 224);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(72, 24);
+            this.label12.TabIndex = 29;
+            this.label12.Text = "Carrera";
+            // 
+            // tbx_nControl
+            // 
+            this.tbx_nControl.Location = new System.Drawing.Point(110, 40);
+            this.tbx_nControl.Name = "tbx_nControl";
+            this.tbx_nControl.Size = new System.Drawing.Size(153, 29);
+            this.tbx_nControl.TabIndex = 28;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(15, 45);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(89, 24);
+            this.label11.TabIndex = 27;
+            this.label11.Text = "N.Control";
+            // 
+            // tbx_email
+            // 
+            this.tbx_email.Location = new System.Drawing.Point(101, 289);
+            this.tbx_email.Name = "tbx_email";
+            this.tbx_email.Size = new System.Drawing.Size(236, 29);
+            this.tbx_email.TabIndex = 24;
+            // 
+            // tbx_telefono
+            // 
+            this.tbx_telefono.Location = new System.Drawing.Point(106, 324);
+            this.tbx_telefono.Name = "tbx_telefono";
+            this.tbx_telefono.Size = new System.Drawing.Size(223, 29);
+            this.tbx_telefono.TabIndex = 26;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(15, 329);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(85, 24);
+            this.label9.TabIndex = 25;
+            this.label9.Text = "Teléfono";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(16, 292);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(57, 24);
+            this.label10.TabIndex = 23;
+            this.label10.Text = "Email";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Hombre",
+            "Mujer"});
+            this.comboBox1.Location = new System.Drawing.Point(76, 181);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 32);
+            this.comboBox1.TabIndex = 22;
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(85, 146);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(84, 29);
+            this.numericUpDown1.TabIndex = 20;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(16, 189);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(54, 24);
+            this.label7.TabIndex = 21;
+            this.label7.Text = "Sexo";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(16, 151);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(55, 24);
+            this.label8.TabIndex = 19;
+            this.label8.Text = "Edad";
+            // 
+            // tbx_apellidos
+            // 
+            this.tbx_apellidos.Location = new System.Drawing.Point(105, 111);
+            this.tbx_apellidos.Name = "tbx_apellidos";
+            this.tbx_apellidos.Size = new System.Drawing.Size(228, 29);
+            this.tbx_apellidos.TabIndex = 15;
+            // 
+            // tbx_nombre
+            // 
+            this.tbx_nombre.Location = new System.Drawing.Point(100, 76);
+            this.tbx_nombre.Name = "tbx_nombre";
+            this.tbx_nombre.Size = new System.Drawing.Size(233, 29);
+            this.tbx_nombre.TabIndex = 13;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(15, 117);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(88, 24);
+            this.label5.TabIndex = 16;
+            this.label5.Text = "Apellidos";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(15, 81);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(79, 24);
+            this.label6.TabIndex = 14;
+            this.label6.Text = "Nombre";
             // 
             // RadioButton_Nombre
             // 
@@ -520,7 +888,7 @@
             this.TextBox_BuscarAlumno.ForeColor = System.Drawing.SystemColors.WindowText;
             this.TextBox_BuscarAlumno.Location = new System.Drawing.Point(8, 6);
             this.TextBox_BuscarAlumno.Name = "TextBox_BuscarAlumno";
-            this.TextBox_BuscarAlumno.Size = new System.Drawing.Size(290, 29);
+            this.TextBox_BuscarAlumno.Size = new System.Drawing.Size(191, 29);
             this.TextBox_BuscarAlumno.TabIndex = 1;
             this.TextBox_BuscarAlumno.TextChanged += new System.EventHandler(this.TextBox_BuscarAlumno_TextChanged);
             // 
@@ -528,9 +896,9 @@
             // 
             this.ListBox_Alumnos.FormattingEnabled = true;
             this.ListBox_Alumnos.ItemHeight = 24;
-            this.ListBox_Alumnos.Location = new System.Drawing.Point(304, 6);
+            this.ListBox_Alumnos.Location = new System.Drawing.Point(215, 6);
             this.ListBox_Alumnos.Name = "ListBox_Alumnos";
-            this.ListBox_Alumnos.Size = new System.Drawing.Size(530, 604);
+            this.ListBox_Alumnos.Size = new System.Drawing.Size(227, 604);
             this.ListBox_Alumnos.TabIndex = 0;
             this.ListBox_Alumnos.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ListBox_Alumnos_MouseUp);
             // 
@@ -546,6 +914,9 @@
             // 
             // TabPage_Consultas
             // 
+            this.TabPage_Consultas.Controls.Add(this.label3);
+            this.TabPage_Consultas.Controls.Add(this.cbx_consultas);
+            this.TabPage_Consultas.Controls.Add(this.dgv_consultas);
             this.TabPage_Consultas.Location = new System.Drawing.Point(4, 33);
             this.TabPage_Consultas.Name = "TabPage_Consultas";
             this.TabPage_Consultas.Padding = new System.Windows.Forms.Padding(3);
@@ -553,6 +924,37 @@
             this.TabPage_Consultas.TabIndex = 6;
             this.TabPage_Consultas.Text = "Consultas";
             this.TabPage_Consultas.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(160, 25);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(375, 24);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "\"SELECCIONE LA TABLA A CONSULTAR\"";
+            // 
+            // cbx_consultas
+            // 
+            this.cbx_consultas.FormattingEnabled = true;
+            this.cbx_consultas.Items.AddRange(new object[] {
+            "ACTIVIDADES",
+            "ALUMNOS",
+            "GRUPOS",
+            "DOCENTES"});
+            this.cbx_consultas.Location = new System.Drawing.Point(552, 17);
+            this.cbx_consultas.Name = "cbx_consultas";
+            this.cbx_consultas.Size = new System.Drawing.Size(188, 32);
+            this.cbx_consultas.TabIndex = 4;
+            this.cbx_consultas.SelectedIndexChanged += new System.EventHandler(this.cbx_consultas_SelectedIndexChanged);
+            // 
+            // dgv_consultas
+            // 
+            this.dgv_consultas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_consultas.Location = new System.Drawing.Point(147, 76);
+            this.dgv_consultas.Name = "dgv_consultas";
+            this.dgv_consultas.Size = new System.Drawing.Size(778, 256);
+            this.dgv_consultas.TabIndex = 3;
             // 
             // ContextMenuStrip_Actividad
             // 
@@ -610,178 +1012,27 @@
             this.borrarToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.borrarToolStripMenuItem.Text = "Borrar";
             // 
-            // groupBox_Agrega_Docentes
-            // 
-            this.groupBox_Agrega_Docentes.Controls.Add(this.comboBox_Sexo);
-            this.groupBox_Agrega_Docentes.Controls.Add(this.textBox_ApellidoM);
-            this.groupBox_Agrega_Docentes.Controls.Add(this.label_ApellidoM);
-            this.groupBox_Agrega_Docentes.Controls.Add(this.textBox_Email);
-            this.groupBox_Agrega_Docentes.Controls.Add(this.numericUpDown_Edad);
-            this.groupBox_Agrega_Docentes.Controls.Add(this.button_Agrega_Docente);
-            this.groupBox_Agrega_Docentes.Controls.Add(this.textBox_Telefono);
-            this.groupBox_Agrega_Docentes.Controls.Add(this.textBox_ApellidoP);
-            this.groupBox_Agrega_Docentes.Controls.Add(this.textBox_Nombre);
-            this.groupBox_Agrega_Docentes.Controls.Add(this.label_Telefono);
-            this.groupBox_Agrega_Docentes.Controls.Add(this.label_Email);
-            this.groupBox_Agrega_Docentes.Controls.Add(this.label_Sexo);
-            this.groupBox_Agrega_Docentes.Controls.Add(this.label_Edad);
-            this.groupBox_Agrega_Docentes.Controls.Add(this.label_ApellidoP);
-            this.groupBox_Agrega_Docentes.Controls.Add(this.label_Nombre);
-            this.groupBox_Agrega_Docentes.Location = new System.Drawing.Point(72, 60);
-            this.groupBox_Agrega_Docentes.Name = "groupBox_Agrega_Docentes";
-            this.groupBox_Agrega_Docentes.Size = new System.Drawing.Size(796, 434);
-            this.groupBox_Agrega_Docentes.TabIndex = 0;
-            this.groupBox_Agrega_Docentes.TabStop = false;
-            this.groupBox_Agrega_Docentes.Text = "Agregar Docente";
-            // 
-            // label_Nombre
-            // 
-            this.label_Nombre.AutoSize = true;
-            this.label_Nombre.Location = new System.Drawing.Point(43, 62);
-            this.label_Nombre.Name = "label_Nombre";
-            this.label_Nombre.Size = new System.Drawing.Size(79, 24);
-            this.label_Nombre.TabIndex = 0;
-            this.label_Nombre.Text = "Nombre";
-            // 
-            // label_ApellidoP
-            // 
-            this.label_ApellidoP.AutoSize = true;
-            this.label_ApellidoP.Location = new System.Drawing.Point(43, 121);
-            this.label_ApellidoP.Name = "label_ApellidoP";
-            this.label_ApellidoP.Size = new System.Drawing.Size(149, 24);
-            this.label_ApellidoP.TabIndex = 1;
-            this.label_ApellidoP.Text = "Apellido Paterno";
-            // 
-            // label_Edad
-            // 
-            this.label_Edad.AutoSize = true;
-            this.label_Edad.Location = new System.Drawing.Point(45, 239);
-            this.label_Edad.Name = "label_Edad";
-            this.label_Edad.Size = new System.Drawing.Size(55, 24);
-            this.label_Edad.TabIndex = 2;
-            this.label_Edad.Text = "Edad";
-            // 
-            // label_Sexo
-            // 
-            this.label_Sexo.AutoSize = true;
-            this.label_Sexo.Location = new System.Drawing.Point(45, 293);
-            this.label_Sexo.Name = "label_Sexo";
-            this.label_Sexo.Size = new System.Drawing.Size(54, 24);
-            this.label_Sexo.TabIndex = 3;
-            this.label_Sexo.Text = "Sexo";
-            // 
-            // label_Email
-            // 
-            this.label_Email.AutoSize = true;
-            this.label_Email.Location = new System.Drawing.Point(464, 62);
-            this.label_Email.Name = "label_Email";
-            this.label_Email.Size = new System.Drawing.Size(57, 24);
-            this.label_Email.TabIndex = 4;
-            this.label_Email.Text = "Email";
-            // 
-            // label_Telefono
-            // 
-            this.label_Telefono.AutoSize = true;
-            this.label_Telefono.Location = new System.Drawing.Point(463, 136);
-            this.label_Telefono.Name = "label_Telefono";
-            this.label_Telefono.Size = new System.Drawing.Size(85, 24);
-            this.label_Telefono.TabIndex = 5;
-            this.label_Telefono.Text = "Teléfono";
-            // 
-            // textBox_Nombre
-            // 
-            this.textBox_Nombre.Location = new System.Drawing.Point(183, 55);
-            this.textBox_Nombre.Name = "textBox_Nombre";
-            this.textBox_Nombre.Size = new System.Drawing.Size(233, 29);
-            this.textBox_Nombre.TabIndex = 0;
-            // 
-            // textBox_ApellidoP
-            // 
-            this.textBox_ApellidoP.Location = new System.Drawing.Point(198, 118);
-            this.textBox_ApellidoP.Name = "textBox_ApellidoP";
-            this.textBox_ApellidoP.Size = new System.Drawing.Size(228, 29);
-            this.textBox_ApellidoP.TabIndex = 1;
-            // 
-            // textBox_Telefono
-            // 
-            this.textBox_Telefono.Location = new System.Drawing.Point(554, 131);
-            this.textBox_Telefono.Name = "textBox_Telefono";
-            this.textBox_Telefono.Size = new System.Drawing.Size(223, 29);
-            this.textBox_Telefono.TabIndex = 6;
-            // 
-            // button_Agrega_Docente
-            // 
-            this.button_Agrega_Docente.Location = new System.Drawing.Point(527, 314);
-            this.button_Agrega_Docente.Name = "button_Agrega_Docente";
-            this.button_Agrega_Docente.Size = new System.Drawing.Size(181, 42);
-            this.button_Agrega_Docente.TabIndex = 9;
-            this.button_Agrega_Docente.Text = "Agregar Docente";
-            this.button_Agrega_Docente.UseVisualStyleBackColor = true;
-            this.button_Agrega_Docente.Click += new System.EventHandler(this.button_Agrega_Docente_Click);
-            // 
             // contextMenuStrip_Docente
             // 
             this.contextMenuStrip_Docente.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.modificarToolStripMenuItem1,
             this.eliminarToolStripMenuItem});
             this.contextMenuStrip_Docente.Name = "contextMenuStrip_Docente";
-            this.contextMenuStrip_Docente.Size = new System.Drawing.Size(153, 70);
+            this.contextMenuStrip_Docente.Size = new System.Drawing.Size(126, 48);
             // 
             // modificarToolStripMenuItem1
             // 
             this.modificarToolStripMenuItem1.Name = "modificarToolStripMenuItem1";
-            this.modificarToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.modificarToolStripMenuItem1.Size = new System.Drawing.Size(125, 22);
             this.modificarToolStripMenuItem1.Text = "Modificar";
             this.modificarToolStripMenuItem1.Click += new System.EventHandler(this.modificarToolStripMenuItem1_Click);
             // 
             // eliminarToolStripMenuItem
             // 
             this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
-            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.eliminarToolStripMenuItem.Text = "Borrar";
             this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click);
-            // 
-            // numericUpDown_Edad
-            // 
-            this.numericUpDown_Edad.Location = new System.Drawing.Point(136, 234);
-            this.numericUpDown_Edad.Name = "numericUpDown_Edad";
-            this.numericUpDown_Edad.Size = new System.Drawing.Size(84, 29);
-            this.numericUpDown_Edad.TabIndex = 3;
-            // 
-            // textBox_Email
-            // 
-            this.textBox_Email.Location = new System.Drawing.Point(541, 57);
-            this.textBox_Email.Name = "textBox_Email";
-            this.textBox_Email.Size = new System.Drawing.Size(236, 29);
-            this.textBox_Email.TabIndex = 5;
-            // 
-            // textBox_ApellidoM
-            // 
-            this.textBox_ApellidoM.Location = new System.Drawing.Point(200, 171);
-            this.textBox_ApellidoM.Name = "textBox_ApellidoM";
-            this.textBox_ApellidoM.Size = new System.Drawing.Size(228, 29);
-            this.textBox_ApellidoM.TabIndex = 2;
-            // 
-            // label_ApellidoM
-            // 
-            this.label_ApellidoM.AutoSize = true;
-            this.label_ApellidoM.Location = new System.Drawing.Point(45, 174);
-            this.label_ApellidoM.Name = "label_ApellidoM";
-            this.label_ApellidoM.Size = new System.Drawing.Size(153, 24);
-            this.label_ApellidoM.TabIndex = 12;
-            this.label_ApellidoM.Text = "Apellido Materno";
-            // 
-            // comboBox_Sexo
-            // 
-            this.comboBox_Sexo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox_Sexo.FormattingEnabled = true;
-            this.comboBox_Sexo.Items.AddRange(new object[] {
-            "Hombre",
-            "Mujer"});
-            this.comboBox_Sexo.Location = new System.Drawing.Point(136, 290);
-            this.comboBox_Sexo.Name = "comboBox_Sexo";
-            this.comboBox_Sexo.Size = new System.Drawing.Size(182, 32);
-            this.comboBox_Sexo.TabIndex = 4;
             // 
             // Form_Administrador
             // 
@@ -802,15 +1053,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Capacidad_Grupo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_CicloEscolar_Anho)).EndInit();
             this.TabPage_Docentes.ResumeLayout(false);
+            this.groupBox_Agrega_Docentes.ResumeLayout(false);
+            this.groupBox_Agrega_Docentes.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Edad)).EndInit();
             this.TabPage_Alumnos.ResumeLayout(false);
             this.TabPage_Alumnos.PerformLayout();
+            this.gbx_Add_Alumno.ResumeLayout(false);
+            this.gbx_Add_Alumno.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            this.TabPage_Consultas.ResumeLayout(false);
+            this.TabPage_Consultas.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_consultas)).EndInit();
             this.ContextMenuStrip_Actividad.ResumeLayout(false);
             this.ContextMenuStrip_Alumno.ResumeLayout(false);
             this.ContextMenuStrip_Grupo.ResumeLayout(false);
-            this.groupBox_Agrega_Docentes.ResumeLayout(false);
-            this.groupBox_Agrega_Docentes.PerformLayout();
             this.contextMenuStrip_Docente.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Edad)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -882,5 +1139,28 @@
         private System.Windows.Forms.TextBox textBox_ApellidoM;
         private System.Windows.Forms.Label label_ApellidoM;
         private System.Windows.Forms.ComboBox comboBox_Sexo;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cbx_consultas;
+        private System.Windows.Forms.DataGridView dgv_consultas;
+        private System.Windows.Forms.GroupBox gbx_Add_Alumno;
+        private System.Windows.Forms.TextBox tbx_carrera;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox tbx_nControl;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox tbx_email;
+        private System.Windows.Forms.TextBox tbx_telefono;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox tbx_apellidos;
+        private System.Windows.Forms.TextBox tbx_nombre;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btn_Add_Alumno;
+        private System.Windows.Forms.TextBox tbx_semestre;
+        private System.Windows.Forms.Label label13;
     }
 }

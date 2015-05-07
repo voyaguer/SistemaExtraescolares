@@ -455,5 +455,101 @@ namespace SistemaExtraescolares
 
         }
 
+        private void cbx_consultas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            DataTable dtb = new DataTable();
+            switch (cbx_consultas.SelectedIndex)
+            {
+                // The following switch section causes an error.
+                case 0:
+                    dgv_consultas.DataSource = (new Consulta_Manejador()).Obtener_actividades();
+                    break;
+                // Add a break or other jump statement here.
+                case 1:
+                    dgv_consultas.DataSource = (new Consulta_Manejador()).Obtener_alumnos();
+                    break;
+                case 2:
+                    dgv_consultas.DataSource = (new Consulta_Manejador()).Obtener_grupos();
+                    break;
+                case 3:
+                    dgv_consultas.DataSource = (new Consulta_Manejador()).Obtener_docentes();
+                    break;
+
+            }
+        }
+
+        private void gbx_Add_Alumno_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Add_Alumno_Click(object sender, EventArgs e)
+        {
+            String Nombre = "", Apellidos = "", Email = "", Telefono = "", N_control = "", Semestre = "", Carrera = "";
+            int Edad = 0;
+            int ID = 2;
+            Char Sexo = '0';
+
+            if ((tbx_nControl.Text == "") || (tbx_nombre.Text == "") || (tbx_apellidos.Text == "") || (tbx_telefono.Text == "") ||
+               (tbx_email.Text == "") || (tbx_carrera.Text == "") || (tbx_semestre.Text == "")
+               || (comboBox1.SelectedIndex.Equals(-1)) || numericUpDown1.Value.ToString() == "0")
+            {
+                MessageBox.Show("Llene todos los datos porfavor");
+
+            }
+            else
+            {
+                N_control = tbx_nControl.Text;
+                Nombre = tbx_nombre.Text;
+                Apellidos = tbx_apellidos.Text;
+                Edad = (int)Convert.ToDecimal(numericUpDown1.Value);
+                if (comboBox1.Text == "Hombre")
+                {
+                    Sexo = 'H';
+                }
+                else
+                {
+                    Sexo = 'M';
+                }
+                //Sexo = Convert.ToChar(comboBox_Sexo.Text);
+                Carrera = tbx_carrera.Text;
+                Semestre = tbx_semestre.Text;
+                Email = tbx_email.Text;
+                Telefono = tbx_telefono.Text;
+                Alumno Nuevo_Alumno = new Alumno();
+                Nuevo_Alumno.NumeroDeControl = N_control;
+                Nuevo_Alumno.Nombre = Nombre;
+                Nuevo_Alumno.Apellidos = Apellidos;
+                Nuevo_Alumno.Edad = Edad;
+                Nuevo_Alumno.Sexo = Sexo;
+                Nuevo_Alumno.Carrera = Carrera;
+                Nuevo_Alumno.Semestre = Convert.ToInt32(Semestre);
+                Nuevo_Alumno.Email = Email;
+                Nuevo_Alumno.Telefono = Telefono;
+                Nuevo_Alumno.IDUsuario = ID;
+                
+               // N_control, Nombre, Apellidos, Edad, Sexo, Semestre, Carrera, Email, Telefono,ID
+                Alumno_Manejador Manejador_Doc = new Alumno_Manejador();
+
+                Manejador_Doc.Agregar_Alumno(Nuevo_Alumno);
+
+                tbx_nControl.Clear();
+                tbx_nombre.Clear();
+                tbx_apellidos.Clear();
+                tbx_email.Clear();
+                tbx_carrera.Clear();
+                tbx_semestre.Clear();
+                tbx_telefono.Clear();
+                numericUpDown1.Value = 0;
+                comboBox1.Text = "";
+            }
+        }
+
+        private void TabPage_Inicio_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

@@ -5,16 +5,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace SistemaExtraescolares
 {
     class Alumno_Manejador
     {
+        String ConnectionString;
+        SqlConnection Connection;
+
+        public Alumno_Manejador()
+        {
+            ConnectionString = ConfigurationManager.ConnectionStrings["DB"].ConnectionString;
+            Connection = new SqlConnection(ConnectionString);
+        }
+
         public Alumno[] GetList()
         {
             Alumno[] Alumnos = new Alumno[0];
-            String ConnectionString = ConfigurationManager.ConnectionStrings["DB"].ConnectionString;
-            SqlConnection Connection = new SqlConnection(ConnectionString);
             try
             {
                 Connection.Open();
@@ -52,6 +60,36 @@ namespace SistemaExtraescolares
                 Connection.Close();
             }
             return Alumnos;
+        }
+
+        public void Agregar_Alumno(Alumno Nuevo_Alumno)
+        {
+            try
+            {
+                Connection.Open();
+                String Query = "insert into Alumnos(NumeroDeControl,Nombre, Apellidos, Edad, Sexo,Semestre, Carrera, Email, Telefono,IDUsuario) " +
+                    "values (@_NumeroDeControl, @_Nombre, @_Apellidos, @_Edad, @_Sexo,@_Semestre,@_Carrera, @_Email, @_Telefono,@_IDUsuario);";
+                SqlCommand Command = new SqlCommand(Query, Connection);
+                Command.Parameters.AddWithValue("@_NumeroDeControl", Nuevo_Alumno.NumeroDeControl);
+                Command.Parameters.AddWithValue("@_Nombre", Nuevo_Alumno.Nombre);
+                Command.Parameters.AddWithValue("@_Apellidos", Nuevo_Alumno.Apellidos);
+                Command.Parameters.AddWithValue("@_Edad", Nuevo_Alumno.Edad);
+                Command.Parameters.AddWithValue("@_Sexo", Nuevo_Alumno.Sexo);
+                Command.Parameters.AddWithValue("@_Semestre", Nuevo_Alumno.Semestre);
+                Command.Parameters.AddWithValue("@_Carrera", Nuevo_Alumno.Carrera);
+                Command.Parameters.AddWithValue("@_Email", Nuevo_Alumno.Email);
+                Command.Parameters.AddWithValue("@_Telefono", Nuevo_Alumno.Telefono);
+                Command.Parameters.AddWithValue("@_IDUsuario", Nuevo_Alumno.IDUsuario);
+                Command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                Connection.Close();
+            }
         }
     }
 }
