@@ -543,6 +543,11 @@ namespace SistemaExtraescolares
                 tbx_telefono.Clear();
                 numericUpDown1.Value = 0;
                 comboBox1.Text = "";
+
+                Alumnos_ConDatos = false;
+                Cargar_Alumnos();
+                Cargar_PestañaAlumnos();
+
             }
         }
 
