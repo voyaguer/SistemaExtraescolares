@@ -103,10 +103,14 @@ namespace SistemaExtraescolares
             {
                 comboBox_Actividades.Items.Add(Act);
             }
-
+            foreach (Grupo Grup in Grupos)
+            {
+                comboBox_Grupos_A_Eliminar.Items.Add(Grup);
+            }
             comboBox_MesPrimero.SelectedIndex = comboBox_MesPrimero.FindStringExact("Enero");
             comboBox_MesUltimo.SelectedIndex = comboBox_MesPrimero.FindStringExact("Febrero");
             comboBox_Actividades.SelectedIndex = 0;
+            comboBox_Grupos_A_Eliminar.SelectedIndex = 0;
         }
 
         void Cargar_Docentes()
@@ -554,6 +558,24 @@ namespace SistemaExtraescolares
         private void TabPage_Inicio_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button_EliminarGrupo_Click(object sender, EventArgs e)
+        {
+            DialogResult _ResultadoDialogo = MessageBox.Show("¿Esta realmente seguro de eliminar el grupo seleccionado?"+
+            "Este cambio no podra cambiarse", "¿Eliminar Grupo?", MessageBoxButtons.YesNo);
+            
+            if (_ResultadoDialogo == DialogResult.Yes)
+            {
+                Int32 Grupo_Eliminar = comboBox_Grupos_A_Eliminar.SelectedIndex;
+                Int32 IDGrupo_Eliminar=Grupos[Grupo_Eliminar].IDGrupo;
+                
+                new Grupo_Manejador().EliminarGrupo(IDGrupo_Eliminar);
+                comboBox_Grupos_A_Eliminar.Items.Clear();
+                Cargar_Grupos();
+                Cargar_PestañaGrupos();
+            }
+            
         }
 
     }

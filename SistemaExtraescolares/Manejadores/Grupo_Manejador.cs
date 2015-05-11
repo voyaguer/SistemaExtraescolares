@@ -108,5 +108,24 @@ namespace SistemaExtraescolares
                 Connection.Close();
             }
         }
+        public void EliminarGrupo(Int32 ID_Grupo_A_Eliminar){
+            try
+            {
+                Connection.Open();
+                String Query = "delete from Grupos where IDGrupo = @_IDGrupo;";
+                SqlCommand Command = new SqlCommand(Query, Connection);
+                Command.Parameters.AddWithValue("@_IDGrupo", ID_Grupo_A_Eliminar);
+                Command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                Console.Write(ex.Message);
+            }
+            finally
+            {
+                Connection.Close();
+            }
+        }
     }
 }

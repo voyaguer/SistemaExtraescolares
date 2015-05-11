@@ -45,9 +45,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label_Dia1 = new System.Windows.Forms.Label();
             this.checkBox_Dia2 = new System.Windows.Forms.CheckBox();
-            this.uC_Horario_Dia3 = new SistemaExtraescolares.UC_Horario_Dia();
-            this.uC_Horario_Dia2 = new SistemaExtraescolares.UC_Horario_Dia();
-            this.uC_Horario_Dia1 = new SistemaExtraescolares.UC_Horario_Dia();
             this.button_Agregar_Grupo = new System.Windows.Forms.Button();
             this.label_Horario_Grupo = new System.Windows.Forms.Label();
             this.numericUpDown_Capacidad_Grupo = new System.Windows.Forms.NumericUpDown();
@@ -117,6 +114,12 @@
             this.contextMenuStrip_Docente = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.modificarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.groupBox_Eliminar_Grupo = new System.Windows.Forms.GroupBox();
+            this.comboBox_Grupos_A_Eliminar = new System.Windows.Forms.ComboBox();
+            this.button_EliminarGrupo = new System.Windows.Forms.Button();
+            this.uC_Horario_Dia3 = new SistemaExtraescolares.UC_Horario_Dia();
+            this.uC_Horario_Dia2 = new SistemaExtraescolares.UC_Horario_Dia();
+            this.uC_Horario_Dia1 = new SistemaExtraescolares.UC_Horario_Dia();
             this.panel1.SuspendLayout();
             this.TabControl_Principal.SuspendLayout();
             this.TabPage_Inicio.SuspendLayout();
@@ -137,6 +140,7 @@
             this.ContextMenuStrip_Alumno.SuspendLayout();
             this.ContextMenuStrip_Grupo.SuspendLayout();
             this.contextMenuStrip_Docente.SuspendLayout();
+            this.groupBox_Eliminar_Grupo.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -247,6 +251,7 @@
             // 
             // TabPage_Grupos
             // 
+            this.TabPage_Grupos.Controls.Add(this.groupBox_Eliminar_Grupo);
             this.TabPage_Grupos.Controls.Add(this.groupBox_Agregar_Grupo);
             this.TabPage_Grupos.Location = new System.Drawing.Point(4, 33);
             this.TabPage_Grupos.Name = "TabPage_Grupos";
@@ -330,35 +335,6 @@
             this.checkBox_Dia2.TabIndex = 31;
             this.checkBox_Dia2.UseVisualStyleBackColor = true;
             this.checkBox_Dia2.CheckedChanged += new System.EventHandler(this.checkBox_Dia2_CheckedChanged);
-            // 
-            // uC_Horario_Dia3
-            // 
-            this.uC_Horario_Dia3.Enabled = false;
-            this.uC_Horario_Dia3.Horario = null;
-            this.uC_Horario_Dia3.Location = new System.Drawing.Point(561, 206);
-            this.uC_Horario_Dia3.Margin = new System.Windows.Forms.Padding(20, 14, 20, 14);
-            this.uC_Horario_Dia3.Name = "uC_Horario_Dia3";
-            this.uC_Horario_Dia3.Size = new System.Drawing.Size(237, 191);
-            this.uC_Horario_Dia3.TabIndex = 30;
-            // 
-            // uC_Horario_Dia2
-            // 
-            this.uC_Horario_Dia2.Enabled = false;
-            this.uC_Horario_Dia2.Horario = null;
-            this.uC_Horario_Dia2.Location = new System.Drawing.Point(318, 206);
-            this.uC_Horario_Dia2.Margin = new System.Windows.Forms.Padding(11, 8, 11, 8);
-            this.uC_Horario_Dia2.Name = "uC_Horario_Dia2";
-            this.uC_Horario_Dia2.Size = new System.Drawing.Size(242, 190);
-            this.uC_Horario_Dia2.TabIndex = 29;
-            // 
-            // uC_Horario_Dia1
-            // 
-            this.uC_Horario_Dia1.Horario = null;
-            this.uC_Horario_Dia1.Location = new System.Drawing.Point(51, 206);
-            this.uC_Horario_Dia1.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.uC_Horario_Dia1.Name = "uC_Horario_Dia1";
-            this.uC_Horario_Dia1.Size = new System.Drawing.Size(231, 193);
-            this.uC_Horario_Dia1.TabIndex = 28;
             // 
             // button_Agregar_Grupo
             // 
@@ -1034,6 +1010,64 @@
             this.eliminarToolStripMenuItem.Text = "Borrar";
             this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click);
             // 
+            // groupBox_Eliminar_Grupo
+            // 
+            this.groupBox_Eliminar_Grupo.Controls.Add(this.button_EliminarGrupo);
+            this.groupBox_Eliminar_Grupo.Controls.Add(this.comboBox_Grupos_A_Eliminar);
+            this.groupBox_Eliminar_Grupo.Location = new System.Drawing.Point(74, 512);
+            this.groupBox_Eliminar_Grupo.Name = "groupBox_Eliminar_Grupo";
+            this.groupBox_Eliminar_Grupo.Size = new System.Drawing.Size(809, 124);
+            this.groupBox_Eliminar_Grupo.TabIndex = 1;
+            this.groupBox_Eliminar_Grupo.TabStop = false;
+            this.groupBox_Eliminar_Grupo.Text = "Eliminar Grupo";
+            // 
+            // comboBox_Grupos_A_Eliminar
+            // 
+            this.comboBox_Grupos_A_Eliminar.FormattingEnabled = true;
+            this.comboBox_Grupos_A_Eliminar.Location = new System.Drawing.Point(6, 28);
+            this.comboBox_Grupos_A_Eliminar.Name = "comboBox_Grupos_A_Eliminar";
+            this.comboBox_Grupos_A_Eliminar.Size = new System.Drawing.Size(792, 32);
+            this.comboBox_Grupos_A_Eliminar.TabIndex = 0;
+            // 
+            // button_EliminarGrupo
+            // 
+            this.button_EliminarGrupo.Location = new System.Drawing.Point(333, 80);
+            this.button_EliminarGrupo.Name = "button_EliminarGrupo";
+            this.button_EliminarGrupo.Size = new System.Drawing.Size(169, 38);
+            this.button_EliminarGrupo.TabIndex = 1;
+            this.button_EliminarGrupo.Text = "Eliminar Grupo";
+            this.button_EliminarGrupo.UseVisualStyleBackColor = true;
+            this.button_EliminarGrupo.Click += new System.EventHandler(this.button_EliminarGrupo_Click);
+            // 
+            // uC_Horario_Dia3
+            // 
+            this.uC_Horario_Dia3.Enabled = false;
+            this.uC_Horario_Dia3.Horario = null;
+            this.uC_Horario_Dia3.Location = new System.Drawing.Point(561, 206);
+            this.uC_Horario_Dia3.Margin = new System.Windows.Forms.Padding(20, 14, 20, 14);
+            this.uC_Horario_Dia3.Name = "uC_Horario_Dia3";
+            this.uC_Horario_Dia3.Size = new System.Drawing.Size(237, 191);
+            this.uC_Horario_Dia3.TabIndex = 30;
+            // 
+            // uC_Horario_Dia2
+            // 
+            this.uC_Horario_Dia2.Enabled = false;
+            this.uC_Horario_Dia2.Horario = null;
+            this.uC_Horario_Dia2.Location = new System.Drawing.Point(318, 206);
+            this.uC_Horario_Dia2.Margin = new System.Windows.Forms.Padding(11, 8, 11, 8);
+            this.uC_Horario_Dia2.Name = "uC_Horario_Dia2";
+            this.uC_Horario_Dia2.Size = new System.Drawing.Size(242, 190);
+            this.uC_Horario_Dia2.TabIndex = 29;
+            // 
+            // uC_Horario_Dia1
+            // 
+            this.uC_Horario_Dia1.Horario = null;
+            this.uC_Horario_Dia1.Location = new System.Drawing.Point(51, 206);
+            this.uC_Horario_Dia1.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.uC_Horario_Dia1.Name = "uC_Horario_Dia1";
+            this.uC_Horario_Dia1.Size = new System.Drawing.Size(231, 193);
+            this.uC_Horario_Dia1.TabIndex = 28;
+            // 
             // Form_Administrador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1068,6 +1102,7 @@
             this.ContextMenuStrip_Alumno.ResumeLayout(false);
             this.ContextMenuStrip_Grupo.ResumeLayout(false);
             this.contextMenuStrip_Docente.ResumeLayout(false);
+            this.groupBox_Eliminar_Grupo.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1162,5 +1197,8 @@
         private System.Windows.Forms.Button btn_Add_Alumno;
         private System.Windows.Forms.TextBox tbx_semestre;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.GroupBox groupBox_Eliminar_Grupo;
+        private System.Windows.Forms.ComboBox comboBox_Grupos_A_Eliminar;
+        private System.Windows.Forms.Button button_EliminarGrupo;
     }
 }
