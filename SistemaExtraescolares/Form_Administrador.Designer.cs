@@ -39,6 +39,9 @@
             this.ListBox_Actividades_Actividades = new System.Windows.Forms.ListBox();
             this.TextBox_BuscarActividad = new System.Windows.Forms.TextBox();
             this.TabPage_Grupos = new System.Windows.Forms.TabPage();
+            this.groupBox_Eliminar_Grupo = new System.Windows.Forms.GroupBox();
+            this.button_EliminarGrupo = new System.Windows.Forms.Button();
+            this.comboBox_Grupos_A_Eliminar = new System.Windows.Forms.ComboBox();
             this.groupBox_Agregar_Grupo = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.checkBox_Dia3 = new System.Windows.Forms.CheckBox();
@@ -107,16 +110,13 @@
             this.ToolStripMenuItem_Actividad_Modificar = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItem_Actividad_Borrar = new System.Windows.Forms.ToolStripMenuItem();
             this.ContextMenuStrip_Alumno = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.ToolStripMenuItem_Alumno_Modificar = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItem_Alumno_Eliminar = new System.Windows.Forms.ToolStripMenuItem();
             this.ContextMenuStrip_Grupo = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.modificarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.borrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip_Docente = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.modificarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.groupBox_Eliminar_Grupo = new System.Windows.Forms.GroupBox();
-            this.comboBox_Grupos_A_Eliminar = new System.Windows.Forms.ComboBox();
-            this.button_EliminarGrupo = new System.Windows.Forms.Button();
             this.uC_Horario_Dia3 = new SistemaExtraescolares.UC_Horario_Dia();
             this.uC_Horario_Dia2 = new SistemaExtraescolares.UC_Horario_Dia();
             this.uC_Horario_Dia1 = new SistemaExtraescolares.UC_Horario_Dia();
@@ -125,6 +125,7 @@
             this.TabPage_Inicio.SuspendLayout();
             this.TabPage_Actividades.SuspendLayout();
             this.TabPage_Grupos.SuspendLayout();
+            this.groupBox_Eliminar_Grupo.SuspendLayout();
             this.groupBox_Agregar_Grupo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Capacidad_Grupo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_CicloEscolar_Anho)).BeginInit();
@@ -140,7 +141,6 @@
             this.ContextMenuStrip_Alumno.SuspendLayout();
             this.ContextMenuStrip_Grupo.SuspendLayout();
             this.contextMenuStrip_Docente.SuspendLayout();
-            this.groupBox_Eliminar_Grupo.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -260,6 +260,35 @@
             this.TabPage_Grupos.TabIndex = 2;
             this.TabPage_Grupos.Text = "Grupos";
             this.TabPage_Grupos.UseVisualStyleBackColor = true;
+            // 
+            // groupBox_Eliminar_Grupo
+            // 
+            this.groupBox_Eliminar_Grupo.Controls.Add(this.button_EliminarGrupo);
+            this.groupBox_Eliminar_Grupo.Controls.Add(this.comboBox_Grupos_A_Eliminar);
+            this.groupBox_Eliminar_Grupo.Location = new System.Drawing.Point(74, 512);
+            this.groupBox_Eliminar_Grupo.Name = "groupBox_Eliminar_Grupo";
+            this.groupBox_Eliminar_Grupo.Size = new System.Drawing.Size(809, 124);
+            this.groupBox_Eliminar_Grupo.TabIndex = 1;
+            this.groupBox_Eliminar_Grupo.TabStop = false;
+            this.groupBox_Eliminar_Grupo.Text = "Eliminar Grupo";
+            // 
+            // button_EliminarGrupo
+            // 
+            this.button_EliminarGrupo.Location = new System.Drawing.Point(333, 80);
+            this.button_EliminarGrupo.Name = "button_EliminarGrupo";
+            this.button_EliminarGrupo.Size = new System.Drawing.Size(169, 38);
+            this.button_EliminarGrupo.TabIndex = 1;
+            this.button_EliminarGrupo.Text = "Eliminar Grupo";
+            this.button_EliminarGrupo.UseVisualStyleBackColor = true;
+            this.button_EliminarGrupo.Click += new System.EventHandler(this.button_EliminarGrupo_Click);
+            // 
+            // comboBox_Grupos_A_Eliminar
+            // 
+            this.comboBox_Grupos_A_Eliminar.FormattingEnabled = true;
+            this.comboBox_Grupos_A_Eliminar.Location = new System.Drawing.Point(6, 28);
+            this.comboBox_Grupos_A_Eliminar.Name = "comboBox_Grupos_A_Eliminar";
+            this.comboBox_Grupos_A_Eliminar.Size = new System.Drawing.Size(792, 32);
+            this.comboBox_Grupos_A_Eliminar.TabIndex = 0;
             // 
             // groupBox_Agregar_Grupo
             // 
@@ -670,9 +699,9 @@
             this.gbx_Add_Alumno.Controls.Add(this.tbx_nombre);
             this.gbx_Add_Alumno.Controls.Add(this.label5);
             this.gbx_Add_Alumno.Controls.Add(this.label6);
-            this.gbx_Add_Alumno.Location = new System.Drawing.Point(469, 6);
+            this.gbx_Add_Alumno.Location = new System.Drawing.Point(514, 6);
             this.gbx_Add_Alumno.Name = "gbx_Add_Alumno";
-            this.gbx_Add_Alumno.Size = new System.Drawing.Size(485, 466);
+            this.gbx_Add_Alumno.Size = new System.Drawing.Size(276, 433);
             this.gbx_Add_Alumno.TabIndex = 4;
             this.gbx_Add_Alumno.TabStop = false;
             this.gbx_Add_Alumno.Text = "Agregar Alumno";
@@ -680,20 +709,20 @@
             // 
             // btn_Add_Alumno
             // 
-            this.btn_Add_Alumno.Location = new System.Drawing.Point(248, 391);
+            this.btn_Add_Alumno.Location = new System.Drawing.Point(42, 376);
             this.btn_Add_Alumno.Name = "btn_Add_Alumno";
             this.btn_Add_Alumno.Size = new System.Drawing.Size(194, 37);
-            this.btn_Add_Alumno.TabIndex = 33;
+            this.btn_Add_Alumno.TabIndex = 13;
             this.btn_Add_Alumno.Text = "Agregar Alumno";
             this.btn_Add_Alumno.UseVisualStyleBackColor = true;
             this.btn_Add_Alumno.Click += new System.EventHandler(this.btn_Add_Alumno_Click);
             // 
             // tbx_semestre
             // 
-            this.tbx_semestre.Location = new System.Drawing.Point(112, 254);
+            this.tbx_semestre.Location = new System.Drawing.Point(105, 254);
             this.tbx_semestre.Name = "tbx_semestre";
-            this.tbx_semestre.Size = new System.Drawing.Size(100, 29);
-            this.tbx_semestre.TabIndex = 32;
+            this.tbx_semestre.Size = new System.Drawing.Size(153, 29);
+            this.tbx_semestre.TabIndex = 10;
             // 
             // label13
             // 
@@ -706,10 +735,10 @@
             // 
             // tbx_carrera
             // 
-            this.tbx_carrera.Location = new System.Drawing.Point(97, 219);
+            this.tbx_carrera.Location = new System.Drawing.Point(105, 219);
             this.tbx_carrera.Name = "tbx_carrera";
-            this.tbx_carrera.Size = new System.Drawing.Size(100, 29);
-            this.tbx_carrera.TabIndex = 30;
+            this.tbx_carrera.Size = new System.Drawing.Size(153, 29);
+            this.tbx_carrera.TabIndex = 9;
             // 
             // label12
             // 
@@ -722,10 +751,10 @@
             // 
             // tbx_nControl
             // 
-            this.tbx_nControl.Location = new System.Drawing.Point(110, 40);
+            this.tbx_nControl.Location = new System.Drawing.Point(105, 40);
             this.tbx_nControl.Name = "tbx_nControl";
             this.tbx_nControl.Size = new System.Drawing.Size(153, 29);
-            this.tbx_nControl.TabIndex = 28;
+            this.tbx_nControl.TabIndex = 4;
             // 
             // label11
             // 
@@ -738,17 +767,17 @@
             // 
             // tbx_email
             // 
-            this.tbx_email.Location = new System.Drawing.Point(101, 289);
+            this.tbx_email.Location = new System.Drawing.Point(105, 289);
             this.tbx_email.Name = "tbx_email";
-            this.tbx_email.Size = new System.Drawing.Size(236, 29);
-            this.tbx_email.TabIndex = 24;
+            this.tbx_email.Size = new System.Drawing.Size(153, 29);
+            this.tbx_email.TabIndex = 11;
             // 
             // tbx_telefono
             // 
-            this.tbx_telefono.Location = new System.Drawing.Point(106, 324);
+            this.tbx_telefono.Location = new System.Drawing.Point(105, 324);
             this.tbx_telefono.Name = "tbx_telefono";
-            this.tbx_telefono.Size = new System.Drawing.Size(223, 29);
-            this.tbx_telefono.TabIndex = 26;
+            this.tbx_telefono.Size = new System.Drawing.Size(153, 29);
+            this.tbx_telefono.TabIndex = 12;
             // 
             // label9
             // 
@@ -775,17 +804,17 @@
             this.comboBox1.Items.AddRange(new object[] {
             "Hombre",
             "Mujer"});
-            this.comboBox1.Location = new System.Drawing.Point(76, 181);
+            this.comboBox1.Location = new System.Drawing.Point(105, 181);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 32);
-            this.comboBox1.TabIndex = 22;
+            this.comboBox1.Size = new System.Drawing.Size(153, 32);
+            this.comboBox1.TabIndex = 8;
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(85, 146);
+            this.numericUpDown1.Location = new System.Drawing.Point(105, 146);
             this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(84, 29);
-            this.numericUpDown1.TabIndex = 20;
+            this.numericUpDown1.Size = new System.Drawing.Size(153, 29);
+            this.numericUpDown1.TabIndex = 7;
             // 
             // label7
             // 
@@ -809,15 +838,15 @@
             // 
             this.tbx_apellidos.Location = new System.Drawing.Point(105, 111);
             this.tbx_apellidos.Name = "tbx_apellidos";
-            this.tbx_apellidos.Size = new System.Drawing.Size(228, 29);
-            this.tbx_apellidos.TabIndex = 15;
+            this.tbx_apellidos.Size = new System.Drawing.Size(153, 29);
+            this.tbx_apellidos.TabIndex = 6;
             // 
             // tbx_nombre
             // 
-            this.tbx_nombre.Location = new System.Drawing.Point(100, 76);
+            this.tbx_nombre.Location = new System.Drawing.Point(105, 76);
             this.tbx_nombre.Name = "tbx_nombre";
-            this.tbx_nombre.Size = new System.Drawing.Size(233, 29);
-            this.tbx_nombre.TabIndex = 13;
+            this.tbx_nombre.Size = new System.Drawing.Size(153, 29);
+            this.tbx_nombre.TabIndex = 5;
             // 
             // label5
             // 
@@ -843,7 +872,7 @@
             this.RadioButton_Nombre.Location = new System.Drawing.Point(8, 79);
             this.RadioButton_Nombre.Name = "RadioButton_Nombre";
             this.RadioButton_Nombre.Size = new System.Drawing.Size(97, 28);
-            this.RadioButton_Nombre.TabIndex = 3;
+            this.RadioButton_Nombre.TabIndex = 2;
             this.RadioButton_Nombre.TabStop = true;
             this.RadioButton_Nombre.Text = "Nombre";
             this.RadioButton_Nombre.UseVisualStyleBackColor = true;
@@ -854,7 +883,7 @@
             this.RadioButton_NumeroControl.Location = new System.Drawing.Point(8, 43);
             this.RadioButton_NumeroControl.Name = "RadioButton_NumeroControl";
             this.RadioButton_NumeroControl.Size = new System.Drawing.Size(191, 28);
-            this.RadioButton_NumeroControl.TabIndex = 2;
+            this.RadioButton_NumeroControl.TabIndex = 1;
             this.RadioButton_NumeroControl.TabStop = true;
             this.RadioButton_NumeroControl.Text = "Numero De Control";
             this.RadioButton_NumeroControl.UseVisualStyleBackColor = true;
@@ -865,7 +894,7 @@
             this.TextBox_BuscarAlumno.Location = new System.Drawing.Point(8, 6);
             this.TextBox_BuscarAlumno.Name = "TextBox_BuscarAlumno";
             this.TextBox_BuscarAlumno.Size = new System.Drawing.Size(191, 29);
-            this.TextBox_BuscarAlumno.TabIndex = 1;
+            this.TextBox_BuscarAlumno.TabIndex = 0;
             this.TextBox_BuscarAlumno.TextChanged += new System.EventHandler(this.TextBox_BuscarAlumno_TextChanged);
             // 
             // ListBox_Alumnos
@@ -874,8 +903,9 @@
             this.ListBox_Alumnos.ItemHeight = 24;
             this.ListBox_Alumnos.Location = new System.Drawing.Point(215, 6);
             this.ListBox_Alumnos.Name = "ListBox_Alumnos";
-            this.ListBox_Alumnos.Size = new System.Drawing.Size(227, 604);
-            this.ListBox_Alumnos.TabIndex = 0;
+            this.ListBox_Alumnos.Size = new System.Drawing.Size(293, 604);
+            this.ListBox_Alumnos.TabIndex = 3;
+            this.ListBox_Alumnos.SelectedIndexChanged += new System.EventHandler(this.ListBox_Alumnos_SelectedIndexChanged);
             this.ListBox_Alumnos.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ListBox_Alumnos_MouseUp);
             // 
             // TabPage_Reportes
@@ -957,16 +987,16 @@
             // ContextMenuStrip_Alumno
             // 
             this.ContextMenuStrip_Alumno.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ToolStripMenuItem_Alumno_Modificar});
+            this.ToolStripMenuItem_Alumno_Eliminar});
             this.ContextMenuStrip_Alumno.Name = "ContextMenuStrip_Alumno";
-            this.ContextMenuStrip_Alumno.Size = new System.Drawing.Size(126, 26);
+            this.ContextMenuStrip_Alumno.Size = new System.Drawing.Size(118, 26);
             // 
-            // ToolStripMenuItem_Alumno_Modificar
+            // ToolStripMenuItem_Alumno_Eliminar
             // 
-            this.ToolStripMenuItem_Alumno_Modificar.Name = "ToolStripMenuItem_Alumno_Modificar";
-            this.ToolStripMenuItem_Alumno_Modificar.Size = new System.Drawing.Size(125, 22);
-            this.ToolStripMenuItem_Alumno_Modificar.Text = "Modificar";
-            this.ToolStripMenuItem_Alumno_Modificar.Click += new System.EventHandler(this.ToolStripMenuItem_Alumno_Modificar_Click);
+            this.ToolStripMenuItem_Alumno_Eliminar.Name = "ToolStripMenuItem_Alumno_Eliminar";
+            this.ToolStripMenuItem_Alumno_Eliminar.Size = new System.Drawing.Size(117, 22);
+            this.ToolStripMenuItem_Alumno_Eliminar.Text = "Eliminar";
+            this.ToolStripMenuItem_Alumno_Eliminar.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ToolStripMenuItem_Alumno_Eliminar_MouseUp);
             // 
             // ContextMenuStrip_Grupo
             // 
@@ -1009,35 +1039,6 @@
             this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.eliminarToolStripMenuItem.Text = "Borrar";
             this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click);
-            // 
-            // groupBox_Eliminar_Grupo
-            // 
-            this.groupBox_Eliminar_Grupo.Controls.Add(this.button_EliminarGrupo);
-            this.groupBox_Eliminar_Grupo.Controls.Add(this.comboBox_Grupos_A_Eliminar);
-            this.groupBox_Eliminar_Grupo.Location = new System.Drawing.Point(74, 512);
-            this.groupBox_Eliminar_Grupo.Name = "groupBox_Eliminar_Grupo";
-            this.groupBox_Eliminar_Grupo.Size = new System.Drawing.Size(809, 124);
-            this.groupBox_Eliminar_Grupo.TabIndex = 1;
-            this.groupBox_Eliminar_Grupo.TabStop = false;
-            this.groupBox_Eliminar_Grupo.Text = "Eliminar Grupo";
-            // 
-            // comboBox_Grupos_A_Eliminar
-            // 
-            this.comboBox_Grupos_A_Eliminar.FormattingEnabled = true;
-            this.comboBox_Grupos_A_Eliminar.Location = new System.Drawing.Point(6, 28);
-            this.comboBox_Grupos_A_Eliminar.Name = "comboBox_Grupos_A_Eliminar";
-            this.comboBox_Grupos_A_Eliminar.Size = new System.Drawing.Size(792, 32);
-            this.comboBox_Grupos_A_Eliminar.TabIndex = 0;
-            // 
-            // button_EliminarGrupo
-            // 
-            this.button_EliminarGrupo.Location = new System.Drawing.Point(333, 80);
-            this.button_EliminarGrupo.Name = "button_EliminarGrupo";
-            this.button_EliminarGrupo.Size = new System.Drawing.Size(169, 38);
-            this.button_EliminarGrupo.TabIndex = 1;
-            this.button_EliminarGrupo.Text = "Eliminar Grupo";
-            this.button_EliminarGrupo.UseVisualStyleBackColor = true;
-            this.button_EliminarGrupo.Click += new System.EventHandler(this.button_EliminarGrupo_Click);
             // 
             // uC_Horario_Dia3
             // 
@@ -1082,6 +1083,7 @@
             this.TabPage_Actividades.ResumeLayout(false);
             this.TabPage_Actividades.PerformLayout();
             this.TabPage_Grupos.ResumeLayout(false);
+            this.groupBox_Eliminar_Grupo.ResumeLayout(false);
             this.groupBox_Agregar_Grupo.ResumeLayout(false);
             this.groupBox_Agregar_Grupo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Capacidad_Grupo)).EndInit();
@@ -1102,7 +1104,6 @@
             this.ContextMenuStrip_Alumno.ResumeLayout(false);
             this.ContextMenuStrip_Grupo.ResumeLayout(false);
             this.contextMenuStrip_Docente.ResumeLayout(false);
-            this.groupBox_Eliminar_Grupo.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1129,7 +1130,7 @@
         private System.Windows.Forms.RadioButton RadioButton_Nombre;
         private System.Windows.Forms.RadioButton RadioButton_NumeroControl;
         private System.Windows.Forms.ContextMenuStrip ContextMenuStrip_Alumno;
-        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_Alumno_Modificar;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_Alumno_Eliminar;
         private System.Windows.Forms.GroupBox groupBox_Agregar_Grupo;
         private System.Windows.Forms.Button button_Agregar_Grupo;
         private System.Windows.Forms.Label label_Horario_Grupo;

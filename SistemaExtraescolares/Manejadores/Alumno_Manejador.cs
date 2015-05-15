@@ -91,5 +91,55 @@ namespace SistemaExtraescolares
                 Connection.Close();
             }
         }
+
+        public void Actualizar(Alumno A)
+        {
+            try
+            {
+                Connection.Open();
+                String Query = "update Alumnos set NumeroDeControl = @NumeroDeControl, Nombre = @Nombre, Apellidos = @Apellidos, " +
+                    "Edad = @Edad, Sexo = @Sexo, Semestre = @Semestre, Carrera = @Carrera, Email = @Email, Telefono = @Telefono where IDAlumno = @IDAlumno;";
+                SqlCommand Command = new SqlCommand(Query, Connection);
+                Command.Parameters.AddWithValue("@NumeroDeControl", A.NumeroDeControl);
+                Command.Parameters.AddWithValue("@Nombre", A.Nombre);
+                Command.Parameters.AddWithValue("@Apellidos", A.Apellidos);
+                Command.Parameters.AddWithValue("@Edad", A.Edad);
+                Command.Parameters.AddWithValue("@Sexo", A.Sexo);
+                Command.Parameters.AddWithValue("@Semestre", A.Semestre);
+                Command.Parameters.AddWithValue("@Carrera", A.Carrera);
+                Command.Parameters.AddWithValue("@Email", A.Email);
+                Command.Parameters.AddWithValue("@Telefono", A.Telefono);
+                Command.Parameters.AddWithValue("@IDAlumno", A.IDAlumno);
+                Command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                Connection.Close();
+            }
+        }
+
+        public void Eliminar(int id)
+        {
+            try
+            {
+                Connection.Open();
+                String Query = "delete from Alumnos where IDAlumno = @IDAlumno;";
+                SqlCommand Command = new SqlCommand(Query, Connection);
+                Command.Parameters.AddWithValue("@IDAlumno", id);
+                Command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                Connection.Close();
+            }
+        }
     }
 }

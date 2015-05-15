@@ -20,6 +20,7 @@ namespace SistemaExtraescolares
         Actividad[] Actividades;
         Alumno[] Alumnos;
         Grupo[] Grupos;
+        string Alumno_ModificarAgregar;
        
         Int32 IndiceSeleccionado;
 
@@ -27,6 +28,7 @@ namespace SistemaExtraescolares
         {
             InitializeComponent();
             Delegado = Del;
+            Alumno_ModificarAgregar = "Agregar";
         }
 
         private void Button_Salir_Click(object sender, EventArgs e)
@@ -103,6 +105,7 @@ namespace SistemaExtraescolares
             {
                 comboBox_Actividades.Items.Add(Act);
             }
+            comboBox_Grupos_A_Eliminar.Items.Clear();
             foreach (Grupo Grup in Grupos)
             {
                 comboBox_Grupos_A_Eliminar.Items.Add(Grup);
@@ -141,6 +144,18 @@ namespace SistemaExtraescolares
                 ListBox_Alumnos.Items.Add(Alum);
             }
             RadioButton_NumeroControl.Checked = true;
+
+            Alumno_ModificarAgregar = "Agregar";
+            btn_Add_Alumno.Text = "Agregar Alumno";
+            tbx_nControl.Clear();
+            tbx_nombre.Clear();
+            tbx_apellidos.Clear();
+            tbx_email.Clear();
+            tbx_carrera.Clear();
+            tbx_semestre.Clear();
+            tbx_telefono.Clear();
+            numericUpDown1.Value = 0;
+            comboBox1.Text = "";
         }
 
         private void ToolStripMenuItem_Actividad_Modificar_Click(object sender, EventArgs e)
@@ -198,10 +213,7 @@ namespace SistemaExtraescolares
             }
         }
 
-        private void ToolStripMenuItem_Alumno_Modificar_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void TextBox_BuscarAlumno_TextChanged(object sender, EventArgs e)
         {
@@ -490,68 +502,136 @@ namespace SistemaExtraescolares
 
         private void btn_Add_Alumno_Click(object sender, EventArgs e)
         {
-            String Nombre = "", Apellidos = "", Email = "", Telefono = "", N_control = "", Semestre = "", Carrera = "";
-            int Edad = 0;
-            int ID = 2;
-            Char Sexo = '0';
-
-            if ((tbx_nControl.Text == "") || (tbx_nombre.Text == "") || (tbx_apellidos.Text == "") || (tbx_telefono.Text == "") ||
-               (tbx_email.Text == "") || (tbx_carrera.Text == "") || (tbx_semestre.Text == "")
-               || (comboBox1.SelectedIndex.Equals(-1)) || numericUpDown1.Value.ToString() == "0")
+            if (Alumno_ModificarAgregar == "Agregar")
             {
-                MessageBox.Show("Llene todos los datos porfavor");
+                String Nombre = "", Apellidos = "", Email = "", Telefono = "", N_control = "", Semestre = "", Carrera = "";
+                int Edad = 0;
+                int ID = 2;
+                Char Sexo = '0';
 
-            }
-            else
-            {
-                N_control = tbx_nControl.Text;
-                Nombre = tbx_nombre.Text;
-                Apellidos = tbx_apellidos.Text;
-                Edad = (int)Convert.ToDecimal(numericUpDown1.Value);
-                if (comboBox1.Text == "Hombre")
+                if ((tbx_nControl.Text == "") || (tbx_nombre.Text == "") || (tbx_apellidos.Text == "") || (tbx_telefono.Text == "") ||
+                   (tbx_carrera.Text == "") || (tbx_semestre.Text == "")
+                   || (comboBox1.SelectedIndex.Equals(-1)) || numericUpDown1.Value.ToString() == "0")
                 {
-                    Sexo = 'H';
+                    MessageBox.Show("Llene todos los datos porfavor");
+
                 }
                 else
                 {
-                    Sexo = 'M';
+                    N_control = tbx_nControl.Text;
+                    Nombre = tbx_nombre.Text;
+                    Apellidos = tbx_apellidos.Text;
+                    Edad = (int)Convert.ToDecimal(numericUpDown1.Value);
+                    if (comboBox1.Text == "Hombre")
+                    {
+                        Sexo = 'H';
+                    }
+                    else
+                    {
+                        Sexo = 'M';
+                    }
+                    //Sexo = Convert.ToChar(comboBox_Sexo.Text);
+                    Carrera = tbx_carrera.Text;
+                    Semestre = tbx_semestre.Text;
+                    Email = tbx_email.Text;
+                    Telefono = tbx_telefono.Text;
+                    Alumno Nuevo_Alumno = new Alumno();
+                    Nuevo_Alumno.NumeroDeControl = N_control;
+                    Nuevo_Alumno.Nombre = Nombre;
+                    Nuevo_Alumno.Apellidos = Apellidos;
+                    Nuevo_Alumno.Edad = Edad;
+                    Nuevo_Alumno.Sexo = Sexo;
+                    Nuevo_Alumno.Carrera = Carrera;
+                    Nuevo_Alumno.Semestre = Convert.ToInt32(Semestre);
+                    Nuevo_Alumno.Email = Email;
+                    Nuevo_Alumno.Telefono = Telefono;
+                    Nuevo_Alumno.IDUsuario = ID;
+
+                    // N_control, Nombre, Apellidos, Edad, Sexo, Semestre, Carrera, Email, Telefono,ID
+                    Alumno_Manejador Manejador_Doc = new Alumno_Manejador();
+
+                    Manejador_Doc.Agregar_Alumno(Nuevo_Alumno);
+
+                    tbx_nControl.Clear();
+                    tbx_nombre.Clear();
+                    tbx_apellidos.Clear();
+                    tbx_email.Clear();
+                    tbx_carrera.Clear();
+                    tbx_semestre.Clear();
+                    tbx_telefono.Clear();
+                    numericUpDown1.Value = 0;
+                    comboBox1.Text = "";
+
+                    Alumnos_ConDatos = false;
+                    Cargar_Alumnos();
+                    Cargar_PestañaAlumnos();
+
                 }
-                //Sexo = Convert.ToChar(comboBox_Sexo.Text);
-                Carrera = tbx_carrera.Text;
-                Semestre = tbx_semestre.Text;
-                Email = tbx_email.Text;
-                Telefono = tbx_telefono.Text;
-                Alumno Nuevo_Alumno = new Alumno();
-                Nuevo_Alumno.NumeroDeControl = N_control;
-                Nuevo_Alumno.Nombre = Nombre;
-                Nuevo_Alumno.Apellidos = Apellidos;
-                Nuevo_Alumno.Edad = Edad;
-                Nuevo_Alumno.Sexo = Sexo;
-                Nuevo_Alumno.Carrera = Carrera;
-                Nuevo_Alumno.Semestre = Convert.ToInt32(Semestre);
-                Nuevo_Alumno.Email = Email;
-                Nuevo_Alumno.Telefono = Telefono;
-                Nuevo_Alumno.IDUsuario = ID;
-                
-               // N_control, Nombre, Apellidos, Edad, Sexo, Semestre, Carrera, Email, Telefono,ID
-                Alumno_Manejador Manejador_Doc = new Alumno_Manejador();
+            }
+            else if (Alumno_ModificarAgregar == "Modificar")
+            {
+                String Nombre = "", Apellidos = "", Email = "", Telefono = "", N_control = "", Semestre = "", Carrera = "";
+                int Edad = 0;
+                Char Sexo = '0';
 
-                Manejador_Doc.Agregar_Alumno(Nuevo_Alumno);
+                if ((tbx_nControl.Text == "") || (tbx_nombre.Text == "") || (tbx_apellidos.Text == "") || (tbx_telefono.Text == "") ||
+                   (tbx_carrera.Text == "") || (tbx_semestre.Text == "")
+                   || (comboBox1.SelectedIndex.Equals(-1)) || numericUpDown1.Value.ToString() == "0")
+                {
+                    MessageBox.Show("Llene todos los datos porfavor");
+                }
+                else
+                {
+                    N_control = tbx_nControl.Text;
+                    Nombre = tbx_nombre.Text;
+                    Apellidos = tbx_apellidos.Text;
+                    Edad = (int)Convert.ToDecimal(numericUpDown1.Value);
+                    if (comboBox1.Text == "Hombre")
+                    {
+                        Sexo = 'H';
+                    }
+                    else
+                    {
+                        Sexo = 'M';
+                    }
+                    //Sexo = Convert.ToChar(comboBox_Sexo.Text);
+                    Carrera = tbx_carrera.Text;
+                    Semestre = tbx_semestre.Text;
+                    Email = tbx_email.Text;
+                    Telefono = tbx_telefono.Text;
+                    Alumno Nuevo_Alumno = new Alumno();
+                    Nuevo_Alumno.NumeroDeControl = N_control;
+                    Nuevo_Alumno.Nombre = Nombre;
+                    Nuevo_Alumno.Apellidos = Apellidos;
+                    Nuevo_Alumno.Edad = Edad;
+                    Nuevo_Alumno.Sexo = Sexo;
+                    Nuevo_Alumno.Carrera = Carrera;
+                    Nuevo_Alumno.Semestre = Convert.ToInt32(Semestre);
+                    Nuevo_Alumno.Email = Email;
+                    Nuevo_Alumno.Telefono = Telefono;
 
-                tbx_nControl.Clear();
-                tbx_nombre.Clear();
-                tbx_apellidos.Clear();
-                tbx_email.Clear();
-                tbx_carrera.Clear();
-                tbx_semestre.Clear();
-                tbx_telefono.Clear();
-                numericUpDown1.Value = 0;
-                comboBox1.Text = "";
+                    Nuevo_Alumno.IDAlumno = ((Alumno)ListBox_Alumnos.SelectedItem).IDAlumno;
 
-                Alumnos_ConDatos = false;
-                Cargar_Alumnos();
-                Cargar_PestañaAlumnos();
+                    // N_control, Nombre, Apellidos, Edad, Sexo, Semestre, Carrera, Email, Telefono,ID
+                    Alumno_Manejador Manejador_Doc = new Alumno_Manejador();
 
+                    Manejador_Doc.Actualizar(Nuevo_Alumno);
+
+                    tbx_nControl.Clear();
+                    tbx_nombre.Clear();
+                    tbx_apellidos.Clear();
+                    tbx_email.Clear();
+                    tbx_carrera.Clear();
+                    tbx_semestre.Clear();
+                    tbx_telefono.Clear();
+                    numericUpDown1.Value = 0;
+                    comboBox1.Text = "";
+
+                    Alumnos_ConDatos = false;
+                    Cargar_Alumnos();
+                    Cargar_PestañaAlumnos();
+
+                }
             }
         }
 
@@ -559,11 +639,11 @@ namespace SistemaExtraescolares
         {
 
         }
-
+        
         private void button_EliminarGrupo_Click(object sender, EventArgs e)
         {
             DialogResult _ResultadoDialogo = MessageBox.Show("¿Esta realmente seguro de eliminar el grupo seleccionado?"+
-            "Este cambio no podra cambiarse", "¿Eliminar Grupo?", MessageBoxButtons.YesNo);
+            " Este cambio no podra ser revertido", "¿Eliminar Grupo?", MessageBoxButtons.YesNo);
             
             if (_ResultadoDialogo == DialogResult.Yes)
             {
@@ -576,6 +656,65 @@ namespace SistemaExtraescolares
                 Cargar_PestañaGrupos();
             }
             
+        }
+
+        private void ListBox_Alumnos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ListBox_Alumnos.SelectedIndex == -1)
+            {
+                Alumno_ModificarAgregar = "Agregar";
+                btn_Add_Alumno.Text = "Agregar Alumno";
+                tbx_nControl.Clear();
+                tbx_nombre.Clear();
+                tbx_apellidos.Clear();
+                tbx_email.Clear();
+                tbx_carrera.Clear();
+                tbx_semestre.Clear();
+                tbx_telefono.Clear();
+                numericUpDown1.Value = 0;
+                comboBox1.Text = "";
+            }
+            else
+            {
+                Alumno_ModificarAgregar = "Modificar";
+                btn_Add_Alumno.Text = "Modificar Alumno";
+
+                Alumno A = (Alumno)ListBox_Alumnos.SelectedItem;
+                
+                tbx_nControl.Text = A.NumeroDeControl;
+                tbx_nombre.Text = A.Nombre;
+                tbx_apellidos.Text = A.Apellidos;
+                tbx_email.Text = A.Email;
+                tbx_carrera.Text = A.Carrera;
+                tbx_semestre.Text = A.Semestre.ToString();
+                tbx_telefono.Text = A.Telefono;
+                numericUpDown1.Value = A.Edad;
+                if (A.Sexo == 'H')
+                {
+                    comboBox1.SelectedItem = "Hombre";
+                }
+                else
+                {
+                    comboBox1.SelectedItem = "Mujer";
+                }
+                
+            }
+        }
+
+        private void ToolStripMenuItem_Alumno_Eliminar_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (e.Button == System.Windows.Forms.MouseButtons.Left)
+            {
+                DialogResult = MessageBox.Show("¿Eliminar Alumno?", "Aviso!", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+                if (DialogResult == System.Windows.Forms.DialogResult.OK)
+                {
+                    Alumno_Manejador Manejador = new Alumno_Manejador();
+                    Manejador.Eliminar(((Alumno)ListBox_Alumnos.SelectedItem).IDAlumno);
+                    Alumnos_ConDatos = false;
+                    Cargar_Alumnos();
+                    Cargar_PestañaAlumnos();
+                }
+            }
         }
 
     }
