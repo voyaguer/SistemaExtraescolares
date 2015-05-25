@@ -48,6 +48,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label_Dia1 = new System.Windows.Forms.Label();
             this.checkBox_Dia2 = new System.Windows.Forms.CheckBox();
+            this.uC_Horario_Dia3 = new SistemaExtraescolares.UC_Horario_Dia();
+            this.uC_Horario_Dia2 = new SistemaExtraescolares.UC_Horario_Dia();
+            this.uC_Horario_Dia1 = new SistemaExtraescolares.UC_Horario_Dia();
             this.button_Agregar_Grupo = new System.Windows.Forms.Button();
             this.label_Horario_Grupo = new System.Windows.Forms.Label();
             this.numericUpDown_Capacidad_Grupo = new System.Windows.Forms.NumericUpDown();
@@ -93,7 +96,7 @@
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.tbx_apellidos = new System.Windows.Forms.TextBox();
+            this.tbx_apellidoP = new System.Windows.Forms.TextBox();
             this.tbx_nombre = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -117,9 +120,8 @@
             this.contextMenuStrip_Docente = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.modificarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.uC_Horario_Dia3 = new SistemaExtraescolares.UC_Horario_Dia();
-            this.uC_Horario_Dia2 = new SistemaExtraescolares.UC_Horario_Dia();
-            this.uC_Horario_Dia1 = new SistemaExtraescolares.UC_Horario_Dia();
+            this.tbx_apellidoM = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.TabControl_Principal.SuspendLayout();
             this.TabPage_Inicio.SuspendLayout();
@@ -364,6 +366,35 @@
             this.checkBox_Dia2.TabIndex = 31;
             this.checkBox_Dia2.UseVisualStyleBackColor = true;
             this.checkBox_Dia2.CheckedChanged += new System.EventHandler(this.checkBox_Dia2_CheckedChanged);
+            // 
+            // uC_Horario_Dia3
+            // 
+            this.uC_Horario_Dia3.Enabled = false;
+            this.uC_Horario_Dia3.Horario = null;
+            this.uC_Horario_Dia3.Location = new System.Drawing.Point(561, 206);
+            this.uC_Horario_Dia3.Margin = new System.Windows.Forms.Padding(20, 14, 20, 14);
+            this.uC_Horario_Dia3.Name = "uC_Horario_Dia3";
+            this.uC_Horario_Dia3.Size = new System.Drawing.Size(237, 191);
+            this.uC_Horario_Dia3.TabIndex = 30;
+            // 
+            // uC_Horario_Dia2
+            // 
+            this.uC_Horario_Dia2.Enabled = false;
+            this.uC_Horario_Dia2.Horario = null;
+            this.uC_Horario_Dia2.Location = new System.Drawing.Point(318, 206);
+            this.uC_Horario_Dia2.Margin = new System.Windows.Forms.Padding(11, 8, 11, 8);
+            this.uC_Horario_Dia2.Name = "uC_Horario_Dia2";
+            this.uC_Horario_Dia2.Size = new System.Drawing.Size(242, 190);
+            this.uC_Horario_Dia2.TabIndex = 29;
+            // 
+            // uC_Horario_Dia1
+            // 
+            this.uC_Horario_Dia1.Horario = null;
+            this.uC_Horario_Dia1.Location = new System.Drawing.Point(51, 206);
+            this.uC_Horario_Dia1.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.uC_Horario_Dia1.Name = "uC_Horario_Dia1";
+            this.uC_Horario_Dia1.Size = new System.Drawing.Size(231, 193);
+            this.uC_Horario_Dia1.TabIndex = 28;
             // 
             // button_Agregar_Grupo
             // 
@@ -680,6 +711,8 @@
             // 
             // gbx_Add_Alumno
             // 
+            this.gbx_Add_Alumno.Controls.Add(this.tbx_apellidoM);
+            this.gbx_Add_Alumno.Controls.Add(this.label4);
             this.gbx_Add_Alumno.Controls.Add(this.btn_Add_Alumno);
             this.gbx_Add_Alumno.Controls.Add(this.tbx_semestre);
             this.gbx_Add_Alumno.Controls.Add(this.label13);
@@ -695,13 +728,13 @@
             this.gbx_Add_Alumno.Controls.Add(this.numericUpDown1);
             this.gbx_Add_Alumno.Controls.Add(this.label7);
             this.gbx_Add_Alumno.Controls.Add(this.label8);
-            this.gbx_Add_Alumno.Controls.Add(this.tbx_apellidos);
+            this.gbx_Add_Alumno.Controls.Add(this.tbx_apellidoP);
             this.gbx_Add_Alumno.Controls.Add(this.tbx_nombre);
             this.gbx_Add_Alumno.Controls.Add(this.label5);
             this.gbx_Add_Alumno.Controls.Add(this.label6);
             this.gbx_Add_Alumno.Location = new System.Drawing.Point(514, 6);
             this.gbx_Add_Alumno.Name = "gbx_Add_Alumno";
-            this.gbx_Add_Alumno.Size = new System.Drawing.Size(276, 433);
+            this.gbx_Add_Alumno.Size = new System.Drawing.Size(276, 459);
             this.gbx_Add_Alumno.TabIndex = 4;
             this.gbx_Add_Alumno.TabStop = false;
             this.gbx_Add_Alumno.Text = "Agregar Alumno";
@@ -709,7 +742,7 @@
             // 
             // btn_Add_Alumno
             // 
-            this.btn_Add_Alumno.Location = new System.Drawing.Point(42, 376);
+            this.btn_Add_Alumno.Location = new System.Drawing.Point(40, 405);
             this.btn_Add_Alumno.Name = "btn_Add_Alumno";
             this.btn_Add_Alumno.Size = new System.Drawing.Size(194, 37);
             this.btn_Add_Alumno.TabIndex = 13;
@@ -719,7 +752,7 @@
             // 
             // tbx_semestre
             // 
-            this.tbx_semestre.Location = new System.Drawing.Point(105, 254);
+            this.tbx_semestre.Location = new System.Drawing.Point(105, 289);
             this.tbx_semestre.Name = "tbx_semestre";
             this.tbx_semestre.Size = new System.Drawing.Size(153, 29);
             this.tbx_semestre.TabIndex = 10;
@@ -727,7 +760,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(16, 259);
+            this.label13.Location = new System.Drawing.Point(16, 294);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(90, 24);
             this.label13.TabIndex = 31;
@@ -735,7 +768,7 @@
             // 
             // tbx_carrera
             // 
-            this.tbx_carrera.Location = new System.Drawing.Point(105, 219);
+            this.tbx_carrera.Location = new System.Drawing.Point(105, 254);
             this.tbx_carrera.Name = "tbx_carrera";
             this.tbx_carrera.Size = new System.Drawing.Size(153, 29);
             this.tbx_carrera.TabIndex = 9;
@@ -743,7 +776,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(16, 224);
+            this.label12.Location = new System.Drawing.Point(16, 259);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(72, 24);
             this.label12.TabIndex = 29;
@@ -767,14 +800,14 @@
             // 
             // tbx_email
             // 
-            this.tbx_email.Location = new System.Drawing.Point(105, 289);
+            this.tbx_email.Location = new System.Drawing.Point(105, 324);
             this.tbx_email.Name = "tbx_email";
             this.tbx_email.Size = new System.Drawing.Size(153, 29);
             this.tbx_email.TabIndex = 11;
             // 
             // tbx_telefono
             // 
-            this.tbx_telefono.Location = new System.Drawing.Point(105, 324);
+            this.tbx_telefono.Location = new System.Drawing.Point(105, 359);
             this.tbx_telefono.Name = "tbx_telefono";
             this.tbx_telefono.Size = new System.Drawing.Size(153, 29);
             this.tbx_telefono.TabIndex = 12;
@@ -782,7 +815,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(15, 329);
+            this.label9.Location = new System.Drawing.Point(15, 364);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(85, 24);
             this.label9.TabIndex = 25;
@@ -791,7 +824,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(16, 292);
+            this.label10.Location = new System.Drawing.Point(16, 327);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(57, 24);
             this.label10.TabIndex = 23;
@@ -804,14 +837,14 @@
             this.comboBox1.Items.AddRange(new object[] {
             "Hombre",
             "Mujer"});
-            this.comboBox1.Location = new System.Drawing.Point(105, 181);
+            this.comboBox1.Location = new System.Drawing.Point(105, 216);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(153, 32);
             this.comboBox1.TabIndex = 8;
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(105, 146);
+            this.numericUpDown1.Location = new System.Drawing.Point(105, 181);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(153, 29);
             this.numericUpDown1.TabIndex = 7;
@@ -819,7 +852,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(16, 189);
+            this.label7.Location = new System.Drawing.Point(16, 224);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(54, 24);
             this.label7.TabIndex = 21;
@@ -828,18 +861,18 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(16, 151);
+            this.label8.Location = new System.Drawing.Point(16, 186);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(55, 24);
             this.label8.TabIndex = 19;
             this.label8.Text = "Edad";
             // 
-            // tbx_apellidos
+            // tbx_apellidoP
             // 
-            this.tbx_apellidos.Location = new System.Drawing.Point(105, 111);
-            this.tbx_apellidos.Name = "tbx_apellidos";
-            this.tbx_apellidos.Size = new System.Drawing.Size(153, 29);
-            this.tbx_apellidos.TabIndex = 6;
+            this.tbx_apellidoP.Location = new System.Drawing.Point(105, 111);
+            this.tbx_apellidoP.Name = "tbx_apellidoP";
+            this.tbx_apellidoP.Size = new System.Drawing.Size(153, 29);
+            this.tbx_apellidoP.TabIndex = 6;
             // 
             // tbx_nombre
             // 
@@ -853,9 +886,9 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(15, 117);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(88, 24);
+            this.label5.Size = new System.Drawing.Size(91, 24);
             this.label5.TabIndex = 16;
-            this.label5.Text = "Apellidos";
+            this.label5.Text = "ApellidoP";
             // 
             // label6
             // 
@@ -1040,34 +1073,21 @@
             this.eliminarToolStripMenuItem.Text = "Borrar";
             this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click);
             // 
-            // uC_Horario_Dia3
+            // tbx_apellidoM
             // 
-            this.uC_Horario_Dia3.Enabled = false;
-            this.uC_Horario_Dia3.Horario = null;
-            this.uC_Horario_Dia3.Location = new System.Drawing.Point(561, 206);
-            this.uC_Horario_Dia3.Margin = new System.Windows.Forms.Padding(20, 14, 20, 14);
-            this.uC_Horario_Dia3.Name = "uC_Horario_Dia3";
-            this.uC_Horario_Dia3.Size = new System.Drawing.Size(237, 191);
-            this.uC_Horario_Dia3.TabIndex = 30;
+            this.tbx_apellidoM.Location = new System.Drawing.Point(105, 146);
+            this.tbx_apellidoM.Name = "tbx_apellidoM";
+            this.tbx_apellidoM.Size = new System.Drawing.Size(153, 29);
+            this.tbx_apellidoM.TabIndex = 32;
             // 
-            // uC_Horario_Dia2
+            // label4
             // 
-            this.uC_Horario_Dia2.Enabled = false;
-            this.uC_Horario_Dia2.Horario = null;
-            this.uC_Horario_Dia2.Location = new System.Drawing.Point(318, 206);
-            this.uC_Horario_Dia2.Margin = new System.Windows.Forms.Padding(11, 8, 11, 8);
-            this.uC_Horario_Dia2.Name = "uC_Horario_Dia2";
-            this.uC_Horario_Dia2.Size = new System.Drawing.Size(242, 190);
-            this.uC_Horario_Dia2.TabIndex = 29;
-            // 
-            // uC_Horario_Dia1
-            // 
-            this.uC_Horario_Dia1.Horario = null;
-            this.uC_Horario_Dia1.Location = new System.Drawing.Point(51, 206);
-            this.uC_Horario_Dia1.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.uC_Horario_Dia1.Name = "uC_Horario_Dia1";
-            this.uC_Horario_Dia1.Size = new System.Drawing.Size(231, 193);
-            this.uC_Horario_Dia1.TabIndex = 28;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(15, 152);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(95, 24);
+            this.label4.TabIndex = 33;
+            this.label4.Text = "ApellidoM";
             // 
             // Form_Administrador
             // 
@@ -1191,7 +1211,7 @@
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox tbx_apellidos;
+        private System.Windows.Forms.TextBox tbx_apellidoP;
         private System.Windows.Forms.TextBox tbx_nombre;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
@@ -1201,5 +1221,7 @@
         private System.Windows.Forms.GroupBox groupBox_Eliminar_Grupo;
         private System.Windows.Forms.ComboBox comboBox_Grupos_A_Eliminar;
         private System.Windows.Forms.Button button_EliminarGrupo;
+        private System.Windows.Forms.TextBox tbx_apellidoM;
+        private System.Windows.Forms.Label label4;
     }
 }

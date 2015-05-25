@@ -32,7 +32,8 @@ create table Alumnos
 	IDAlumno int identity(1,1) unique not null,
 	NumeroDeControl nvarchar(25) unique not null,
 	Nombre nvarchar(25) not null,
-	Apellidos nvarchar(50) not null,
+	ApellidoP nvarchar(25) not null,
+	ApellidoM nvarchar(25) not null,
 	Edad tinyint not null,
 	Sexo char(1) not null, -- H -> Hombre || M -> Mujer
 	Semestre tinyint not null,
@@ -52,7 +53,8 @@ create table Docentes
 (
 	IDDocente int identity(1,1) unique not null,
 	Nombre nvarchar(25) not null,
-	Apellidos nvarchar(50) not null,
+	ApellidoP nvarchar(25) not null,
+	ApellidoM nvarchar(25) not null,
 	Edad tinyint not null,
 	Sexo char(1) not null, -- H -> Hombre || M -> Mujer
 	Email nvarchar(50),

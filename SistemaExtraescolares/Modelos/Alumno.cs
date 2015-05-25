@@ -7,7 +7,8 @@ namespace SistemaExtraescolares
         public Int32 IDAlumno { get; set; }
         public String NumeroDeControl { get; set; }
         public String Nombre { get; set; }
-        public String Apellidos { get; set; }
+        public String ApellidoP { get; set; }
+        public String ApellidoM { get; set; }
         public Int32 Edad { get; set; }
         public Char Sexo { get; set; }
         public Int32 Semestre { get; set; }
@@ -17,7 +18,7 @@ namespace SistemaExtraescolares
         public Int32 IDUsuario { get; set; }
         public String NombreCompleto
         {
-            get { return Nombre + " " + Apellidos; }
+            get { return Nombre + " " + ApellidoP + " " + ApellidoM; }
         }
 
         public Alumno()
@@ -25,7 +26,8 @@ namespace SistemaExtraescolares
             IDAlumno = 0;
             NumeroDeControl = String.Empty;
             Nombre = String.Empty;
-            Apellidos = String.Empty;
+            ApellidoP = String.Empty;
+            ApellidoM = String.Empty;
             Edad = 0;
             Sexo = ' ';
             Semestre = 0;

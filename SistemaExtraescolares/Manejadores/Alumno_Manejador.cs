@@ -38,7 +38,8 @@ namespace SistemaExtraescolares
                         Alum.IDAlumno = Convert.ToInt32(DataReader["IDAlumno"]);
                         Alum.NumeroDeControl = DataReader["NumeroDeControl"].ToString();
                         Alum.Nombre = DataReader["Nombre"].ToString();
-                        Alum.Apellidos = DataReader["Apellidos"].ToString();
+                        Alum.ApellidoP = DataReader["ApellidoP"].ToString();
+                        Alum.ApellidoM = DataReader["ApellidoM"].ToString();
                         Alum.Edad = Convert.ToInt32(DataReader["Edad"]);
                         Alum.Sexo = Convert.ToChar(DataReader["Sexo"]);
                         Alum.Semestre = Convert.ToInt32(DataReader["Semestre"]);
@@ -67,12 +68,13 @@ namespace SistemaExtraescolares
             try
             {
                 Connection.Open();
-                String Query = "insert into Alumnos(NumeroDeControl,Nombre, Apellidos, Edad, Sexo,Semestre, Carrera, Email, Telefono,IDUsuario) " +
-                    "values (@_NumeroDeControl, @_Nombre, @_Apellidos, @_Edad, @_Sexo,@_Semestre,@_Carrera, @_Email, @_Telefono,@_IDUsuario);";
+                String Query = "insert into Alumnos(NumeroDeControl,Nombre, ApellidoP, ApellidoM, Edad, Sexo,Semestre, Carrera, Email, Telefono,IDUsuario) " +
+                    "values (@_NumeroDeControl, @_Nombre, @_ApellidoP, @_ApellidoM, @_Edad, @_Sexo,@_Semestre,@_Carrera, @_Email, @_Telefono,@_IDUsuario);";
                 SqlCommand Command = new SqlCommand(Query, Connection);
                 Command.Parameters.AddWithValue("@_NumeroDeControl", Nuevo_Alumno.NumeroDeControl);
                 Command.Parameters.AddWithValue("@_Nombre", Nuevo_Alumno.Nombre);
-                Command.Parameters.AddWithValue("@_Apellidos", Nuevo_Alumno.Apellidos);
+                Command.Parameters.AddWithValue("@_ApellidoP", Nuevo_Alumno.ApellidoP);
+                Command.Parameters.AddWithValue("@_ApellidoM", Nuevo_Alumno.ApellidoM);
                 Command.Parameters.AddWithValue("@_Edad", Nuevo_Alumno.Edad);
                 Command.Parameters.AddWithValue("@_Sexo", Nuevo_Alumno.Sexo);
                 Command.Parameters.AddWithValue("@_Semestre", Nuevo_Alumno.Semestre);
@@ -97,12 +99,13 @@ namespace SistemaExtraescolares
             try
             {
                 Connection.Open();
-                String Query = "update Alumnos set NumeroDeControl = @NumeroDeControl, Nombre = @Nombre, Apellidos = @Apellidos, " +
+                String Query = "update Alumnos set NumeroDeControl = @NumeroDeControl, Nombre = @Nombre, ApellidoP = @ApellidoP, ApellidoM = @ApellidoM," +
                     "Edad = @Edad, Sexo = @Sexo, Semestre = @Semestre, Carrera = @Carrera, Email = @Email, Telefono = @Telefono where IDAlumno = @IDAlumno;";
                 SqlCommand Command = new SqlCommand(Query, Connection);
                 Command.Parameters.AddWithValue("@NumeroDeControl", A.NumeroDeControl);
                 Command.Parameters.AddWithValue("@Nombre", A.Nombre);
-                Command.Parameters.AddWithValue("@Apellidos", A.Apellidos);
+                Command.Parameters.AddWithValue("@ApellidoP", A.ApellidoP);
+                Command.Parameters.AddWithValue("@ApellidoM", A.ApellidoM);
                 Command.Parameters.AddWithValue("@Edad", A.Edad);
                 Command.Parameters.AddWithValue("@Sexo", A.Sexo);
                 Command.Parameters.AddWithValue("@Semestre", A.Semestre);

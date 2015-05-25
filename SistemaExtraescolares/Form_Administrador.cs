@@ -149,7 +149,7 @@ namespace SistemaExtraescolares
             btn_Add_Alumno.Text = "Agregar Alumno";
             tbx_nControl.Clear();
             tbx_nombre.Clear();
-            tbx_apellidos.Clear();
+            tbx_apellidoP.Clear();
             tbx_email.Clear();
             tbx_carrera.Clear();
             tbx_semestre.Clear();
@@ -436,28 +436,35 @@ namespace SistemaExtraescolares
                 ApellidoP = textBox_ApellidoP.Text;
                 ApellidoM = textBox_ApellidoM.Text;
                 Edad = Convert.ToInt32(numericUpDown_Edad.Value);
-                Sexo = Convert.ToChar(comboBox_Sexo.Text);
+                if (comboBox_Sexo.Text == "Hombre")
+                {
+                    Sexo = 'H';
+                }
+                else if(comboBox_Sexo.Text == "Mujer") 
+                {
+                    Sexo = 'M';
+                }
                 Email = textBox_Email.Text;
                 Telefono = textBox_Telefono.Text;
+
+                Docente Nuevo_Docente = new Docente(Nombre, ApellidoP, ApellidoM, Edad, Sexo, Email, Telefono);
+
+                Docente_Manejador Manejador_Doc = new Docente_Manejador();
+
+                Manejador_Doc.Agregar_Docente(Nuevo_Docente);
+
+                textBox_Nombre.Clear();
+                textBox_ApellidoP.Clear();
+                textBox_ApellidoM.Clear();
+                numericUpDown_Edad.Value = 0;
+                comboBox_Sexo.Text = "";
+                textBox_Email.Clear();
+                textBox_Telefono.Clear();
             }
             else
             {
                 MessageBox.Show("Llene todos los datos porfavor");
             }
-
-            Docente Nuevo_Docente = new Docente(Nombre, ApellidoP, ApellidoM, Edad, Sexo, Email, Telefono);
-
-            Docente_Manejador Manejador_Doc = new Docente_Manejador();
-
-            Manejador_Doc.Agregar_Docente(Nuevo_Docente);
-
-            textBox_Nombre.Clear();
-            textBox_ApellidoP.Clear();
-            textBox_ApellidoM.Clear();
-            numericUpDown_Edad.Value = 0;
-            comboBox_Sexo.Text = "";
-            textBox_Email.Clear();
-            textBox_Telefono.Clear();
 
         }
 
@@ -504,12 +511,12 @@ namespace SistemaExtraescolares
         {
             if (Alumno_ModificarAgregar == "Agregar")
             {
-                String Nombre = "", Apellidos = "", Email = "", Telefono = "", N_control = "", Semestre = "", Carrera = "";
+                String Nombre = "", ApellidoP = "", ApellidoM = "", Email = "", Telefono = "", N_control = "", Semestre = "", Carrera = "";
                 int Edad = 0;
                 int ID = 2;
                 Char Sexo = '0';
 
-                if ((tbx_nControl.Text == "") || (tbx_nombre.Text == "") || (tbx_apellidos.Text == "") || (tbx_telefono.Text == "") ||
+                if ((tbx_nControl.Text == "") || (tbx_nombre.Text == "") || (tbx_apellidoP.Text == "") || (tbx_apellidoM.Text == "") || (tbx_telefono.Text == "") ||
                    (tbx_carrera.Text == "") || (tbx_semestre.Text == "")
                    || (comboBox1.SelectedIndex.Equals(-1)) || numericUpDown1.Value.ToString() == "0")
                 {
@@ -520,7 +527,8 @@ namespace SistemaExtraescolares
                 {
                     N_control = tbx_nControl.Text;
                     Nombre = tbx_nombre.Text;
-                    Apellidos = tbx_apellidos.Text;
+                    ApellidoP = tbx_apellidoP.Text;
+                    ApellidoM = tbx_apellidoM.Text;
                     Edad = (int)Convert.ToDecimal(numericUpDown1.Value);
                     if (comboBox1.Text == "Hombre")
                     {
@@ -538,7 +546,8 @@ namespace SistemaExtraescolares
                     Alumno Nuevo_Alumno = new Alumno();
                     Nuevo_Alumno.NumeroDeControl = N_control;
                     Nuevo_Alumno.Nombre = Nombre;
-                    Nuevo_Alumno.Apellidos = Apellidos;
+                    Nuevo_Alumno.ApellidoP = ApellidoP;
+                    Nuevo_Alumno.ApellidoM = ApellidoM;
                     Nuevo_Alumno.Edad = Edad;
                     Nuevo_Alumno.Sexo = Sexo;
                     Nuevo_Alumno.Carrera = Carrera;
@@ -554,7 +563,7 @@ namespace SistemaExtraescolares
 
                     tbx_nControl.Clear();
                     tbx_nombre.Clear();
-                    tbx_apellidos.Clear();
+                    tbx_apellidoP.Clear();
                     tbx_email.Clear();
                     tbx_carrera.Clear();
                     tbx_semestre.Clear();
@@ -570,11 +579,11 @@ namespace SistemaExtraescolares
             }
             else if (Alumno_ModificarAgregar == "Modificar")
             {
-                String Nombre = "", Apellidos = "", Email = "", Telefono = "", N_control = "", Semestre = "", Carrera = "";
+                String Nombre = "", ApellidoP = "", ApellidoM = "", Email = "", Telefono = "", N_control = "", Semestre = "", Carrera = "";
                 int Edad = 0;
                 Char Sexo = '0';
 
-                if ((tbx_nControl.Text == "") || (tbx_nombre.Text == "") || (tbx_apellidos.Text == "") || (tbx_telefono.Text == "") ||
+                if ((tbx_nControl.Text == "") || (tbx_nombre.Text == "") || (tbx_apellidoP.Text == "") || (tbx_telefono.Text == "") ||
                    (tbx_carrera.Text == "") || (tbx_semestre.Text == "")
                    || (comboBox1.SelectedIndex.Equals(-1)) || numericUpDown1.Value.ToString() == "0")
                 {
@@ -584,7 +593,8 @@ namespace SistemaExtraescolares
                 {
                     N_control = tbx_nControl.Text;
                     Nombre = tbx_nombre.Text;
-                    Apellidos = tbx_apellidos.Text;
+                    ApellidoP = tbx_apellidoP.Text;
+                    ApellidoM = tbx_apellidoM.Text;
                     Edad = (int)Convert.ToDecimal(numericUpDown1.Value);
                     if (comboBox1.Text == "Hombre")
                     {
@@ -602,7 +612,8 @@ namespace SistemaExtraescolares
                     Alumno Nuevo_Alumno = new Alumno();
                     Nuevo_Alumno.NumeroDeControl = N_control;
                     Nuevo_Alumno.Nombre = Nombre;
-                    Nuevo_Alumno.Apellidos = Apellidos;
+                    Nuevo_Alumno.ApellidoP = ApellidoP;
+                    Nuevo_Alumno.ApellidoM = ApellidoM;
                     Nuevo_Alumno.Edad = Edad;
                     Nuevo_Alumno.Sexo = Sexo;
                     Nuevo_Alumno.Carrera = Carrera;
@@ -619,7 +630,7 @@ namespace SistemaExtraescolares
 
                     tbx_nControl.Clear();
                     tbx_nombre.Clear();
-                    tbx_apellidos.Clear();
+                    tbx_apellidoP.Clear();
                     tbx_email.Clear();
                     tbx_carrera.Clear();
                     tbx_semestre.Clear();
@@ -666,7 +677,7 @@ namespace SistemaExtraescolares
                 btn_Add_Alumno.Text = "Agregar Alumno";
                 tbx_nControl.Clear();
                 tbx_nombre.Clear();
-                tbx_apellidos.Clear();
+                tbx_apellidoP.Clear();
                 tbx_email.Clear();
                 tbx_carrera.Clear();
                 tbx_semestre.Clear();
@@ -683,7 +694,8 @@ namespace SistemaExtraescolares
                 
                 tbx_nControl.Text = A.NumeroDeControl;
                 tbx_nombre.Text = A.Nombre;
-                tbx_apellidos.Text = A.Apellidos;
+                tbx_apellidoP.Text = A.ApellidoP;
+                tbx_apellidoM.Text = A.ApellidoM;
                 tbx_email.Text = A.Email;
                 tbx_carrera.Text = A.Carrera;
                 tbx_semestre.Text = A.Semestre.ToString();
