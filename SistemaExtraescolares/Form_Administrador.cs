@@ -513,7 +513,6 @@ namespace SistemaExtraescolares
             {
                 String Nombre = "", ApellidoP = "", ApellidoM = "", Email = "", Telefono = "", N_control = "", Semestre = "", Carrera = "";
                 int Edad = 0;
-                int ID = 2;
                 Char Sexo = '0';
 
                 if ((tbx_nControl.Text == "") || (tbx_nombre.Text == "") || (tbx_apellidoP.Text == "") || (tbx_apellidoM.Text == "") || (tbx_telefono.Text == "") ||
@@ -554,7 +553,6 @@ namespace SistemaExtraescolares
                     Nuevo_Alumno.Semestre = Convert.ToInt32(Semestre);
                     Nuevo_Alumno.Email = Email;
                     Nuevo_Alumno.Telefono = Telefono;
-                    Nuevo_Alumno.IDUsuario = ID;
 
                     // N_control, Nombre, Apellidos, Edad, Sexo, Semestre, Carrera, Email, Telefono,ID
                     Alumno_Manejador Manejador_Doc = new Alumno_Manejador();

@@ -68,9 +68,20 @@ namespace SistemaExtraescolares
             try
             {
                 Connection.Open();
-                String Query = "insert into Alumnos(NumeroDeControl,Nombre, ApellidoP, ApellidoM, Edad, Sexo,Semestre, Carrera, Email, Telefono,IDUsuario) " +
-                    "values (@_NumeroDeControl, @_Nombre, @_ApellidoP, @_ApellidoM, @_Edad, @_Sexo,@_Semestre,@_Carrera, @_Email, @_Telefono,@_IDUsuario);";
+
+                String Query = "insert into Usuarios (Usuario, Passwrd, Rango) values (@Usuario, @Passwrd, 0);";
                 SqlCommand Command = new SqlCommand(Query, Connection);
+                Command.Parameters.AddWithValue("@Usuario", Nuevo_Alumno.NumeroDeControl);
+                Command.Parameters.AddWithValue("@Passwrd", Nuevo_Alumno.NumeroDeControl);
+                Command.ExecuteNonQuery();
+
+                Query = "select top 1 IDUsuario from Usuarios order by IDUsuario desc;";
+                Command = new SqlCommand(Query, Connection);
+                Int32 lastId = Convert.ToInt32(Command.ExecuteScalar());
+
+                Query = "insert into Alumnos(NumeroDeControl,Nombre, ApellidoP, ApellidoM, Edad, Sexo,Semestre, Carrera, Email, Telefono,IDUsuario) " +
+                    "values (@_NumeroDeControl, @_Nombre, @_ApellidoP, @_ApellidoM, @_Edad, @_Sexo,@_Semestre,@_Carrera, @_Email, @_Telefono,@_IDUsuario);";
+                Command = new SqlCommand(Query, Connection);
                 Command.Parameters.AddWithValue("@_NumeroDeControl", Nuevo_Alumno.NumeroDeControl);
                 Command.Parameters.AddWithValue("@_Nombre", Nuevo_Alumno.Nombre);
                 Command.Parameters.AddWithValue("@_ApellidoP", Nuevo_Alumno.ApellidoP);
@@ -81,8 +92,10 @@ namespace SistemaExtraescolares
                 Command.Parameters.AddWithValue("@_Carrera", Nuevo_Alumno.Carrera);
                 Command.Parameters.AddWithValue("@_Email", Nuevo_Alumno.Email);
                 Command.Parameters.AddWithValue("@_Telefono", Nuevo_Alumno.Telefono);
-                Command.Parameters.AddWithValue("@_IDUsuario", Nuevo_Alumno.IDUsuario);
+                Command.Parameters.AddWithValue("@_IDUsuario", lastId);
                 Command.ExecuteNonQuery();
+
+                
             }
             catch (Exception ex)
             {
