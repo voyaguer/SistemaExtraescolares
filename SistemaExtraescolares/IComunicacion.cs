@@ -10,5 +10,6 @@ namespace SistemaExtraescolares
     {
         void Salir();
         void Cargar_Principal(int Rango);
+        void Cargar_Alumnos(int rango);
     }
 }

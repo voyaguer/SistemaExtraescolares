@@ -717,5 +717,10 @@ namespace SistemaExtraescolares
             }
         }
 
+        private void Form_Administrador_Load(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

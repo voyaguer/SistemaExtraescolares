@@ -1,6 +1,6 @@
 ﻿namespace SistemaExtraescolares
 {
-    partial class Form_Alumno
+    partial class Form_Registrarse
     {
         /// <summary>
         /// Required designer variable.
@@ -29,15 +29,6 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.TabControl_Principal = new System.Windows.Forms.TabControl();
-            this.TabPage_Inicio = new System.Windows.Forms.TabPage();
-            this.Button_Salir = new System.Windows.Forms.Button();
-            this.TabPage_Actividades = new System.Windows.Forms.TabPage();
-            this.ListBox_Actividades_Alumnos = new System.Windows.Forms.ListBox();
-            this.ListBox_Actividades_Grupos = new System.Windows.Forms.ListBox();
-            this.ListBox_Actividades_Actividades = new System.Windows.Forms.ListBox();
-            this.TextBox_BuscarActividad = new System.Windows.Forms.TextBox();
-            this.TabPage_Alumnos = new System.Windows.Forms.TabPage();
             this.gbx_Add_Alumno = new System.Windows.Forms.GroupBox();
             this.btn_Add_Alumno = new System.Windows.Forms.Button();
             this.tbx_semestre = new System.Windows.Forms.TextBox();
@@ -58,119 +49,21 @@
             this.tbx_nombre = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.Button_Regresar_Login = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            this.TabControl_Principal.SuspendLayout();
-            this.TabPage_Inicio.SuspendLayout();
-            this.TabPage_Actividades.SuspendLayout();
-            this.TabPage_Alumnos.SuspendLayout();
             this.gbx_Add_Alumno.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.TabControl_Principal);
+            this.panel1.Controls.Add(this.Button_Regresar_Login);
+            this.panel1.Controls.Add(this.gbx_Add_Alumno);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1012, 681);
             this.panel1.TabIndex = 0;
-            // 
-            // TabControl_Principal
-            // 
-            this.TabControl_Principal.Controls.Add(this.TabPage_Inicio);
-            this.TabControl_Principal.Controls.Add(this.TabPage_Actividades);
-            this.TabControl_Principal.Controls.Add(this.TabPage_Alumnos);
-            this.TabControl_Principal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TabControl_Principal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TabControl_Principal.Location = new System.Drawing.Point(0, 0);
-            this.TabControl_Principal.Name = "TabControl_Principal";
-            this.TabControl_Principal.SelectedIndex = 0;
-            this.TabControl_Principal.Size = new System.Drawing.Size(1012, 681);
-            this.TabControl_Principal.TabIndex = 1;
-            this.TabControl_Principal.SelectedIndexChanged += new System.EventHandler(this.TabControl_Principal_SelectedIndexChanged);
-            // 
-            // TabPage_Inicio
-            // 
-            this.TabPage_Inicio.Controls.Add(this.Button_Salir);
-            this.TabPage_Inicio.Location = new System.Drawing.Point(4, 33);
-            this.TabPage_Inicio.Name = "TabPage_Inicio";
-            this.TabPage_Inicio.Padding = new System.Windows.Forms.Padding(3);
-            this.TabPage_Inicio.Size = new System.Drawing.Size(1004, 644);
-            this.TabPage_Inicio.TabIndex = 0;
-            this.TabPage_Inicio.Text = "Inicio";
-            this.TabPage_Inicio.UseVisualStyleBackColor = true;
-            // 
-            // Button_Salir
-            // 
-            this.Button_Salir.Location = new System.Drawing.Point(1153, 601);
-            this.Button_Salir.Name = "Button_Salir";
-            this.Button_Salir.Size = new System.Drawing.Size(95, 37);
-            this.Button_Salir.TabIndex = 0;
-            this.Button_Salir.Text = "Salir";
-            this.Button_Salir.UseVisualStyleBackColor = true;
-            // 
-            // TabPage_Actividades
-            // 
-            this.TabPage_Actividades.Controls.Add(this.ListBox_Actividades_Alumnos);
-            this.TabPage_Actividades.Controls.Add(this.ListBox_Actividades_Grupos);
-            this.TabPage_Actividades.Controls.Add(this.ListBox_Actividades_Actividades);
-            this.TabPage_Actividades.Controls.Add(this.TextBox_BuscarActividad);
-            this.TabPage_Actividades.Location = new System.Drawing.Point(4, 33);
-            this.TabPage_Actividades.Name = "TabPage_Actividades";
-            this.TabPage_Actividades.Padding = new System.Windows.Forms.Padding(3);
-            this.TabPage_Actividades.Size = new System.Drawing.Size(1004, 644);
-            this.TabPage_Actividades.TabIndex = 1;
-            this.TabPage_Actividades.Text = "Actividades";
-            this.TabPage_Actividades.UseVisualStyleBackColor = true;
-            // 
-            // ListBox_Actividades_Alumnos
-            // 
-            this.ListBox_Actividades_Alumnos.FormattingEnabled = true;
-            this.ListBox_Actividades_Alumnos.ItemHeight = 24;
-            this.ListBox_Actividades_Alumnos.Location = new System.Drawing.Point(800, 43);
-            this.ListBox_Actividades_Alumnos.Name = "ListBox_Actividades_Alumnos";
-            this.ListBox_Actividades_Alumnos.Size = new System.Drawing.Size(450, 580);
-            this.ListBox_Actividades_Alumnos.TabIndex = 4;
-            this.ListBox_Actividades_Alumnos.Visible = false;
-            // 
-            // ListBox_Actividades_Grupos
-            // 
-            this.ListBox_Actividades_Grupos.FormattingEnabled = true;
-            this.ListBox_Actividades_Grupos.HorizontalScrollbar = true;
-            this.ListBox_Actividades_Grupos.ItemHeight = 24;
-            this.ListBox_Actividades_Grupos.Location = new System.Drawing.Point(304, 43);
-            this.ListBox_Actividades_Grupos.Name = "ListBox_Actividades_Grupos";
-            this.ListBox_Actividades_Grupos.Size = new System.Drawing.Size(490, 580);
-            this.ListBox_Actividades_Grupos.TabIndex = 3;
-            this.ListBox_Actividades_Grupos.Visible = false;
-            // 
-            // ListBox_Actividades_Actividades
-            // 
-            this.ListBox_Actividades_Actividades.FormattingEnabled = true;
-            this.ListBox_Actividades_Actividades.ItemHeight = 24;
-            this.ListBox_Actividades_Actividades.Location = new System.Drawing.Point(8, 43);
-            this.ListBox_Actividades_Actividades.Name = "ListBox_Actividades_Actividades";
-            this.ListBox_Actividades_Actividades.Size = new System.Drawing.Size(290, 580);
-            this.ListBox_Actividades_Actividades.TabIndex = 2;
-            // 
-            // TextBox_BuscarActividad
-            // 
-            this.TextBox_BuscarActividad.Location = new System.Drawing.Point(8, 6);
-            this.TextBox_BuscarActividad.Name = "TextBox_BuscarActividad";
-            this.TextBox_BuscarActividad.Size = new System.Drawing.Size(290, 29);
-            this.TextBox_BuscarActividad.TabIndex = 1;
-            // 
-            // TabPage_Alumnos
-            // 
-            this.TabPage_Alumnos.Controls.Add(this.gbx_Add_Alumno);
-            this.TabPage_Alumnos.Location = new System.Drawing.Point(4, 33);
-            this.TabPage_Alumnos.Name = "TabPage_Alumnos";
-            this.TabPage_Alumnos.Padding = new System.Windows.Forms.Padding(3);
-            this.TabPage_Alumnos.Size = new System.Drawing.Size(1004, 644);
-            this.TabPage_Alumnos.TabIndex = 4;
-            this.TabPage_Alumnos.Text = "Mi Perfil";
-            this.TabPage_Alumnos.UseVisualStyleBackColor = true;
             // 
             // gbx_Add_Alumno
             // 
@@ -193,12 +86,13 @@
             this.gbx_Add_Alumno.Controls.Add(this.tbx_nombre);
             this.gbx_Add_Alumno.Controls.Add(this.label5);
             this.gbx_Add_Alumno.Controls.Add(this.label6);
-            this.gbx_Add_Alumno.Location = new System.Drawing.Point(36, 34);
+            this.gbx_Add_Alumno.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbx_Add_Alumno.Location = new System.Drawing.Point(87, 80);
             this.gbx_Add_Alumno.Name = "gbx_Add_Alumno";
             this.gbx_Add_Alumno.Size = new System.Drawing.Size(276, 433);
-            this.gbx_Add_Alumno.TabIndex = 4;
+            this.gbx_Add_Alumno.TabIndex = 5;
             this.gbx_Add_Alumno.TabStop = false;
-            this.gbx_Add_Alumno.Text = "Alumno";
+            this.gbx_Add_Alumno.Text = "Agregar Alumno";
             // 
             // btn_Add_Alumno
             // 
@@ -206,7 +100,7 @@
             this.btn_Add_Alumno.Name = "btn_Add_Alumno";
             this.btn_Add_Alumno.Size = new System.Drawing.Size(194, 37);
             this.btn_Add_Alumno.TabIndex = 13;
-            this.btn_Add_Alumno.Text = "Modificar Perfil";
+            this.btn_Add_Alumno.Text = "Agregar Alumno";
             this.btn_Add_Alumno.UseVisualStyleBackColor = true;
             this.btn_Add_Alumno.Click += new System.EventHandler(this.btn_Add_Alumno_Click);
             // 
@@ -359,21 +253,26 @@
             this.label6.TabIndex = 14;
             this.label6.Text = "Nombre";
             // 
-            // Form_Alumno
+            // Button_Regresar_Login
+            // 
+            this.Button_Regresar_Login.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Button_Regresar_Login.Location = new System.Drawing.Point(684, 584);
+            this.Button_Regresar_Login.Name = "Button_Regresar_Login";
+            this.Button_Regresar_Login.Size = new System.Drawing.Size(261, 59);
+            this.Button_Regresar_Login.TabIndex = 6;
+            this.Button_Regresar_Login.Text = "Regresar a Login";
+            this.Button_Regresar_Login.UseVisualStyleBackColor = true;
+            this.Button_Regresar_Login.Click += new System.EventHandler(this.Button_Regresar_Login_Click);
+            // 
+            // Form_Registrarse
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1012, 681);
             this.Controls.Add(this.panel1);
-            this.Name = "Form_Alumno";
+            this.Name = "Form_Registrarse";
             this.Text = "Form_Alumno";
-            this.Load += new System.EventHandler(this.Form_Alumno_Load);
             this.panel1.ResumeLayout(false);
-            this.TabControl_Principal.ResumeLayout(false);
-            this.TabPage_Inicio.ResumeLayout(false);
-            this.TabPage_Actividades.ResumeLayout(false);
-            this.TabPage_Actividades.PerformLayout();
-            this.TabPage_Alumnos.ResumeLayout(false);
             this.gbx_Add_Alumno.ResumeLayout(false);
             this.gbx_Add_Alumno.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
@@ -384,15 +283,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TabControl TabControl_Principal;
-        private System.Windows.Forms.TabPage TabPage_Inicio;
-        private System.Windows.Forms.Button Button_Salir;
-        private System.Windows.Forms.TabPage TabPage_Actividades;
-        private System.Windows.Forms.ListBox ListBox_Actividades_Alumnos;
-        private System.Windows.Forms.ListBox ListBox_Actividades_Grupos;
-        private System.Windows.Forms.ListBox ListBox_Actividades_Actividades;
-        private System.Windows.Forms.TextBox TextBox_BuscarActividad;
-        private System.Windows.Forms.TabPage TabPage_Alumnos;
         private System.Windows.Forms.GroupBox gbx_Add_Alumno;
         private System.Windows.Forms.Button btn_Add_Alumno;
         private System.Windows.Forms.TextBox tbx_semestre;
@@ -413,5 +303,6 @@
         private System.Windows.Forms.TextBox tbx_nombre;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button Button_Regresar_Login;
     }
 }
