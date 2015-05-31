@@ -48,6 +48,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label_Dia1 = new System.Windows.Forms.Label();
             this.checkBox_Dia2 = new System.Windows.Forms.CheckBox();
+            this.uC_Horario_Dia3 = new SistemaExtraescolares.UC_Horario_Dia();
+            this.uC_Horario_Dia2 = new SistemaExtraescolares.UC_Horario_Dia();
+            this.uC_Horario_Dia1 = new SistemaExtraescolares.UC_Horario_Dia();
             this.button_Agregar_Grupo = new System.Windows.Forms.Button();
             this.label_Horario_Grupo = new System.Windows.Forms.Label();
             this.numericUpDown_Capacidad_Grupo = new System.Windows.Forms.NumericUpDown();
@@ -78,6 +81,8 @@
             this.label_Nombre = new System.Windows.Forms.Label();
             this.TabPage_Alumnos = new System.Windows.Forms.TabPage();
             this.gbx_Add_Alumno = new System.Windows.Forms.GroupBox();
+            this.tbx_apellidoM = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.btn_Add_Alumno = new System.Windows.Forms.Button();
             this.tbx_semestre = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -117,11 +122,6 @@
             this.contextMenuStrip_Docente = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.modificarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tbx_apellidoM = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.uC_Horario_Dia3 = new SistemaExtraescolares.UC_Horario_Dia();
-            this.uC_Horario_Dia2 = new SistemaExtraescolares.UC_Horario_Dia();
-            this.uC_Horario_Dia1 = new SistemaExtraescolares.UC_Horario_Dia();
             this.panel1.SuspendLayout();
             this.TabControl_Principal.SuspendLayout();
             this.TabPage_Inicio.SuspendLayout();
@@ -291,6 +291,7 @@
             this.comboBox_Grupos_A_Eliminar.Name = "comboBox_Grupos_A_Eliminar";
             this.comboBox_Grupos_A_Eliminar.Size = new System.Drawing.Size(792, 32);
             this.comboBox_Grupos_A_Eliminar.TabIndex = 0;
+            this.comboBox_Grupos_A_Eliminar.SelectedIndexChanged += new System.EventHandler(this.comboBox_Grupos_A_Eliminar_SelectedIndexChanged);
             // 
             // groupBox_Agregar_Grupo
             // 
@@ -366,6 +367,35 @@
             this.checkBox_Dia2.TabIndex = 31;
             this.checkBox_Dia2.UseVisualStyleBackColor = true;
             this.checkBox_Dia2.CheckedChanged += new System.EventHandler(this.checkBox_Dia2_CheckedChanged);
+            // 
+            // uC_Horario_Dia3
+            // 
+            this.uC_Horario_Dia3.Enabled = false;
+            this.uC_Horario_Dia3.Horario = null;
+            this.uC_Horario_Dia3.Location = new System.Drawing.Point(561, 206);
+            this.uC_Horario_Dia3.Margin = new System.Windows.Forms.Padding(20, 14, 20, 14);
+            this.uC_Horario_Dia3.Name = "uC_Horario_Dia3";
+            this.uC_Horario_Dia3.Size = new System.Drawing.Size(237, 191);
+            this.uC_Horario_Dia3.TabIndex = 30;
+            // 
+            // uC_Horario_Dia2
+            // 
+            this.uC_Horario_Dia2.Enabled = false;
+            this.uC_Horario_Dia2.Horario = null;
+            this.uC_Horario_Dia2.Location = new System.Drawing.Point(318, 206);
+            this.uC_Horario_Dia2.Margin = new System.Windows.Forms.Padding(11, 8, 11, 8);
+            this.uC_Horario_Dia2.Name = "uC_Horario_Dia2";
+            this.uC_Horario_Dia2.Size = new System.Drawing.Size(242, 190);
+            this.uC_Horario_Dia2.TabIndex = 29;
+            // 
+            // uC_Horario_Dia1
+            // 
+            this.uC_Horario_Dia1.Horario = null;
+            this.uC_Horario_Dia1.Location = new System.Drawing.Point(51, 206);
+            this.uC_Horario_Dia1.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.uC_Horario_Dia1.Name = "uC_Horario_Dia1";
+            this.uC_Horario_Dia1.Size = new System.Drawing.Size(231, 193);
+            this.uC_Horario_Dia1.TabIndex = 28;
             // 
             // button_Agregar_Grupo
             // 
@@ -711,6 +741,22 @@
             this.gbx_Add_Alumno.Text = "Agregar Alumno";
             this.gbx_Add_Alumno.Enter += new System.EventHandler(this.gbx_Add_Alumno_Enter);
             // 
+            // tbx_apellidoM
+            // 
+            this.tbx_apellidoM.Location = new System.Drawing.Point(105, 146);
+            this.tbx_apellidoM.Name = "tbx_apellidoM";
+            this.tbx_apellidoM.Size = new System.Drawing.Size(153, 29);
+            this.tbx_apellidoM.TabIndex = 7;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(15, 152);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(95, 24);
+            this.label4.TabIndex = 33;
+            this.label4.Text = "ApellidoM";
+            // 
             // btn_Add_Alumno
             // 
             this.btn_Add_Alumno.Location = new System.Drawing.Point(40, 405);
@@ -1043,51 +1089,6 @@
             this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.eliminarToolStripMenuItem.Text = "Borrar";
             this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click);
-            // 
-            // tbx_apellidoM
-            // 
-            this.tbx_apellidoM.Location = new System.Drawing.Point(105, 146);
-            this.tbx_apellidoM.Name = "tbx_apellidoM";
-            this.tbx_apellidoM.Size = new System.Drawing.Size(153, 29);
-            this.tbx_apellidoM.TabIndex = 7;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(15, 152);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(95, 24);
-            this.label4.TabIndex = 33;
-            this.label4.Text = "ApellidoM";
-            // 
-            // uC_Horario_Dia3
-            // 
-            this.uC_Horario_Dia3.Enabled = false;
-            this.uC_Horario_Dia3.Horario = null;
-            this.uC_Horario_Dia3.Location = new System.Drawing.Point(561, 206);
-            this.uC_Horario_Dia3.Margin = new System.Windows.Forms.Padding(20, 14, 20, 14);
-            this.uC_Horario_Dia3.Name = "uC_Horario_Dia3";
-            this.uC_Horario_Dia3.Size = new System.Drawing.Size(237, 191);
-            this.uC_Horario_Dia3.TabIndex = 30;
-            // 
-            // uC_Horario_Dia2
-            // 
-            this.uC_Horario_Dia2.Enabled = false;
-            this.uC_Horario_Dia2.Horario = null;
-            this.uC_Horario_Dia2.Location = new System.Drawing.Point(318, 206);
-            this.uC_Horario_Dia2.Margin = new System.Windows.Forms.Padding(11, 8, 11, 8);
-            this.uC_Horario_Dia2.Name = "uC_Horario_Dia2";
-            this.uC_Horario_Dia2.Size = new System.Drawing.Size(242, 190);
-            this.uC_Horario_Dia2.TabIndex = 29;
-            // 
-            // uC_Horario_Dia1
-            // 
-            this.uC_Horario_Dia1.Horario = null;
-            this.uC_Horario_Dia1.Location = new System.Drawing.Point(51, 206);
-            this.uC_Horario_Dia1.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
-            this.uC_Horario_Dia1.Name = "uC_Horario_Dia1";
-            this.uC_Horario_Dia1.Size = new System.Drawing.Size(231, 193);
-            this.uC_Horario_Dia1.TabIndex = 28;
             // 
             // Form_Administrador
             // 

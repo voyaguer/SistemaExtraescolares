@@ -50,7 +50,7 @@ namespace SistemaExtraescolares
             }
             else if (Rango == 1)
             {
-                Form_Docente _Docente = new Form_Docente();
+                Form_Docente _Docente = new Form_Docente(1);
                 Control _Controls = _Docente.Controls[0];
                 this.Controls.Add(_Controls);
             }

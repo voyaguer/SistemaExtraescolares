@@ -727,5 +727,10 @@ namespace SistemaExtraescolares
             }
         }
 
+        private void comboBox_Grupos_A_Eliminar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

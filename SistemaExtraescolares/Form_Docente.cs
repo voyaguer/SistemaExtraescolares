@@ -20,9 +20,11 @@ namespace SistemaExtraescolares
         Actividad[] Actividades;
         Alumno[] Alumnos;
         Grupo[] Grupos;
+        Int32 IDDocente=0;
         string Alumno_ModificarAgregar;
         public Form_Docente(Int32 IDDocente)
         {
+            this.IDDocente = IDDocente;
             InitializeComponent();
         }
 
@@ -38,9 +40,24 @@ namespace SistemaExtraescolares
                     Cargar_Alumnos();
                     Cargar_PestañaAlumnos();
                     break;
+                case 3:
+                    Cargar_Grupos();
+                    Cargar_PestañaListas();
+                    break;
                 default:
                     break;
             }
+        }
+
+        private void Cargar_PestañaListas()
+        {
+            foreach (Grupo Grup in Grupos)
+            {
+                comboBox_ListaGrupo.Items.Add(Grup);
+            }
+            comboBox_ListaGrupo.SelectedIndex = 0;
+
+
         }
         void Cargar_PestañaAlumnos()
         {
@@ -90,7 +107,7 @@ namespace SistemaExtraescolares
             if (!Grupos_ConDatos)
             {
                 Cargar_Actividades();
-                Grupos = (new Grupo_Manejador()).GetList();
+                Grupos = (new Grupo_Manejador()).GetList(this.IDDocente);
                 foreach (Grupo Grup in Grupos)
                 {
                     Grup.NombreActividad = Actividades.Single(Act => Act.IDActividad == Grup.IDActividad).Nombre;
@@ -210,6 +227,11 @@ namespace SistemaExtraescolares
             {
                 ListBox_Actividades_Actividades.SelectedIndex = 0;
             }
+        }
+
+        private void comboBox_ListaGrupo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

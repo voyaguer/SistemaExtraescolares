@@ -78,9 +78,9 @@
             this.Button_Salir = new System.Windows.Forms.Button();
             this.TabControl_Docente = new System.Windows.Forms.TabControl();
             this.TabPage_Listas = new System.Windows.Forms.TabPage();
-            this.comboBox_Grupo = new System.Windows.Forms.ComboBox();
-            this.label_Grupo = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label_Grupo = new System.Windows.Forms.Label();
+            this.comboBox_ListaGrupo = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Edad)).BeginInit();
             this.TabPage_Alumnos.SuspendLayout();
@@ -521,30 +521,13 @@
             // 
             this.TabPage_Listas.Controls.Add(this.dataGridView1);
             this.TabPage_Listas.Controls.Add(this.label_Grupo);
-            this.TabPage_Listas.Controls.Add(this.comboBox_Grupo);
+            this.TabPage_Listas.Controls.Add(this.comboBox_ListaGrupo);
             this.TabPage_Listas.Location = new System.Drawing.Point(4, 33);
             this.TabPage_Listas.Name = "TabPage_Listas";
             this.TabPage_Listas.Size = new System.Drawing.Size(1256, 644);
             this.TabPage_Listas.TabIndex = 5;
             this.TabPage_Listas.Text = "Listas";
             this.TabPage_Listas.UseVisualStyleBackColor = true;
-            // 
-            // comboBox_Grupo
-            // 
-            this.comboBox_Grupo.FormattingEnabled = true;
-            this.comboBox_Grupo.Location = new System.Drawing.Point(316, 31);
-            this.comboBox_Grupo.Name = "comboBox_Grupo";
-            this.comboBox_Grupo.Size = new System.Drawing.Size(288, 32);
-            this.comboBox_Grupo.TabIndex = 0;
-            // 
-            // label_Grupo
-            // 
-            this.label_Grupo.AutoSize = true;
-            this.label_Grupo.Location = new System.Drawing.Point(210, 34);
-            this.label_Grupo.Name = "label_Grupo";
-            this.label_Grupo.Size = new System.Drawing.Size(68, 24);
-            this.label_Grupo.TabIndex = 1;
-            this.label_Grupo.Text = "Grupo:";
             // 
             // dataGridView1
             // 
@@ -553,6 +536,24 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(764, 449);
             this.dataGridView1.TabIndex = 2;
+            // 
+            // label_Grupo
+            // 
+            this.label_Grupo.AutoSize = true;
+            this.label_Grupo.Location = new System.Drawing.Point(22, 31);
+            this.label_Grupo.Name = "label_Grupo";
+            this.label_Grupo.Size = new System.Drawing.Size(68, 24);
+            this.label_Grupo.TabIndex = 1;
+            this.label_Grupo.Text = "Grupo:";
+            // 
+            // comboBox_ListaGrupo
+            // 
+            this.comboBox_ListaGrupo.FormattingEnabled = true;
+            this.comboBox_ListaGrupo.Location = new System.Drawing.Point(96, 28);
+            this.comboBox_ListaGrupo.Name = "comboBox_ListaGrupo";
+            this.comboBox_ListaGrupo.Size = new System.Drawing.Size(517, 32);
+            this.comboBox_ListaGrupo.TabIndex = 0;
+            this.comboBox_ListaGrupo.SelectedIndexChanged += new System.EventHandler(this.comboBox_ListaGrupo_SelectedIndexChanged);
             // 
             // Form_Docente
             // 
@@ -632,7 +633,7 @@
         private System.Windows.Forms.TabPage TabPage_Listas;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label_Grupo;
-        private System.Windows.Forms.ComboBox comboBox_Grupo;
+        private System.Windows.Forms.ComboBox comboBox_ListaGrupo;
 
     }
 }
