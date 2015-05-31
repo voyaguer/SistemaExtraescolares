@@ -58,6 +58,8 @@
             this.tbx_nombre = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tbx_apellidos2 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.TabControl_Principal.SuspendLayout();
             this.TabPage_Inicio.SuspendLayout();
@@ -174,6 +176,8 @@
             // 
             // gbx_Add_Alumno
             // 
+            this.gbx_Add_Alumno.Controls.Add(this.tbx_apellidos2);
+            this.gbx_Add_Alumno.Controls.Add(this.label1);
             this.gbx_Add_Alumno.Controls.Add(this.btn_Add_Alumno);
             this.gbx_Add_Alumno.Controls.Add(this.tbx_semestre);
             this.gbx_Add_Alumno.Controls.Add(this.label13);
@@ -195,14 +199,14 @@
             this.gbx_Add_Alumno.Controls.Add(this.label6);
             this.gbx_Add_Alumno.Location = new System.Drawing.Point(36, 34);
             this.gbx_Add_Alumno.Name = "gbx_Add_Alumno";
-            this.gbx_Add_Alumno.Size = new System.Drawing.Size(276, 433);
+            this.gbx_Add_Alumno.Size = new System.Drawing.Size(294, 501);
             this.gbx_Add_Alumno.TabIndex = 4;
             this.gbx_Add_Alumno.TabStop = false;
             this.gbx_Add_Alumno.Text = "Alumno";
             // 
             // btn_Add_Alumno
             // 
-            this.btn_Add_Alumno.Location = new System.Drawing.Point(42, 376);
+            this.btn_Add_Alumno.Location = new System.Drawing.Point(42, 409);
             this.btn_Add_Alumno.Name = "btn_Add_Alumno";
             this.btn_Add_Alumno.Size = new System.Drawing.Size(194, 37);
             this.btn_Add_Alumno.TabIndex = 13;
@@ -212,7 +216,7 @@
             // 
             // tbx_semestre
             // 
-            this.tbx_semestre.Location = new System.Drawing.Point(105, 254);
+            this.tbx_semestre.Location = new System.Drawing.Point(105, 287);
             this.tbx_semestre.Name = "tbx_semestre";
             this.tbx_semestre.Size = new System.Drawing.Size(153, 29);
             this.tbx_semestre.TabIndex = 10;
@@ -220,7 +224,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(16, 259);
+            this.label13.Location = new System.Drawing.Point(16, 292);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(90, 24);
             this.label13.TabIndex = 31;
@@ -228,7 +232,7 @@
             // 
             // tbx_carrera
             // 
-            this.tbx_carrera.Location = new System.Drawing.Point(105, 219);
+            this.tbx_carrera.Location = new System.Drawing.Point(105, 252);
             this.tbx_carrera.Name = "tbx_carrera";
             this.tbx_carrera.Size = new System.Drawing.Size(153, 29);
             this.tbx_carrera.TabIndex = 9;
@@ -236,7 +240,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(16, 224);
+            this.label12.Location = new System.Drawing.Point(16, 257);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(72, 24);
             this.label12.TabIndex = 29;
@@ -260,14 +264,14 @@
             // 
             // tbx_email
             // 
-            this.tbx_email.Location = new System.Drawing.Point(105, 289);
+            this.tbx_email.Location = new System.Drawing.Point(105, 322);
             this.tbx_email.Name = "tbx_email";
             this.tbx_email.Size = new System.Drawing.Size(153, 29);
             this.tbx_email.TabIndex = 11;
             // 
             // tbx_telefono
             // 
-            this.tbx_telefono.Location = new System.Drawing.Point(105, 324);
+            this.tbx_telefono.Location = new System.Drawing.Point(105, 357);
             this.tbx_telefono.Name = "tbx_telefono";
             this.tbx_telefono.Size = new System.Drawing.Size(153, 29);
             this.tbx_telefono.TabIndex = 12;
@@ -275,7 +279,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(15, 329);
+            this.label9.Location = new System.Drawing.Point(15, 362);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(85, 24);
             this.label9.TabIndex = 25;
@@ -284,7 +288,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(16, 292);
+            this.label10.Location = new System.Drawing.Point(16, 325);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(57, 24);
             this.label10.TabIndex = 23;
@@ -297,14 +301,14 @@
             this.comboBox1.Items.AddRange(new object[] {
             "Hombre",
             "Mujer"});
-            this.comboBox1.Location = new System.Drawing.Point(105, 181);
+            this.comboBox1.Location = new System.Drawing.Point(105, 214);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(153, 32);
             this.comboBox1.TabIndex = 8;
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(105, 146);
+            this.numericUpDown1.Location = new System.Drawing.Point(105, 179);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(153, 29);
             this.numericUpDown1.TabIndex = 7;
@@ -312,7 +316,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(16, 189);
+            this.label7.Location = new System.Drawing.Point(16, 222);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(54, 24);
             this.label7.TabIndex = 21;
@@ -321,7 +325,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(16, 151);
+            this.label8.Location = new System.Drawing.Point(16, 184);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(55, 24);
             this.label8.TabIndex = 19;
@@ -346,9 +350,9 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(15, 117);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(88, 24);
+            this.label5.Size = new System.Drawing.Size(91, 24);
             this.label5.TabIndex = 16;
-            this.label5.Text = "Apellidos";
+            this.label5.Text = "ApellidoP";
             // 
             // label6
             // 
@@ -358,6 +362,22 @@
             this.label6.Size = new System.Drawing.Size(79, 24);
             this.label6.TabIndex = 14;
             this.label6.Text = "Nombre";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(14, 149);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(95, 24);
+            this.label1.TabIndex = 32;
+            this.label1.Text = "ApellidoM";
+            // 
+            // tbx_apellidos2
+            // 
+            this.tbx_apellidos2.Location = new System.Drawing.Point(105, 144);
+            this.tbx_apellidos2.Name = "tbx_apellidos2";
+            this.tbx_apellidos2.Size = new System.Drawing.Size(153, 29);
+            this.tbx_apellidos2.TabIndex = 33;
             // 
             // Form_Alumno
             // 
@@ -413,5 +433,7 @@
         private System.Windows.Forms.TextBox tbx_nombre;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox tbx_apellidos2;
+        private System.Windows.Forms.Label label1;
     }
 }

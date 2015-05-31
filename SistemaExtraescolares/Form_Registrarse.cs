@@ -23,8 +23,8 @@ namespace SistemaExtraescolares
 
         private void btn_Add_Alumno_Click(object sender, EventArgs e)
         {
-            
-                String Nombre = "", Apellidos = "", Email = "", Telefono = "", N_control = "", Semestre = "", Carrera = "";
+
+                String Nombre = "", ApellidoPaterno = "", ApellidoMaterno = "", Email = "", Telefono = "", N_control = "", Semestre = "", Carrera = "";
                 int Edad = 0;
                 int ID = 2;
                 Char Sexo = '0';
@@ -40,7 +40,8 @@ namespace SistemaExtraescolares
                 {
                     N_control = tbx_nControl.Text;
                     Nombre = tbx_nombre.Text;
-                    Apellidos = tbx_apellidos.Text;
+                    ApellidoPaterno = tbx_apellidos.Text;
+                    ApellidoPaterno = tbx_apellidos2.Text;
                     Edad = (int)Convert.ToDecimal(numericUpDown1.Value);
                     if (comboBox1.Text == "Hombre")
                     {
@@ -58,7 +59,8 @@ namespace SistemaExtraescolares
                     Alumno Nuevo_Alumno = new Alumno();
                     Nuevo_Alumno.NumeroDeControl = N_control;
                     Nuevo_Alumno.Nombre = Nombre;
-                    Nuevo_Alumno.Apellidos = Apellidos;
+                    Nuevo_Alumno.ApellidoP = ApellidoPaterno;
+                    Nuevo_Alumno.ApellidoM = ApellidoMaterno;
                     Nuevo_Alumno.Edad = Edad;
                     Nuevo_Alumno.Sexo = Sexo;
                     Nuevo_Alumno.Carrera = Carrera;
