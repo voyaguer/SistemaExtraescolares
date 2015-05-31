@@ -173,6 +173,7 @@
             this.TabPage_Alumnos.TabIndex = 4;
             this.TabPage_Alumnos.Text = "Mi Perfil";
             this.TabPage_Alumnos.UseVisualStyleBackColor = true;
+            this.TabPage_Alumnos.Click += new System.EventHandler(this.TabPage_Alumnos_Click);
             // 
             // gbx_Add_Alumno
             // 

@@ -63,7 +63,8 @@ namespace SistemaExtraescolares
                 {
                     String NumeroDeControl = Convert.ToString(DataReader["NumeroDeControl"]);
                     String Nombre = Convert.ToString(DataReader["Nombre"]);
-                    String Apellidos = Convert.ToString(DataReader["Apellidos"]);
+                    String ApellidoP = Convert.ToString(DataReader["ApellidoP"]);
+                    String ApellidoM = Convert.ToString(DataReader["ApellidoM"]);
                     Int32 Edad = Convert.ToInt32(DataReader["Edad"]);
                     Char Sexo = Convert.ToChar(DataReader["Sexo"]);
                     Int32 Semestre = Convert.ToInt32(DataReader["Semestre"]);
@@ -73,7 +74,8 @@ namespace SistemaExtraescolares
 
                     tbx_nControl.Text = NumeroDeControl;
                     tbx_nombre.Text = Nombre;
-                    tbx_apellidos.Text = Apellidos;
+                    tbx_apellidos.Text = ApellidoP;
+                    tbx_apellidos.Text = ApellidoM;
                     tbx_email.Text = Email;
                     tbx_carrera.Text = Carrera;
                     tbx_semestre.Text = Semestre.ToString();
@@ -109,7 +111,7 @@ namespace SistemaExtraescolares
             int Edad = 0;
             Char Sexo = '0';
 
-            if ((tbx_nControl.Text == "") || (tbx_nombre.Text == "") || (tbx_apellidos.Text == "") || (tbx_telefono.Text == "") ||
+            if ((tbx_nControl.Text == "") || (tbx_nombre.Text == "") || (tbx_apellidos.Text == "") || (tbx_apellidos2.Text == "") || (tbx_telefono.Text == "") ||
                (tbx_carrera.Text == "") || (tbx_semestre.Text == "")
                || (comboBox1.SelectedIndex.Equals(-1)) || numericUpDown1.Value.ToString() == "0")
             {
@@ -158,6 +160,7 @@ namespace SistemaExtraescolares
                 tbx_nControl.Clear();
                 tbx_nombre.Clear();
                 tbx_apellidos.Clear();
+                tbx_apellidos2.Clear();
                 tbx_email.Clear();
                 tbx_carrera.Clear();
                 tbx_semestre.Clear();
@@ -170,6 +173,11 @@ namespace SistemaExtraescolares
                 MessageBox.Show("TU PERFIL SE ACTUALIZO CON EXITO");
 
             }
+        }
+
+        private void TabPage_Alumnos_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
