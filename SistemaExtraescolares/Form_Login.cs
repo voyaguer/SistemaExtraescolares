@@ -53,7 +53,29 @@ namespace SistemaExtraescolares
                     }
                     else
                     {
-                        Label_Alerta.Text = "Mejor suerte para la próxima!";
+                        DataReader.Close();
+                        String Query2 = "select * from Alumnos where Nombre = @Usuario and NumeroDeControl = @Passwrd;";
+                        SqlParameter[] Data2 = new SqlParameter[2];
+                        Data2[0] = new SqlParameter("@Usuario", Usuario);
+                        Data2[1] = new SqlParameter("@Passwrd", Password);
+                        SqlCommand Command2 = new SqlCommand(Query2, Connection);
+                        Command2.Parameters.AddRange(Data2);
+                        using (var DataReader2 = Command2.ExecuteReader())
+                        {
+                            if (DataReader2.Read())
+                            {
+                                Int32 IDAlumno = Convert.ToInt32(DataReader2["IDAlumno"]);
+
+
+                                Delegado.Cargar_Alumnos(IDAlumno);
+                                
+                                
+                            }
+                            else
+                            {
+                                Label_Alerta.Text = "Mejor suerte para la próxima!";
+                            }
+                        }
                     }
                 }
                 Connection.Close();
@@ -63,6 +85,11 @@ namespace SistemaExtraescolares
                 Label_Alerta.Text = ex.Message;
                 Connection.Close();
             }
+        }
+
+        private void Button_Registrarse_Click(object sender, EventArgs e)
+        {
+            Delegado.Cargar_Principal(3);
         }
     }
 }

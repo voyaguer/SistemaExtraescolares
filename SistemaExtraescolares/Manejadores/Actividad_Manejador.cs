@@ -13,6 +13,7 @@ namespace SistemaExtraescolares
 
         String ConnectionString;
         SqlConnection Connection;
+        public int ID;
 
         public Actividad_Manejador()
         {

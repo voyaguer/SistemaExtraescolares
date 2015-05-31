@@ -1097,6 +1097,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "Form_Administrador";
             this.Text = "Administrador";
+            this.Load += new System.EventHandler(this.Form_Administrador_Load);
             this.panel1.ResumeLayout(false);
             this.TabControl_Principal.ResumeLayout(false);
             this.TabPage_Inicio.ResumeLayout(false);
