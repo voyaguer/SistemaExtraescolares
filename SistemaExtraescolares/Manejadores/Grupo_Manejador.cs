@@ -61,8 +61,10 @@ namespace SistemaExtraescolares
             try
             {
                 Connection.Open();
-                String Query = "select * from Grupos;";
+                String Query = "select * from Grupos where IDDocente=@_IDocente;";
                 SqlCommand Command = new SqlCommand(Query, Connection);
+                Command.Parameters.AddWithValue("@_IDocente", IDDocente);
+                
                 using (var DataReader = Command.ExecuteReader())
                 {
                     List<Grupo> Lista = new List<Grupo>();

@@ -21,10 +21,12 @@ namespace SistemaExtraescolares
         Alumno[] Alumnos;
         Grupo[] Grupos;
         Int32 IDDocente=0;
+        String password = "";
         string Alumno_ModificarAgregar;
-        public Form_Docente(Int32 IDDocente)
+        public Form_Docente(Int32 IDDocente, String password)
         {
             this.IDDocente = IDDocente;
+            this.password = password;
             InitializeComponent();
         }
 
@@ -55,7 +57,16 @@ namespace SistemaExtraescolares
             {
                 comboBox_ListaGrupo.Items.Add(Grup);
             }
-            comboBox_ListaGrupo.SelectedIndex = 0;
+            try
+            {
+                comboBox_ListaGrupo.SelectedIndex = 0;
+            }
+            catch (Exception)
+            {
+                
+                //throw;
+            }
+           
 
 
         }
@@ -232,6 +243,36 @@ namespace SistemaExtraescolares
         private void comboBox_ListaGrupo_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button_CambiarContrasenia_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                if (password==textBox_passAnterior.Text)
+                {
+                    if (textBox_PassNuevo.Text==textBox_PassRepetir.Text)
+                    {
+                        Docente_Manejador _Docente = new Docente_Manejador();
+                        _Docente.CambiarPass(IDDocente, textBox_PassNuevo.Text);
+                        MessageBox.Show("Contraseña cambiada");
+                    }
+                    else
+                    {
+                        MessageBox.Show("La contraseña verifique la contraseña nueva");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("La contraseña no coincide con con contraseña anterior, intruduzca su antigua contraseña");
+                }
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Verifique los datos");
+            }
         }
     }
 }

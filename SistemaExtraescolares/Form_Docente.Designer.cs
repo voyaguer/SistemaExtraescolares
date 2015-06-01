@@ -81,6 +81,13 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label_Grupo = new System.Windows.Forms.Label();
             this.comboBox_ListaGrupo = new System.Windows.Forms.ComboBox();
+            this.textBox_passAnterior = new System.Windows.Forms.TextBox();
+            this.label_passAnterior = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox_PassRepetir = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox_PassNuevo = new System.Windows.Forms.TextBox();
+            this.button_CambiarContrasenia = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Edad)).BeginInit();
             this.TabPage_Alumnos.SuspendLayout();
@@ -484,6 +491,13 @@
             // 
             // TabPage_Inicio
             // 
+            this.TabPage_Inicio.Controls.Add(this.button_CambiarContrasenia);
+            this.TabPage_Inicio.Controls.Add(this.label2);
+            this.TabPage_Inicio.Controls.Add(this.textBox_PassNuevo);
+            this.TabPage_Inicio.Controls.Add(this.label1);
+            this.TabPage_Inicio.Controls.Add(this.textBox_PassRepetir);
+            this.TabPage_Inicio.Controls.Add(this.label_passAnterior);
+            this.TabPage_Inicio.Controls.Add(this.textBox_passAnterior);
             this.TabPage_Inicio.Controls.Add(this.Button_Salir);
             this.TabPage_Inicio.Location = new System.Drawing.Point(4, 33);
             this.TabPage_Inicio.Name = "TabPage_Inicio";
@@ -555,6 +569,68 @@
             this.comboBox_ListaGrupo.TabIndex = 0;
             this.comboBox_ListaGrupo.SelectedIndexChanged += new System.EventHandler(this.comboBox_ListaGrupo_SelectedIndexChanged);
             // 
+            // textBox_passAnterior
+            // 
+            this.textBox_passAnterior.Location = new System.Drawing.Point(214, 75);
+            this.textBox_passAnterior.Name = "textBox_passAnterior";
+            this.textBox_passAnterior.PasswordChar = '*';
+            this.textBox_passAnterior.Size = new System.Drawing.Size(277, 29);
+            this.textBox_passAnterior.TabIndex = 1;
+            // 
+            // label_passAnterior
+            // 
+            this.label_passAnterior.AutoSize = true;
+            this.label_passAnterior.Location = new System.Drawing.Point(26, 78);
+            this.label_passAnterior.Name = "label_passAnterior";
+            this.label_passAnterior.Size = new System.Drawing.Size(182, 24);
+            this.label_passAnterior.TabIndex = 2;
+            this.label_passAnterior.Text = "Contraseña Anterior:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(26, 177);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(176, 24);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Repetir Contraseña:";
+            // 
+            // textBox_PassRepetir
+            // 
+            this.textBox_PassRepetir.Location = new System.Drawing.Point(214, 172);
+            this.textBox_PassRepetir.Name = "textBox_PassRepetir";
+            this.textBox_PassRepetir.PasswordChar = '*';
+            this.textBox_PassRepetir.Size = new System.Drawing.Size(277, 29);
+            this.textBox_PassRepetir.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(26, 129);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(171, 24);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Contraseña Nueva:";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // textBox_PassNuevo
+            // 
+            this.textBox_PassNuevo.Location = new System.Drawing.Point(214, 126);
+            this.textBox_PassNuevo.Name = "textBox_PassNuevo";
+            this.textBox_PassNuevo.PasswordChar = '*';
+            this.textBox_PassNuevo.Size = new System.Drawing.Size(277, 29);
+            this.textBox_PassNuevo.TabIndex = 5;
+            // 
+            // button_CambiarContrasenia
+            // 
+            this.button_CambiarContrasenia.Location = new System.Drawing.Point(214, 236);
+            this.button_CambiarContrasenia.Name = "button_CambiarContrasenia";
+            this.button_CambiarContrasenia.Size = new System.Drawing.Size(277, 37);
+            this.button_CambiarContrasenia.TabIndex = 7;
+            this.button_CambiarContrasenia.Text = "Cambiar Contraseña";
+            this.button_CambiarContrasenia.UseVisualStyleBackColor = true;
+            this.button_CambiarContrasenia.Click += new System.EventHandler(this.button_CambiarContrasenia_Click);
+            // 
             // Form_Docente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -571,6 +647,7 @@
             this.TabPage_Actividades.ResumeLayout(false);
             this.TabPage_Actividades.PerformLayout();
             this.TabPage_Inicio.ResumeLayout(false);
+            this.TabPage_Inicio.PerformLayout();
             this.TabControl_Docente.ResumeLayout(false);
             this.TabPage_Listas.ResumeLayout(false);
             this.TabPage_Listas.PerformLayout();
@@ -634,6 +711,13 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label_Grupo;
         private System.Windows.Forms.ComboBox comboBox_ListaGrupo;
+        private System.Windows.Forms.Button button_CambiarContrasenia;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBox_PassNuevo;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox_PassRepetir;
+        private System.Windows.Forms.Label label_passAnterior;
+        private System.Windows.Forms.TextBox textBox_passAnterior;
 
     }
 }

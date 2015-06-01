@@ -105,5 +105,24 @@ namespace SistemaExtraescolares
                 Connection.Close();
             }
         }
+
+        public void CambiarPass(int IDDocente, string p)
+        {
+            try
+            {
+                Connection.Open();
+                String Query = "update Usuarios set Passwrd=@_pass where Usuario=@_IDDocente;";
+                SqlCommand Command = new SqlCommand(Query, Connection);
+                Command.Parameters.AddWithValue("@_pass", p);
+                Command.Parameters.AddWithValue("@_IDDocente", IDDocente);
+                Command.ExecuteNonQuery();
+
+            }
+            finally
+            {
+                Connection.Close();
+            }
+            
+        }
     }
 }
