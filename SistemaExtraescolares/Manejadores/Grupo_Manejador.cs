@@ -127,5 +127,45 @@ namespace SistemaExtraescolares
                 Connection.Close();
             }
         }
+
+        public Grupo[] GetList(Int32 IDDocente)
+        {
+            Grupo[] Grupos = new Grupo[0];
+            try
+            {
+                Connection.Open();
+                String Query = "select * from Grupos where IDDocente=@_IDocente;";
+                SqlCommand Command = new SqlCommand(Query, Connection);
+                Command.Parameters.AddWithValue("@_IDocente", IDDocente);
+
+                using (var DataReader = Command.ExecuteReader())
+                {
+                    List<Grupo> Lista = new List<Grupo>();
+                    Grupo Grup;
+                    while (DataReader.Read())
+                    {
+                        Grup = new Grupo();
+                        Grup.IDGrupo = Convert.ToInt32(DataReader["IDGrupo"]);
+                        Grup.IDActividad = Convert.ToInt32(DataReader["IDActividad"]);
+                        Grup.CicloEscolar_Anho = Convert.ToInt32(DataReader["CicloEscolar_Anho"]);
+                        Grup.CicloEscolar_MesPrimero = Convert.ToInt32(DataReader["CicloEscolar_MesPrimero"]);
+                        Grup.CicloEscolar_MesUltimo = Convert.ToInt32(DataReader["CicloEscolar_MesUltimo"]);
+                        Grup.Capacidad = Convert.ToInt32(DataReader["Capacidad"]);
+                        Grup.Horario = DataReader["Horario"].ToString();
+                        Lista.Add(Grup);
+                    }
+                    Grupos = Lista.ToArray<Grupo>();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.Write(ex.Message);
+            }
+            finally
+            {
+                Connection.Close();
+            }
+            return Grupos;
+        }
     }
 }

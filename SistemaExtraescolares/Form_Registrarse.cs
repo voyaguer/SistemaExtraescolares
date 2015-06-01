@@ -89,7 +89,7 @@ namespace SistemaExtraescolares
 
         private void Button_Regresar_Login_Click(object sender, EventArgs e)
         {
-            Delegado.Cargar_Principal(4);
+            Delegado.Cargar_Principal(4,"u","u");
         }
     }
 }

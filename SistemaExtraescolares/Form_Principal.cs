@@ -34,7 +34,7 @@ namespace SistemaExtraescolares
             this.Controls.Add(_Controls);
         }
 
-        public void Cargar_Principal(int Rango)
+        public void Cargar_Principal(int Rango, String Usuario, String Password)
         {
             /*
              * Alumno = 0
@@ -52,7 +52,9 @@ namespace SistemaExtraescolares
             }
             else if (Rango == 1)
             {
-
+                Form_Docente _Docente = new Form_Docente(IDDocente, Usuario, Password);
+                Control _Controls = _Docente.Controls[0];
+                this.Controls.Add(_Controls);
             }
             else if (Rango == 2)
             {
@@ -81,5 +83,7 @@ namespace SistemaExtraescolares
             Control _Controls = _Alumno.Controls[0];
             this.Controls.Add(_Controls);
         }
+
+        public int IDDocente { get; set; }
     }
 }

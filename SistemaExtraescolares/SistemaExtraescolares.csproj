@@ -60,6 +60,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Form_Docente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Docente.Designer.cs">
+      <DependentUpon>Form_Docente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_Registrarse.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,6 +114,9 @@
     <Compile Include="UC_Horario_Dia.Designer.cs">
       <DependentUpon>UC_Horario_Dia.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Form_Docente.resx">
+      <DependentUpon>Form_Docente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_Registrarse.resx">
       <DependentUpon>Form_Registrarse.cs</DependentUpon>
     </EmbeddedResource>

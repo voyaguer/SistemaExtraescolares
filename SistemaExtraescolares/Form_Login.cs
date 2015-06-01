@@ -49,7 +49,7 @@ namespace SistemaExtraescolares
                     if (DataReader.Read())
                     {
                         Int32 Rango = Convert.ToInt32(DataReader["Rango"]);
-                        Delegado.Cargar_Principal(Rango);
+                        Delegado.Cargar_Principal(Rango,Usuario,Password);
                     }
                     else
                     {
@@ -89,7 +89,7 @@ namespace SistemaExtraescolares
 
         private void Button_Registrarse_Click(object sender, EventArgs e)
         {
-            Delegado.Cargar_Principal(3);
+            Delegado.Cargar_Principal(3,"u","u");
         }
     }
 }

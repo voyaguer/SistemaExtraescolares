@@ -9,7 +9,7 @@ namespace SistemaExtraescolares
     public interface IComunicacion
     {
         void Salir();
-        void Cargar_Principal(int Rango);
+        void Cargar_Principal(int Rango, String Usuario, String Password);
         void Cargar_Alumnos(int rango);
     }
 }
